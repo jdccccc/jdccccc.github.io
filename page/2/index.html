@@ -1,128 +1,255 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN ">
+
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>StarAndRain</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="To Record some Graceful Time">
-<meta property="og:type" content="website">
-<meta property="og:title" content="StarAndRain">
-<meta property="og:url" content="http://loverain.tech/page/2/index.html">
-<meta property="og:site_name" content="StarAndRain">
-<meta property="og:description" content="To Record some Graceful Time">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="LoveRain">
-<meta property="article:tag" content="Technology and Science">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="StarAndRain" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarAndRain || I want to be the stars in your night sky.</title>
+    <meta name="author" content="LoveRain">
+    <meta name="description" content="To Record some Graceful Time ">
+    <meta name="keywords" content="Technology and Science ">
+    <link rel="icon" href="/images/avatar.png">
+    <link rel="stylesheet" href="/css/antd.min.css">
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
+    <link rel="stylesheet" href="/css/maiden-theme.css">
     
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
+    <script src="/js/vue.js"></script>
+    <script src="/js/antd.min.js"></script>
 <meta name="generator" content="Hexo 6.2.0"></head>
 
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">StarAndRain</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">I want to be the stars in your night sky.</a>
+
+    <div id="loading"
+        style="height: 100vh; width: 100%; position: fixed;display: flex;z-index: 200; justify-content: space-between;">
+        <div id="loadleft" style="width: 50%;background-color: #ffffff;transition: width 0.6s ease-out;"></div>
+        <div id="loadright" style="width: 50%;background-color: #ffffff;transition: width 0.6s ease-out;"></div>
+        <div
+            style="position: fixed; height: 100vh; width: 100%;display: flex;justify-content: center;align-items: center;">
+            <div id="loadcontent"
+                style="width:400px;height:400px;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px#a3ddfb; text-align:center;opacity:1;transition:opacity 0.3s ease-out;">
+                <div>
+                    <h2>LOADING...</h2>
+                    <p>加载过慢请开启缓存(浏览器默认开启)</p>
+                    <div>
+                        <img src="/dancingkitty.gif" alt="loading">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="layout">
+        <transition name="into">
+            <div v-show="show_page" style="display: none;">
+                <div id="menu_show">
+                     
+<nav id="menu">
+    <div class="desktop-menu">
+        <a href="/">
+            <span class="title">StarAndRain</span>
+        </a>
+        
+        <a href="/">
+            <span>
+                <a-icon type="home" theme="filled" />
+            </span>
+            <span>home</span>
+        </a>
+        
+        <a href="/about">
+            <span>
+                <a-icon type="idcard" theme="filled" />
+            </span>
+            <span>about</span>
+        </a>
+        
+        <a href="/archives">
+            <span>
+                <a-icon type="folder" theme="filled" />
+            </span>
+            <span>archives</span>
+        </a>
+        
+        <a href="/like/categories">
+            <span>
+                <a-icon type="book" theme="filled" />
+            </span>
+            <span>categories</span>
+        </a>
+        
+        <a href="/like/tags">
+            <span>
+                <a-icon type="tags" theme="filled" />
+            </span>
+            <span>tags</span>
+        </a>
+        
+        <a target="_blank" rel="noopener" href="https://en.korilin.com">
+            <span>
+                <a-icon type="compass" theme="filled" />
+            </span>
+            <span>英文博客</span>
+        </a>
+        
+    </div>
+
+    <div :class="'phone-menu ' + menu_show" id="phone-menu">
+        <div :class="'title'" @click="menu_show=!menu_show">
+            <span style="margin-right: 10px;">
+                <a-icon type="appstore" theme="filled" />
+            </span>
+            <span>StarAndRain</span>
+        </div>
+        <div class="items" v-show="menu_show">
+            
+            <a href="/">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="home" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">home</div>
+                </div>
+            </a>
+            
+            <a href="/about">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="idcard" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">about</div>
+                </div>
+            </a>
+            
+            <a href="/archives">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="folder" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">archives</div>
+                </div>
+            </a>
+            
+            <a href="/like/categories">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="book" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">categories</div>
+                </div>
+            </a>
+            
+            <a href="/like/tags">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="tags" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">tags</div>
+                </div>
+            </a>
+            
+            <a target="_blank" rel="noopener" href="https://en.korilin.com">
+                <div class="item">
+                    <div style="min-width:20px; max-width:50px; width: 10%">
+                        <a-icon type="compass" theme="filled" />
+                    </div>
+                    <div style="min-width:100px;max-width: 150%;width: 20%;">英文博客</div>
+                </div>
+            </a>
+            
+        </div>
+        <div class="curtain" v-show="menu_show"></div>
+    </div>
+
+</nav>
+                </div>
+
+                <div id="main">
+                    <div id="home-head" style=background-image:url('home.jpg')>
+    <script>
+        var menu = document.getElementById("menu")
+        menu.className += " menu-color"
+    </script>
+     
+    <div id="home-info" class="home-info" @click="home_click">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>StarAndRain</h1>
+                <h3>I want to be the stars in your night sky.</h3>
+                <h5>To Record some Graceful Time</h5>
+            </div>
+        </span>
+    </div>
+     
+</div>
+
+
+
+<div id="home-posts-wrap" class=>
+    <div id="home-posts">
+
+        <div id="posts">
+            
+
+<div class="post">
+
+    <a href="//[object Object]/Tech/Qv2ray/Qv2ray科学上网/">
+        <h2>
+            Qv2ray科学上网
         </h2>
-      
+    </a>
+
+    <div class="category-and-date">
+
+        
+        <span class="category">
+            <a href="/categories/Tech">
+                <span class="icon">
+                    <a-icon type="book" theme="filled" /></span>
+                Tech
+            </a>
+        </span>
+        
+
+        <span class="date">
+            <span class="icon">
+                <a-icon type="calendar" theme="filled" />
+            </span>
+            2022/5/31
+        </span>
+
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://loverain.tech"></form>
-      </div>
-    </div>
-  </div>
-</header>
 
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-Tech/Qv2ray/Qv2ray科学上网" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/%5Bobject%20Object%5D/Tech/Qv2ray/Qv2ray%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" class="article-date">
-  <time class="dt-published" datetime="2022-05-31T04:55:47.239Z" itemprop="datePublished">2022-05-31</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Tech/">Tech</a>►<a class="article-category-link" href="/categories/Tech/Qv2ray/">Qv2ray</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/%5Bobject%20Object%5D/Tech/Qv2ray/Qv2ray%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">Qv2ray科学上网</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="获取Qv2ray"><a href="#获取Qv2ray" class="headerlink" title="获取Qv2ray"></a>获取Qv2ray</h1><h2 id="来自软件包管理器"><a href="#来自软件包管理器" class="headerlink" title="来自软件包管理器"></a>来自软件包管理器</h2><h3 id="Linux：Deepin"><a href="#Linux：Deepin" class="headerlink" title="Linux：Deepin"></a>Linux：Deepin</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install gnupg ca-certificates curl</span><br></pre></td></tr></table></figure>
-
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            
+            <h1 id="获取Qv2ray"><a href="#获取Qv2ray" class="headerlink" title="获取Qv2ray"></a>获取Qv2ray</h1><h2 id="来自软件包管理器"><a href="#来自软件包管理器" class="headerlink" title="来自软件包管理器"></a>来自软件包管理器</h2><h3 id="Linux：Deepin"><a href="#Linux：Deepin" class="headerlink" title="Linux：Deepin"></a>Linux：Deepin</h3><pre><code class="bash">sudo apt install gnupg ca-certificates curl
+</code></pre>
 <h3 id="为Debian安装Qv2ray稳定版本"><a href="#为Debian安装Qv2ray稳定版本" class="headerlink" title="为Debian安装Qv2ray稳定版本"></a>为Debian安装Qv2ray稳定版本</h3><p>添加Qv2ray公钥到你的系统：</p>
 <p>导入我们的GPG密钥</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://raw.fastgit.org/Qv2ray/debian/master/pubkey.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/qv2ray-stable-archive.gpg</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">curl https://raw.fastgit.org/Qv2ray/debian/master/pubkey.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/qv2ray-stable-archive.gpg
+</code></pre>
 <h3 id="主存储库"><a href="#主存储库" class="headerlink" title="主存储库"></a>主存储库</h3><p>添加官方APT存储库</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [arch=amd64] https://qv2ray.net/debian/ stable main&quot;</span> | sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/qv2ray.list</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">echo &quot;deb [arch=amd64] https://qv2ray.net/debian/ stable main&quot; | sudo tee /etc/apt/sources.list.d/qv2ray.list
+</code></pre>
 <p>更新APT索引</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">sudo apt update
+</code></pre>
 <p>安装Qv2ray</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install qv2ray</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">sudo apt install qv2ray
+</code></pre>
 <blockquote>
 <p>出现错误：E: 无法修正错误，因为您要求某些软件包保持现状，就是它们破坏了软件包间的依赖关系。</p>
 <p>解决办法：（最终aptitude也希望不安装qv2ray故而失败）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用aptitude进行安装，aptitude 会对依赖关系进行智能处理</span></span><br><span class="line">sudo apt-get install aptitude</span><br><span class="line">sudo aptitude install &lt;package name&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="bash">#使用aptitude进行安装，aptitude 会对依赖关系进行智能处理
+sudo apt-get install aptitude
+sudo aptitude install &lt;package name&gt;
+</code></pre>
 </blockquote>
 <!--最终本方法失败，可能是由于qv2ray版本过老-->
 
@@ -160,50 +287,72 @@
 <li>点击 <strong>确定</strong> 应用设置并关闭对话框。</li>
 </ol>
 
-      
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://loverain.tech/[object%20Object]/Tech/Qv2ray/Qv2ray%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" data-id="cl3tukw3z000irw6d9kfye6g0" data-title="Qv2ray科学上网" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deepin/" rel="tag">Deepin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Qv2ray-V2Ray/" rel="tag">Qv2ray - V2Ray</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Tech/Typora/如何在Typora中使用图床" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/%5Bobject%20Object%5D/Tech/Typora/%E5%A6%82%E4%BD%95%E5%9C%A8Typora%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%9B%BE%E5%BA%8A/" class="article-date">
-  <time class="dt-published" datetime="2022-05-31T04:55:47.239Z" itemprop="datePublished">2022-05-31</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Tech/">Tech</a>►<a class="article-category-link" href="/categories/Tech/Typora/">Typora</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="post-tags">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/%5Bobject%20Object%5D/Tech/Typora/%E5%A6%82%E4%BD%95%E5%9C%A8Typora%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%9B%BE%E5%BA%8A/">如何在Typora中使用图床</a>
-    </h1>
-  
+        <span class="icon">
+            <a-icon type="tags" theme="filled" />
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/Deepin" style=color:#1bccbc>
+                Deepin
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/Qv2ray-- V2Ray" style=color:#1bccbc>
+                Qv2ray - V2Ray
+            </a>
+        </span>
+        
+    </div>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4a29945ad69c">Github+PicGO+jsDelivr创建免费、稳定图床</a></p>
+    <a href="//[object Object]/Tech/Qv2ray/Qv2ray科学上网/ " class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+
+    <a href="//[object Object]/Tech/Typora/如何在Typora中使用图床/">
+        <h2>
+            如何在Typora中使用图床
+        </h2>
+    </a>
+
+    <div class="category-and-date">
+
+        
+        <span class="category">
+            <a href="/categories/Tech">
+                <span class="icon">
+                    <a-icon type="book" theme="filled" /></span>
+                Tech
+            </a>
+        </span>
+        
+
+        <span class="date">
+            <span class="icon">
+                <a-icon type="calendar" theme="filled" />
+            </span>
+            2022/5/31
+        </span>
+
+    </div>
+
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            
+            <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4a29945ad69c">Github+PicGO+jsDelivr创建免费、稳定图床</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a3371dc5802e">Typora如何通过PicGo自动上传图片到图床</a></p>
 <h1 id="工具选择"><a href="#工具选择" class="headerlink" title="工具选择"></a>工具选择</h1><ol>
 <li>Github——用来存放图片，目前投入微软怀抱，后台硬，不会随便倒闭</li>
@@ -293,50 +442,72 @@
 </li>
 </ul>
 
-      
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://loverain.tech/[object%20Object]/Tech/Typora/%E5%A6%82%E4%BD%95%E5%9C%A8Typora%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%9B%BE%E5%BA%8A/" data-id="cl3tukw42000mrw6d5rxa3tym" data-title="如何在Typora中使用图床" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PicGO/" rel="tag">PicGO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Typora/" rel="tag">Typora</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Tech/deepin/deepin优化设置" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/%5Bobject%20Object%5D/Tech/deepin/deepin%E4%BC%98%E5%8C%96%E8%AE%BE%E7%BD%AE/" class="article-date">
-  <time class="dt-published" datetime="2022-05-31T04:55:47.231Z" itemprop="datePublished">2022-05-31</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Tech/">Tech</a>►<a class="article-category-link" href="/categories/Tech/deepin/">deepin</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="post-tags">
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/%5Bobject%20Object%5D/Tech/deepin/deepin%E4%BC%98%E5%8C%96%E8%AE%BE%E7%BD%AE/">deepin优化设置</a>
-    </h1>
-  
+        <span class="icon">
+            <a-icon type="tags" theme="filled" />
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/Typora" style=color:#879cff>
+                Typora
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/PicGO" style=color:#00bcd4>
+                PicGO
+            </a>
+        </span>
+        
+    </div>
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h1 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h1><h2 id="29-05-22"><a href="#29-05-22" class="headerlink" title="29.05.22"></a>29.05.22</h2><p>deepin美化主要使用系统设置</p>
+    <a href="//[object Object]/Tech/Typora/如何在Typora中使用图床/ " class="go-post">
+        阅读全文
+    </a>
+</div>
+
+<div class="post">
+
+    <a href="//[object Object]/Tech/deepin/deepin优化设置/">
+        <h2>
+            deepin优化设置
+        </h2>
+    </a>
+
+    <div class="category-and-date">
+
+        
+        <span class="category">
+            <a href="/categories/Tech">
+                <span class="icon">
+                    <a-icon type="book" theme="filled" /></span>
+                Tech
+            </a>
+        </span>
+        
+
+        <span class="date">
+            <span class="icon">
+                <a-icon type="calendar" theme="filled" />
+            </span>
+            2022/5/31
+        </span>
+
+    </div>
+
+    <div class="excerpt">
+        <div class="content" v-pre>
+            
+            
+            <h1 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h1><h2 id="29-05-22"><a href="#29-05-22" class="headerlink" title="29.05.22"></a>29.05.22</h2><p>deepin美化主要使用系统设置</p>
 <p>KDE、GNOME等设置暂时没有能力和精力配置，暂时搁置</p>
 <h3 id="桌面美化"><a href="#桌面美化" class="headerlink" title="桌面美化"></a>桌面美化</h3><ul>
 <li><p>桌面图标全部隐藏</p>
@@ -397,14 +568,16 @@
 <li>安装一个本地包</li>
 </ul>
 <p>    自动从远程仓库中查找所需要的依赖，并同时安装到系统中。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install 包文件名 </span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">sudo apt install 包文件名 
+</code></pre>
 <blockquote>
 <p>包文件名必须是一个路径，可以是相对路径也可以是绝对路径，即使包文件就在当前目录下，也必须写成<code>./包文件名</code>的格式。</p>
 </blockquote>
 <ul>
 <li><p>根据包名从远程仓库安装软件包</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install 包名</span><br></pre></td></tr></table></figure></li>
+<pre><code class="bash">sudo apt install 包名
+</code></pre>
+</li>
 </ul>
 <blockquote>
 <p>deepin&#x2F;UOS 应用商店的规范要求应用的包名需要是域名倒置的格式，因此，gimp在应用商店仓库中的包名为：<code>org.gimp</code>。实际情况中，两者都可以成功安装gimp。这两者存在于不同的仓库中，<code>gimp</code>来自 Debian 上游的打包，而<code>org.gimp</code>则来自 deepin 商店团队的打包。</p>
@@ -412,36 +585,30 @@
 <h4 id="删除软件包"><a href="#删除软件包" class="headerlink" title="删除软件包"></a>删除软件包</h4><ul>
 <li>删除一个已经安装成功的软件包</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt remove 包名     </span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">sudo apt remove 包名     
+</code></pre>
 <blockquote>
 <p>不删除软件的配置文件</p>
 </blockquote>
 <ul>
 <li>同时删除配置文件</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt purge 包名</span><br></pre></td></tr></table></figure>
-
-
-
+<pre><code class="bash">sudo apt purge 包名
+</code></pre>
 <ul>
 <li>删除一些版本更新导致的冗余依赖</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt autoremove</span><br></pre></td></tr></table></figure>
-
-
-
+<pre><code class="bash">sudo apt autoremove
+</code></pre>
 <h4 id="更新本地缓存"><a href="#更新本地缓存" class="headerlink" title="更新本地缓存"></a>更新本地缓存</h4><p>apt可以从远程仓库搜索和下载软件包，其机制是从远程仓库获取仓库中所有软件包的列表，并在需要的时候读取本地的列表文件。</p>
 <p>列表中描述了<strong>软件仓库中存在哪些软件包以及基本信息</strong>，需要从远程仓库中获取软件包之间，需要先更新本地缓存，以保证本地的软件包列表与远程仓库中的列表保持一致。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-
+<pre><code class="bash">sudo apt update
+</code></pre>
 <blockquote>
 <p>该操作会将远程仓库信息缓存到<code>/var/lib/apt/lists</code> </p>
 </blockquote>
-<h4 id="同步本地软件包版本（升级系统）"><a href="#同步本地软件包版本（升级系统）" class="headerlink" title="同步本地软件包版本（升级系统）"></a>同步本地软件包版本（升级系统）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure>
-
-
-
+<h4 id="同步本地软件包版本（升级系统）"><a href="#同步本地软件包版本（升级系统）" class="headerlink" title="同步本地软件包版本（升级系统）"></a>同步本地软件包版本（升级系统）</h4><pre><code class="bash">sudo apt upgrade
+</code></pre>
 <h3 id="dpkg的基本用法"><a href="#dpkg的基本用法" class="headerlink" title="dpkg的基本用法"></a>dpkg的基本用法</h3><p>dpkg作为包管理器的底层部分，通常情况下不推荐日常使用</p>
 <ul>
 <li><p>不能自动处理依赖关系</p>
@@ -449,163 +616,233 @@
 <li><p>不支持从远程仓库获取软件包</p>
 </li>
 </ul>
-<h4 id="安装软件包（-i-选项）"><a href="#安装软件包（-i-选项）" class="headerlink" title="安装软件包（-i 选项）"></a>安装软件包（-i 选项）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i 软件包文件名</span><br></pre></td></tr></table></figure>
-
+<h4 id="安装软件包（-i-选项）"><a href="#安装软件包（-i-选项）" class="headerlink" title="安装软件包（-i 选项）"></a>安装软件包（-i 选项）</h4><pre><code class="bash">sudo dpkg -i 软件包文件名
+</code></pre>
 <blockquote>
 <p>这里无需像apt一样必须提供一个路径，若包文件就在当前目录，可直接输入文件名即可。</p>
 </blockquote>
 <h4 id="卸载软件包"><a href="#卸载软件包" class="headerlink" title="卸载软件包"></a>卸载软件包</h4><p>可以使用<code>-r</code>或<code>-P</code>选项，这两者可类比apt的<code>remove</code>命令和<code>purge</code>命令。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -r 包名</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -P 包名</span><br></pre></td></tr></table></figure>
-
-
-
+<pre><code class="bash">sudo dpkg -r 包名
+</code></pre>
+<pre><code class="bash">sudo dpkg -P 包名
+</code></pre>
 <h4 id="查看文件所属包"><a href="#查看文件所属包" class="headerlink" title="查看文件所属包"></a>查看文件所属包</h4><p>系统中的文件可能所属于某个软件包，当软件包被卸载时将此类文件将被删除，要查看此类文件所对应的软件包，可使用<code>-S</code>选项：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -S 文件名</span><br></pre></td></tr></table></figure>
+<pre><code class="bash">sudo dpkg -S 文件名
+</code></pre>
 
-
-
-
-      
+            
+        </div>
     </div>
-    <footer class="article-footer">
-      <a data-url="http://loverain.tech/[object%20Object]/Tech/deepin/deepin%E4%BC%98%E5%8C%96%E8%AE%BE%E7%BD%AE/" data-id="cl3tukw4w002prw6dgfcf8hsf" data-title="deepin优化设置" class="article-share-link">分享</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apt/" rel="tag">apt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/deepin/" rel="tag">deepin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dpkg/" rel="tag">dpkg</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <a-icon type="tags" theme="filled" />
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/deepin" style=color:#1bccbc>
+                deepin
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/apt" style=color:#879cff>
+                apt
+            </a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/dpkg" style=color:#00bcd4>
+                dpkg
+            </a>
+        </span>
+        
+    </div>
+
+    <a href="//[object Object]/Tech/deepin/deepin优化设置/ " class="go-post">
+        阅读全文
+    </a>
+</div>
 
 
+             
+<div class="page-current">
 
-  
+    <div class="prev">
+        
+        <a href="/">
+            <span class="page-num">
+                <a-icon type="caret-left" theme="filled" />
+            </span>
+        </a>
+        
+    </div>
 
+    <div class="page-index">
 
-  <nav id="page-nav">
+        
+        <span>
+
+            
+
+            
+            <a href="/">
+                <span class="page-num">
+                    1
+                </span>
+            </a>
+        </span>
+        
+
+        <span class="current">
+            2
+        </span>
+
+        
+
+    </div>
+
+    <div class="next">
+        
+    </div>
+
+</div>
+
+        </div>
+    </div>
     
-    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-  </nav>
+    <div id="home-card">
+        <a-affix :offset-top="card_top">
+    <a-card class="card-style" style="width: 300px">
+        <div class="avatar">
+            <img src="images/avatar.png " alt="头像">
+        </div>
+        <div class="name">
+            LoveRain
+        </div>
+        <div class="descriptions">
+            
+            <div class="description">
+                正しさなんてもの
+            </div>
+            
+            <div class="description">
+                人のモノサシによって変わる
+            </div>
+            
+        </div>
+        <div class="icon-links">
+            
+            <span class="icon-link">
+                <a target="_blank" rel="noopener" href="https://github.com/korilin">
 
-</section>
-        
-          <aside id="sidebar">
-  
+                    
+                    <a-icon type="github"
+                        theme="filled" />
+                    
+                </a>
+            </span>
+            
+            <span class="icon-link">
+                <a target="_blank" rel="noopener" href="https://twitter.com/korilin_dev">
+
+                    
+                    <a-icon type="twitter"
+                        theme="" />
+                    
+                </a>
+            </span>
+            
+        </div>
+        <div class="friend-links">
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://en.korilin.com">
+                    英文技术博客
+                </a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://jp.korilin.com">
+                    日语记录博客
+                </a>
+            </div>
+            
+        </div>
+    </a-card>
+</a-affix>
+    </div>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">分类</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/">Tech</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Git/">Git</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Git/QuickStart/">QuickStart</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Git/Summary/">Summary</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Hexo/">Hexo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Hexo/QuickStart/">QuickStart</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Hexo/Summary/">Summary</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Nodejs/">Nodejs</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Nodejs/npm/">npm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Nodejs/nvm/">nvm</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Qv2ray/">Qv2ray</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Typora/">Typora</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/deepin/">deepin</a></li></ul></li></ul>
+</div>
+                     
+<footer id="footer">
+    <div class="footer-wrap">
+        <div>
+            © 2018 - 2022 StarAndRain
+            <span class="footer-icon">
+                <a-icon type="flag" theme="filled" /></span>
+            @LoveRain
+        </div>
+        <div></div>
+        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
+                target="_blank" rel="noopener" href="https://github.com/korilin/hexo-theme-particle">Particle Theme</a></div>
+        
     </div>
-  </div>
 
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deepin/" rel="tag">Deepin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitPage-%E5%9F%9F%E5%90%8D/" rel="tag">GitPage - 域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/" rel="tag">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PicGO/" rel="tag">PicGO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QuickStart/" rel="tag">QuickStart</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Qv2ray-V2Ray/" rel="tag">Qv2ray - V2Ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Structure/" rel="tag">Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Summary/" rel="tag">Summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/" rel="tag">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apt/" rel="tag">apt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deepin/" rel="tag">deepin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dpkg/" rel="tag">dpkg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm-Nodejs/" rel="tag">npm - Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvm/" rel="tag">nvm</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">标签云</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Deepin/" style="font-size: 10px;">Deepin</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/GitPage-%E5%9F%9F%E5%90%8D/" style="font-size: 10px;">GitPage - 域名</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Nodejs/" style="font-size: 10px;">Nodejs</a> <a href="/tags/PicGO/" style="font-size: 10px;">PicGO</a> <a href="/tags/QuickStart/" style="font-size: 15px;">QuickStart</a> <a href="/tags/Qv2ray-V2Ray/" style="font-size: 10px;">Qv2ray - V2Ray</a> <a href="/tags/Structure/" style="font-size: 10px;">Structure</a> <a href="/tags/Summary/" style="font-size: 15px;">Summary</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/apt/" style="font-size: 10px;">apt</a> <a href="/tags/deepin/" style="font-size: 10px;">deepin</a> <a href="/tags/dpkg/" style="font-size: 10px;">dpkg</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/npm-Nodejs/" style="font-size: 10px;">npm - Nodejs</a> <a href="/tags/nvm/" style="font-size: 10px;">nvm</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">归档</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/%5Bobject%20Object%5D/Tech/Hexo/Hexo%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/">Hexo个性化配置</a>
-          </li>
-        
-          <li>
-            <a href="/%5Bobject%20Object%5D/%E5%8D%9A%E5%AE%A2%E7%BB%93%E6%9E%84/">博客结构</a>
-          </li>
-        
-          <li>
-            <a href="/%5Bobject%20Object%5D/Tech/Node.js/npm%E4%BD%BF%E7%94%A8/">npm使用</a>
-          </li>
-        
-          <li>
-            <a href="/%5Bobject%20Object%5D/Tech/Node.js/nvm%E4%BD%BF%E7%94%A8/">nvm使用</a>
-          </li>
-        
-          <li>
-            <a href="/%5Bobject%20Object%5D/Tech/Git/Git%E6%80%BB%E7%BB%93/">Git总结</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2022 LoveRain<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
 </footer>
 
+<script src="/js/highlight.min.js"></script>
+<script src="/js/particle.js"></script>
+                </div>
+            </div>
+        </transition>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
 
+    <script>
+    new Vue({
+        el: "#layout",
+        data: {
+            show_page: false,
+            onload_menu: false,
+            menu_show: false,
+            card_top: 100
+        },
+        created: function () {
+            var that = this
+            window.onload = function () {
+                that.show_page = true
+                document.getElementById("loadcontent").style.opacity = 0
+                setTimeout(function () {
+                    document.getElementById("loadleft").style.width = 0
+                    document.getElementById("loadright").style.width = 0
+                }, 300)
+                setTimeout(function () {
+                    document.getElementById("loading").style = "display:none"
+                }, 600)
+            }
+        },
+        mounted: function () {
+            var that = this
+            window.addEventListener('scroll', function (e) {
+                that.menu_show = false
+            })
+        },
+        methods: {
+            home_click: function () {
+                window.scrollTo({
+                    top: window.innerHeight - 80,
+                    behavior: "smooth",
+                });
+            }
+        }
+    })
+</script>
 
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
 </body>
+
 </html>
