@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>StarAndRain</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="To Record some Graceful Time">
+<meta property="og:type" content="website">
+<meta property="og:title" content="StarAndRain">
+<meta property="og:url" content="http://loverain.tech/page/2/index.html">
+<meta property="og:site_name" content="StarAndRain">
+<meta property="og:description" content="To Record some Graceful Time">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="LoveRain">
+<meta property="article:tag" content="Technology and Science">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="StarAndRain" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">StarAndRain</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I want to be the stars in your night sky.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://loverain.tech"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Tech/Qv2ray/Qv2ray科学上网" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/%5Bobject%20Object%5D/Tech/Qv2ray/Qv2ray%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" class="article-date">
+  <time class="dt-published" datetime="2022-05-31T04:55:47.239Z" itemprop="datePublished">2022-05-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tech/">Tech</a>►<a class="article-category-link" href="/categories/Tech/Qv2ray/">Qv2ray</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/%5Bobject%20Object%5D/Tech/Qv2ray/Qv2ray%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/">Qv2ray科学上网</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="获取Qv2ray"><a href="#获取Qv2ray" class="headerlink" title="获取Qv2ray"></a>获取Qv2ray</h1><h2 id="来自软件包管理器"><a href="#来自软件包管理器" class="headerlink" title="来自软件包管理器"></a>来自软件包管理器</h2><h3 id="Linux：Deepin"><a href="#Linux：Deepin" class="headerlink" title="Linux：Deepin"></a>Linux：Deepin</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install gnupg ca-certificates curl</span><br></pre></td></tr></table></figure>
+
+<h3 id="为Debian安装Qv2ray稳定版本"><a href="#为Debian安装Qv2ray稳定版本" class="headerlink" title="为Debian安装Qv2ray稳定版本"></a>为Debian安装Qv2ray稳定版本</h3><p>添加Qv2ray公钥到你的系统：</p>
+<p>导入我们的GPG密钥</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https://raw.fastgit.org/Qv2ray/debian/master/pubkey.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/qv2ray-stable-archive.gpg</span><br></pre></td></tr></table></figure>
+
+<h3 id="主存储库"><a href="#主存储库" class="headerlink" title="主存储库"></a>主存储库</h3><p>添加官方APT存储库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;deb [arch=amd64] https://qv2ray.net/debian/ stable main&quot;</span> | sudo <span class="built_in">tee</span> /etc/apt/sources.list.d/qv2ray.list</span><br></pre></td></tr></table></figure>
+
+<p>更新APT索引</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+
+<p>安装Qv2ray</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install qv2ray</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>出现错误：E: 无法修正错误，因为您要求某些软件包保持现状，就是它们破坏了软件包间的依赖关系。</p>
+<p>解决办法：（最终aptitude也希望不安装qv2ray故而失败）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#使用aptitude进行安装，aptitude 会对依赖关系进行智能处理</span></span><br><span class="line">sudo apt-get install aptitude</span><br><span class="line">sudo aptitude install &lt;package name&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<!--最终本方法失败，可能是由于qv2ray版本过老-->
+
+
+
+<h2 id="来自应用商店"><a href="#来自应用商店" class="headerlink" title="来自应用商店"></a>来自应用商店</h2><p>商店中直接搜索<code>qv2ray</code>下载</p>
+<h1 id="配置V2Ray-Core"><a href="#配置V2Ray-Core" class="headerlink" title="配置V2Ray Core"></a>配置V2Ray Core</h1><ul>
+<li>V2Ray仓库下载V2ray压缩文件</li>
+<li>解压到Qv2ray的默认核心目录</li>
+</ul>
+<blockquote>
+<p>注意不能够使用v5版本的v2ray,尽量使用v4版本的v2ray</p>
+<p>v5版本的v2ray可能会出现qv2ray执行权限不足的情况</p>
+</blockquote>
+<h1 id="订阅"><a href="#订阅" class="headerlink" title="订阅"></a>订阅</h1><ol>
+<li>在主窗口中点击 <strong>组编辑器</strong> 按钮打开 <strong>组编辑器</strong></li>
+<li>点击 <strong>在左下角添加</strong> 组图标按钮 <strong><a href="qv2ray://open/group/connection">组编辑器</a></strong> 窗口。</li>
+<li>选择 <strong>分组列表</strong>中创建的项目，其详细信息将显示在右侧。</li>
+<li>切换到<strong>订阅设置</strong>面板并完成配置：<ol>
+<li>编辑 <strong>分组名称</strong>。</li>
+<li>勾选 <strong>此组是一个订阅</strong>。</li>
+<li>设置以下字段：<ul>
+<li><strong>订阅地址</strong>：使用上面提到的 <strong>订阅链接</strong></li>
+<li><strong>订阅类型</strong>：如果默认值无法工作，请将其更改为另一值。</li>
+</ul>
+</li>
+<li>可选更改这些字段：<ul>
+<li><strong>更新间隔</strong>：当订阅需要在启动时更新时，Qv2ray 会通知您。根据您自己的要求更改它。</li>
+<li><strong>导入过滤器</strong>：Qv2ray 可以过滤从您的订阅中导入的节点。你可以自己研究出使用方法。</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>点击 <strong>更新订阅</strong> 按钮并等待完成。</li>
+<li>点击 <strong>确定</strong> 应用设置并关闭对话框。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://loverain.tech/[object%20Object]/Tech/Qv2ray/Qv2ray%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" data-id="cl3tukw3z000irw6d9kfye6g0" data-title="Qv2ray科学上网" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Deepin/" rel="tag">Deepin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Qv2ray-V2Ray/" rel="tag">Qv2ray - V2Ray</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Tech/Typora/如何在Typora中使用图床" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/%5Bobject%20Object%5D/Tech/Typora/%E5%A6%82%E4%BD%95%E5%9C%A8Typora%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%9B%BE%E5%BA%8A/" class="article-date">
+  <time class="dt-published" datetime="2022-05-31T04:55:47.239Z" itemprop="datePublished">2022-05-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tech/">Tech</a>►<a class="article-category-link" href="/categories/Tech/Typora/">Typora</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/%5Bobject%20Object%5D/Tech/Typora/%E5%A6%82%E4%BD%95%E5%9C%A8Typora%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%9B%BE%E5%BA%8A/">如何在Typora中使用图床</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4a29945ad69c">Github+PicGO+jsDelivr创建免费、稳定图床</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a3371dc5802e">Typora如何通过PicGo自动上传图片到图床</a></p>
+<h1 id="工具选择"><a href="#工具选择" class="headerlink" title="工具选择"></a>工具选择</h1><ol>
+<li>Github——用来存放图片，目前投入微软怀抱，后台硬，不会随便倒闭</li>
+<li>PicGo是一个用于快速上传图片并获取URL链接的工具，通过访问该链接访问网络图片资源</li>
+<li>jsDelivr是用于开源项目的免费公共CDN（内容分发网络），用来加速Github的访问速度</li>
+</ol>
+<h1 id="如何创建图床"><a href="#如何创建图床" class="headerlink" title="如何创建图床"></a>如何创建图床</h1><ol>
+<li><p>在GitHub上新建一个仓库</p>
+<ul>
+<li>可以叫做PictureBed</li>
+</ul>
+</li>
+<li><p>在GitHub中生成一个Token</p>
+<ul>
+<li>进入个人设置 <code>Settings -&gt; Developer settings -&gt; Personal access tokens -&gt; Generate new token</code></li>
+<li>在<code>Note</code>中填好描述，勾选<code>repo</code>，然后点击<code>Generate token</code>生成一个Token</li>
+<li>注意这个Token只会显示一次，所以，需要保存下来</li>
+</ul>
+</li>
+<li><p>配置PicGo</p>
+<ol>
+<li><p>前往PicGo的GitHub仓库下载，<a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https://github.com/Molunerfinn/PicGo/releases">传送门</a>。如果下载较慢，可以复制地址到迅雷下载，非常快！</p>
+</li>
+<li><p>下载后点击安装，弹出配置窗口</p>
+<ul>
+<li>设定仓库名：按照 <code>用户名/图床仓库名</code> 的格式填写</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>设定分支名：<code>master</code><ul>
+<li>设定Token：填写之前在GitHub生成的Token</li>
+</ul>
+</li>
+<li>指定存储路径：填写想要储存的路径，如 <code>BlogImg/</code>，这样就会在仓库下创建一个名为<code>BlogImg</code> 的文件夹，图片将会储存在此文件夹中<ul>
+<li>设定自定义域名：图片上传后，PicGo 会按照 <code>自定义域名+储存路径+上传的图片名</code> 的方式生成访问链接，并放到粘贴板上</li>
+</ul>
+</li>
+</ul>
+<p>		</p>
+<ol start="3">
+<li><p>设定自定义域名：我的自定义域名设置为 <code>https://cdn.jsdelivr.net/gh/chenshifangcheng/PictureBed</code>，</p>
+<p>因为我们要使用 jsDelivr 加速访问，所以自定义域名可以设置为 <code>https://cdn.jsdelivr.net/gh/用户名/图床仓库名</code>，上传完毕后，就可以通过 <code>https://cdn.jsdelivr.net/gh/用户名/图床仓库名/储存路径/上传的图片名</code> 加速访问我们的图片了。存储路径为<code>BlogImg/</code>,  所以通过<code>https://cdn.jsdelivr.net/gh/chenshifangcheng/PictureBed/BlogImg/上传的图片名</code> 来加速访问。</p>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="设置Typora插入图片时自动上传图片"><a href="#设置Typora插入图片时自动上传图片" class="headerlink" title="设置Typora插入图片时自动上传图片"></a>设置Typora插入图片时自动上传图片</h1><ol>
+<li>进入“文件 -&gt; 偏好设置 -&gt; 图片”，在“插入图片时”区域，下拉框选择“上传图片”，勾选如下三项（勾选即开启自动上传）：</li>
+</ol>
+<ul>
+<li><p>对本地位置的图片应用上述规则</p>
+<ul>
+<li><p>即当插入本地图片（包括从菜单中插入，截图，copy &amp; paste，drag &amp; drop）时，会自动上传该图片</p>
+</li>
+<li><p>插入截图时，首先会将截图自动保存在本地，然后再自动上传</p>
+<p>本地路径：C:\Users&lt;User&gt;\AppData\Roaming\Typora\typora-user-images</p>
+</li>
+</ul>
+</li>
+<li><p>对网络位置的图片应用上述规则</p>
+<ul>
+<li>重新上传网络图片到你的图床（<del>我试验没成功</del>, 在最新的版本0.9.94中可以直接对网络图片上传，右击“上传图片”）</li>
+</ul>
+</li>
+<li><p>允许根据 YAML 设置自动上传图片</p>
+<ul>
+<li><p>通过读取 YAML 配置来决定是否自动上传图片</p>
+</li>
+<li><p>在勾选该选项的前提下，在 Markdown 文件的 YAML front matter 中添加如下配置，则Typora会在你插入图片时自动上传图片：</p>
+<p><code>typora-copy-images-to: upload</code></p>
+</li>
+</ul>
+</li>
+</ul>
+<p>			</p>
+<ol start="2">
+<li>在“上传服务设定”区域：</li>
+</ol>
+<ul>
+<li>上传服务：下拉框选择 “PicGo(app)”，即通过PicGo app来上传图片</li>
+<li>PicGo路径：选择PicGo的安装路径</li>
+<li>下载PicGo(app)：如果本地没有安装，点击该按钮时会引导到PicGo安装页面</li>
+<li>验证图片上传选项：点击该按钮来验证当前配置是否能成功上传图片到图床<ul>
+<li>如果成功的话，会将Typora的两个logo上传到你的图床</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://loverain.tech/[object%20Object]/Tech/Typora/%E5%A6%82%E4%BD%95%E5%9C%A8Typora%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%9B%BE%E5%BA%8A/" data-id="cl3tukw42000mrw6d5rxa3tym" data-title="如何在Typora中使用图床" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PicGO/" rel="tag">PicGO</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Typora/" rel="tag">Typora</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Tech/deepin/deepin优化设置" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/%5Bobject%20Object%5D/Tech/deepin/deepin%E4%BC%98%E5%8C%96%E8%AE%BE%E7%BD%AE/" class="article-date">
+  <time class="dt-published" datetime="2022-05-31T04:55:47.231Z" itemprop="datePublished">2022-05-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tech/">Tech</a>►<a class="article-category-link" href="/categories/Tech/deepin/">deepin</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/%5Bobject%20Object%5D/Tech/deepin/deepin%E4%BC%98%E5%8C%96%E8%AE%BE%E7%BD%AE/">deepin优化设置</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h1><h2 id="29-05-22"><a href="#29-05-22" class="headerlink" title="29.05.22"></a>29.05.22</h2><p>deepin美化主要使用系统设置</p>
+<p>KDE、GNOME等设置暂时没有能力和精力配置，暂时搁置</p>
+<h3 id="桌面美化"><a href="#桌面美化" class="headerlink" title="桌面美化"></a>桌面美化</h3><ul>
+<li><p>桌面图标全部隐藏</p>
+</li>
+<li><p>在任务栏的启动器中搜索应用，运行应用后可在任务栏中固定</p>
+</li>
+<li><p>智能隐藏任务栏，会在其他窗口遮盖任务栏时隐藏任务栏</p>
+</li>
+</ul>
+<h3 id="终端美化"><a href="#终端美化" class="headerlink" title="终端美化"></a>终端美化</h3><ul>
+<li><p>点击终端右上角浏览菜单中的主题，可以更换颜色</p>
+</li>
+<li><p>设置中可以调整透明度</p>
+</li>
+</ul>
+<h1 id="应用安装"><a href="#应用安装" class="headerlink" title="应用安装"></a>应用安装</h1><h2 id="29-05-22-1"><a href="#29-05-22-1" class="headerlink" title="29.05.22"></a>29.05.22</h2><p>目前我还不清楚Linux的软件安装机制，需要详细学习一下</p>
+<h3 id="包管理及概念"><a href="#包管理及概念" class="headerlink" title="包管理及概念"></a>包管理及概念</h3><ul>
+<li><p>包管理的作用是<strong>管理整个系统环境中的所有软件包</strong></p>
+</li>
+<li><p>支持从远程仓库下载、安装并自动处理依赖</p>
+</li>
+<li><p>deepin是基于Debian的Linux发行版</p>
+<ul>
+<li><p>因此使用apt作为包管理器</p>
+</li>
+<li><p>dpkg作为包管理器基础</p>
+</li>
+<li><p>两者都作为系统的一部分被预装在操作系统环境中</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="软件包"><a href="#软件包" class="headerlink" title="软件包"></a>软件包</h4><ul>
+<li><p>软件包可以看作整个系统的<strong>组成单元</strong>，操作系统由若干软件包和文件组成。</p>
+</li>
+<li><p>在deepin或其他基于Debian的发行版中，软件包的后缀名为<code>.deb</code>。</p>
+</li>
+<li><p>当在系统中安装某软件包时，需要先补齐该软件包所需的<strong>依赖</strong>。</p>
+</li>
+</ul>
+<h4 id="包名"><a href="#包名" class="headerlink" title="包名"></a>包名</h4><p>软件包的<strong>唯一标识</strong>，一般情况下，相同包名的软件包不允许在系统中安装多个，即使版本不同。</p>
+<h4 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h4><p>安装软件包时<strong>所需要的其他软件包</strong>。</p>
+<ul>
+<li><p>依赖可以设置版本作为可选条件，若系统中存在的依赖软件包版本与所需软件包要求不符，则视为该依赖包不满足</p>
+</li>
+<li><p><em>依赖地狱</em>：当软件包的依赖树过于复杂时，系统可能无法同时满足所有软件的依赖需求，此时我们可以将这种现象称为依赖地狱。举个简单的例子：软件包A依赖于1.0版本的软件包C，软件包B依赖于2.0版本的软件包C，此时软件包A和软件包C的1.0版本已经被安装，此时若想要安装软件包B，则需将软件包C的版本升级至2.0，但若这么做便导致软件包A的依赖无法被满足。</p>
+</li>
+</ul>
+<h4 id="软件仓库"><a href="#软件仓库" class="headerlink" title="软件仓库"></a>软件仓库</h4><p>现代的软件包管理器支持从远程的软件包仓库中下载软件包机器依赖，减轻用户的依赖管理问题</p>
+<h4 id="镜像仓库"><a href="#镜像仓库" class="headerlink" title="镜像仓库"></a>镜像仓库</h4><p>针对某些发行版所维护的软件仓库提供的镜像仓库</p>
+<ul>
+<li><p>某些发行版所提供的仓库可能由于种种原因，对于特定区域人群来说难以访问</p>
+</li>
+<li><p>镜像同步原仓库内容需要时间，可能更新略有延迟</p>
+</li>
+</ul>
+<h3 id="apt的基本用法"><a href="#apt的基本用法" class="headerlink" title="apt的基本用法"></a>apt的基本用法</h3><h4 id="安装软件包"><a href="#安装软件包" class="headerlink" title="安装软件包"></a>安装软件包</h4><ul>
+<li>安装一个本地包</li>
+</ul>
+<p>    自动从远程仓库中查找所需要的依赖，并同时安装到系统中。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install 包文件名 </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>包文件名必须是一个路径，可以是相对路径也可以是绝对路径，即使包文件就在当前目录下，也必须写成<code>./包文件名</code>的格式。</p>
+</blockquote>
+<ul>
+<li><p>根据包名从远程仓库安装软件包</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install 包名</span><br></pre></td></tr></table></figure></li>
+</ul>
+<blockquote>
+<p>deepin&#x2F;UOS 应用商店的规范要求应用的包名需要是域名倒置的格式，因此，gimp在应用商店仓库中的包名为：<code>org.gimp</code>。实际情况中，两者都可以成功安装gimp。这两者存在于不同的仓库中，<code>gimp</code>来自 Debian 上游的打包，而<code>org.gimp</code>则来自 deepin 商店团队的打包。</p>
+</blockquote>
+<h4 id="删除软件包"><a href="#删除软件包" class="headerlink" title="删除软件包"></a>删除软件包</h4><ul>
+<li>删除一个已经安装成功的软件包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt remove 包名     </span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>不删除软件的配置文件</p>
+</blockquote>
+<ul>
+<li>同时删除配置文件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt purge 包名</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>删除一些版本更新导致的冗余依赖</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt autoremove</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="更新本地缓存"><a href="#更新本地缓存" class="headerlink" title="更新本地缓存"></a>更新本地缓存</h4><p>apt可以从远程仓库搜索和下载软件包，其机制是从远程仓库获取仓库中所有软件包的列表，并在需要的时候读取本地的列表文件。</p>
+<p>列表中描述了<strong>软件仓库中存在哪些软件包以及基本信息</strong>，需要从远程仓库中获取软件包之间，需要先更新本地缓存，以保证本地的软件包列表与远程仓库中的列表保持一致。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>该操作会将远程仓库信息缓存到<code>/var/lib/apt/lists</code> </p>
+</blockquote>
+<h4 id="同步本地软件包版本（升级系统）"><a href="#同步本地软件包版本（升级系统）" class="headerlink" title="同步本地软件包版本（升级系统）"></a>同步本地软件包版本（升级系统）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt upgrade</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="dpkg的基本用法"><a href="#dpkg的基本用法" class="headerlink" title="dpkg的基本用法"></a>dpkg的基本用法</h3><p>dpkg作为包管理器的底层部分，通常情况下不推荐日常使用</p>
+<ul>
+<li><p>不能自动处理依赖关系</p>
+</li>
+<li><p>不支持从远程仓库获取软件包</p>
+</li>
+</ul>
+<h4 id="安装软件包（-i-选项）"><a href="#安装软件包（-i-选项）" class="headerlink" title="安装软件包（-i 选项）"></a>安装软件包（-i 选项）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -i 软件包文件名</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这里无需像apt一样必须提供一个路径，若包文件就在当前目录，可直接输入文件名即可。</p>
+</blockquote>
+<h4 id="卸载软件包"><a href="#卸载软件包" class="headerlink" title="卸载软件包"></a>卸载软件包</h4><p>可以使用<code>-r</code>或<code>-P</code>选项，这两者可类比apt的<code>remove</code>命令和<code>purge</code>命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -r 包名</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -P 包名</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="查看文件所属包"><a href="#查看文件所属包" class="headerlink" title="查看文件所属包"></a>查看文件所属包</h4><p>系统中的文件可能所属于某个软件包，当软件包被卸载时将此类文件将被删除，要查看此类文件所对应的软件包，可使用<code>-S</code>选项：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg -S 文件名</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://loverain.tech/[object%20Object]/Tech/deepin/deepin%E4%BC%98%E5%8C%96%E8%AE%BE%E7%BD%AE/" data-id="cl3tukw4w002prw6dgfcf8hsf" data-title="deepin优化设置" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apt/" rel="tag">apt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/deepin/" rel="tag">deepin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dpkg/" rel="tag">dpkg</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+
+
+  <nav id="page-nav">
+    
+    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/">Tech</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Git/">Git</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Git/QuickStart/">QuickStart</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Git/Summary/">Summary</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Hexo/">Hexo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Hexo/QuickStart/">QuickStart</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Hexo/Summary/">Summary</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Nodejs/">Nodejs</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Nodejs/npm/">npm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Nodejs/nvm/">nvm</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Qv2ray/">Qv2ray</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Typora/">Typora</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/deepin/">deepin</a></li></ul></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deepin/" rel="tag">Deepin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitPage-%E5%9F%9F%E5%90%8D/" rel="tag">GitPage - 域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/" rel="tag">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PicGO/" rel="tag">PicGO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QuickStart/" rel="tag">QuickStart</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Qv2ray-V2Ray/" rel="tag">Qv2ray - V2Ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Structure/" rel="tag">Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Summary/" rel="tag">Summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/" rel="tag">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apt/" rel="tag">apt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deepin/" rel="tag">deepin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dpkg/" rel="tag">dpkg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm-Nodejs/" rel="tag">npm - Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvm/" rel="tag">nvm</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Deepin/" style="font-size: 10px;">Deepin</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/GitPage-%E5%9F%9F%E5%90%8D/" style="font-size: 10px;">GitPage - 域名</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Nodejs/" style="font-size: 10px;">Nodejs</a> <a href="/tags/PicGO/" style="font-size: 10px;">PicGO</a> <a href="/tags/QuickStart/" style="font-size: 15px;">QuickStart</a> <a href="/tags/Qv2ray-V2Ray/" style="font-size: 10px;">Qv2ray - V2Ray</a> <a href="/tags/Structure/" style="font-size: 10px;">Structure</a> <a href="/tags/Summary/" style="font-size: 15px;">Summary</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/apt/" style="font-size: 10px;">apt</a> <a href="/tags/deepin/" style="font-size: 10px;">deepin</a> <a href="/tags/dpkg/" style="font-size: 10px;">dpkg</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/npm-Nodejs/" style="font-size: 10px;">npm - Nodejs</a> <a href="/tags/nvm/" style="font-size: 10px;">nvm</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/%5Bobject%20Object%5D/Tech/Hexo/Hexo%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/">Hexo个性化配置</a>
+          </li>
+        
+          <li>
+            <a href="/%5Bobject%20Object%5D/%E5%8D%9A%E5%AE%A2%E7%BB%93%E6%9E%84/">博客结构</a>
+          </li>
+        
+          <li>
+            <a href="/%5Bobject%20Object%5D/Tech/Node.js/npm%E4%BD%BF%E7%94%A8/">npm使用</a>
+          </li>
+        
+          <li>
+            <a href="/%5Bobject%20Object%5D/Tech/Node.js/nvm%E4%BD%BF%E7%94%A8/">nvm使用</a>
+          </li>
+        
+          <li>
+            <a href="/%5Bobject%20Object%5D/Tech/Git/Git%E6%80%BB%E7%BB%93/">Git总结</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2022 LoveRain<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.4.1.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

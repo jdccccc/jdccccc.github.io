@@ -4,17 +4,20 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>StarAndRain</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+  <meta name="description" content="To Record some Graceful Time">
+<meta property="og:type" content="website">
+<meta property="og:title" content="StarAndRain">
+<meta property="og:url" content="http://loverain.tech/index.html">
+<meta property="og:site_name" content="StarAndRain">
+<meta property="og:description" content="To Record some Graceful Time">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="LoveRain">
+<meta property="article:tag" content="Technology and Science">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="StarAndRain" type="application/atom+xml">
   
   
     <link rel="shortcut icon" href="/favicon.png">
@@ -42,8 +45,12 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">StarAndRain</a>
       </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">I want to be the stars in your night sky.</a>
+        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -57,12 +64,12 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://loverain.tech"></form>
       </div>
     </div>
   </div>
@@ -71,12 +78,16 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Hello" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <article id="post-Tech/Hexo/Hexo个性化配置" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2022/05/31/Hello/" class="article-date">
-  <time class="dt-published" datetime="2022-05-31T01:47:58.000Z" itemprop="datePublished">2022-05-31</time>
+    <a href="/%5Bobject%20Object%5D/Tech/Hexo/Hexo%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/" class="article-date">
+  <time class="dt-published" datetime="2022-05-31T07:40:18.285Z" itemprop="datePublished">2022-05-31</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tech/">Tech</a>►<a class="article-category-link" href="/categories/Tech/Hexo/">Hexo</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -85,7 +96,7 @@
         
   
     <h1 itemprop="name">
-      <a class="p-name article-title" href="/2022/05/31/Hello/">Hello</a>
+      <a class="p-name article-title" href="/%5Bobject%20Object%5D/Tech/Hexo/Hexo%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/">Hexo个性化配置</a>
     </h1>
   
 
@@ -93,16 +104,933 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>这是我的第一篇新博客</p>
+        <h1 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置<code>_config.yml</code></h1><h2 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h2><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>title</code></td>
+<td align="left">网站标题</td>
+</tr>
+<tr>
+<td align="left"><code>subtitle</code></td>
+<td align="left">网站副标题</td>
+</tr>
+<tr>
+<td align="left"><code>description</code></td>
+<td align="left">网站描述</td>
+</tr>
+<tr>
+<td align="left"><code>keywords</code></td>
+<td align="left">网站的关键词。支持多个关键词。</td>
+</tr>
+<tr>
+<td align="left"><code>author</code></td>
+<td align="left">您的名字</td>
+</tr>
+<tr>
+<td align="left"><code>language</code></td>
+<td align="left">网站使用的语言。对于简体中文用户来说，使用不同的主题可能需要设置成不同的值，请参考你的主题的文档自行设置，常见的有 <code>zh-Hans</code>和 <code>zh-CN</code>。</td>
+</tr>
+<tr>
+<td align="left"><code>timezone</code></td>
+<td align="left">网站时区。Hexo 默认使用您电脑的时区。请参考 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">时区列表</a> 进行设置，如 <code>America/New_York</code>, <code>Japan</code>, 和 <code>UTC</code> 。一般的，对于中国大陆地区可以使用 <code>Asia/Shanghai</code>。</td>
+</tr>
+</tbody></table>
+<p>其中，<code>description</code>主要用于SEO，告诉搜索引擎一个关于您站点的简单描述，通常建议在其中包含您网站的关键词。<code>author</code>参数用于主题显示文章的作者。</p>
+<blockquote>
+<p>我们强烈建议你将所有的主题配置集中在一处。如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 <code>theme_config</code> 的优先级最高，其次是 <code>_config.[theme].yml</code> 文件，最后是位于主题目录下的 <code>_config.yml</code> 文件。</p>
+</blockquote>
+<h1 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h1><p>Front-matter 是文件最上方以 <code>---</code> 分隔的区域，用于指定个别文件的变量</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>layout</code></td>
+<td align="left">布局</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration#%E6%96%87%E7%AB%A0"><code>config.default_layout</code></a></td>
+</tr>
+<tr>
+<td align="left"><code>title</code></td>
+<td align="left">标题</td>
+<td align="left">文章的文件名</td>
+</tr>
+<tr>
+<td align="left"><code>date</code></td>
+<td align="left">建立日期</td>
+<td align="left">文件建立日期</td>
+</tr>
+<tr>
+<td align="left"><code>updated</code></td>
+<td align="left">更新日期</td>
+<td align="left">文件更新日期</td>
+</tr>
+<tr>
+<td align="left"><code>comments</code></td>
+<td align="left">开启文章的评论功能</td>
+<td align="left">true</td>
+</tr>
+<tr>
+<td align="left"><code>tags</code></td>
+<td align="left">标签（不适用于分页）</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>categories</code></td>
+<td align="left">分类（不适用于分页）</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>permalink</code></td>
+<td align="left">覆盖文章网址</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h1 id="分类和标签"><a href="#分类和标签" class="headerlink" title="分类和标签"></a>分类和标签</h1><p>只有文章支持分类和标签，您可以在 Front-matter 中设置。在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性，也就是说 <code>Foo, Bar</code> 不等于 <code>Bar, Foo</code>；而标签没有顺序和层次。</p>
+<p>下面的指定方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">  - Diary</span><br><span class="line">  - Life</span><br></pre></td></tr></table></figure>
+
+<p>会使分类<code>Life</code>成为<code>Diary</code>的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p>
+<p>如果你需要为文章添加多个分类，可以尝试以下 list 中的方法。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">- [Diary, PlayStation]</span><br><span class="line">- [Diary, Games]</span><br><span class="line">- [Life]</span><br></pre></td></tr></table></figure>
+
+<p>此时这篇文章同时包括三个分类： <code>PlayStation</code> 和 <code>Games</code> 分别都是父分类 <code>Diary</code> 的子分类，同时 <code>Life</code> 是一个没有子分类的分类。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/31/Hello/" data-id="cl3ti3wsh0000vf6dbunt4fc9" data-title="Hello" class="article-share-link">Share</a>
+      <a data-url="http://loverain.tech/[object%20Object]/Tech/Hexo/Hexo%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/" data-id="cl3tuqdg40000cp6d6gayerba" data-title="Hexo个性化配置" class="article-share-link">分享</a>
       
       
       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-博客结构" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/%5Bobject%20Object%5D/%E5%8D%9A%E5%AE%A2%E7%BB%93%E6%9E%84/" class="article-date">
+  <time class="dt-published" datetime="2022-05-31T04:56:01.911Z" itemprop="datePublished">2022-05-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Design/">Design</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/%5Bobject%20Object%5D/%E5%8D%9A%E5%AE%A2%E7%BB%93%E6%9E%84/">博客结构</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h1><ul>
+<li>如果博客结构复杂不便于浏览和制作</li>
+<li>故而规定到博文界面最多有三层分类选项</li>
+<li>三层分类<ul>
+<li>第一层分类主要按照技术和理论分类</li>
+<li>第二层分类按照具体的技术和理论的名称分类</li>
+<li>第三层分类按照该博文在具体技术和理论中讨论的部分分类</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://loverain.tech/[object%20Object]/%E5%8D%9A%E5%AE%A2%E7%BB%93%E6%9E%84/" data-id="cl3tukw3g0002rw6ddeqv2zpf" data-title="博客结构" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Structure/" rel="tag">Structure</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Tech/Node.js/npm使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/%5Bobject%20Object%5D/Tech/Node.js/npm%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time class="dt-published" datetime="2022-05-31T04:55:47.263Z" itemprop="datePublished">2022-05-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tech/">Tech</a>►<a class="article-category-link" href="/categories/Tech/Nodejs/">Nodejs</a>►<a class="article-category-link" href="/categories/Tech/Nodejs/npm/">npm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/%5Bobject%20Object%5D/Tech/Node.js/npm%E4%BD%BF%E7%94%A8/">npm使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>作者：宁静的夜<br>链接：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4643a8e43b79">https://www.jianshu.com/p/4643a8e43b79</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p>简单来说，npm就是javascript的包管理工具，类似java语法当中的maven, gradle, python的pip。</p>
+</blockquote>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>npm是和Node.js一起发布的，只要安装了Node.js，npm也安装好了，可以从Node.js的<a target="_blank" rel="noopener" href="https://link.jianshu.com/?t=https://nodejs.org/en/download/">下载页</a>下载对应操作系统的安装包安装即可。 安装好后，执行如下命令，检查是否安装成功。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v6.10.0</span><br><span class="line"></span><br><span class="line">$ npm -v</span><br><span class="line">4.4.1</span><br></pre></td></tr></table></figure>
+
+<p>但是由于npm自身的更新频率比Node.js高很多，所以通过上面的命令安装的npm可能不是最新版本，可以通过下面的命令单独更新npm</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install npm@latest -g</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h1><p>执行命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install &lt;package_name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>便可以安装对应的包<strong>到执行命令的当前目录</strong>，并创建一个<code>node_modules</code>的文件夹,然后把需要安装的安装包下载到里面。</p>
+<h1 id="使用package-json"><a href="#使用package-json" class="headerlink" title="使用package.json"></a>使用<code>package.json</code></h1><p>通过上面的命令，直接安装的包默认都是最新版本的。但是在项目中，我们怎么让一起开发的同事知道项目中用了哪些包，具体包的版本信息呢？这时<code>package.json</code>就上场了，可以把它想成是java语言中的<code>pom.xml</code>,</p>
+<p>一个基本的<code>package.json</code>文件至少需要包含两个重要信息: 包名<code>name</code>和版本信息<code>version</code>。<br>例如:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;my-awesome-package&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;1.0.0&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="创建package-json"><a href="#创建package-json" class="headerlink" title="创建package.json"></a>创建<code>package.json</code></h2><p>我们可以使用命令<code>npm init</code>来初始化一个<code>package.json</code>文件，运行这个命令后，它会询问一些关于包的基本信息，根据实际情况回答即可。如果不喜欢这种方式，可以使用<code>npm init --yes</code>命令直接使用默认的配置来创建<code>package.json</code>文件，最后根据需要修改创建好的<code>package.json</code>文件即可。</p>
+<h1 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h1><p>使用<code>npm install</code>会读取<code>package.json</code>文件来安装模块。安装的模块分为两类</p>
+<p><code>dependencies</code>和<code>devDependencies</code>，分别对应生产环境需要的安装包和开发环境需要的安装包。</p>
+<p>同样在安装模块的时候，可以通过指定参数来修改<code>package.json</code>文件，如</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ npm install &lt;package_name&gt; --save</span><br><span class="line"></span><br><span class="line">$ npm install &lt;package_name&gt; --save-dev</span><br></pre></td></tr></table></figure>
+
+<p>来将新安装的模块信息记录到<code>package.json</code>文件。</p>
+<h1 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm update</span><br></pre></td></tr></table></figure>
+
+<h1 id="卸载模块"><a href="#卸载模块" class="headerlink" title="卸载模块"></a>卸载模块</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall &lt;package_name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>如果要在卸载模块的同时，也将他从package.json文件中移除，可以添加跟安装时候一样的参数，例如:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall --save lodash</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="全局包管理"><a href="#全局包管理" class="headerlink" title="全局包管理"></a>全局包管理</h1><p>默认情况下。我们<strong>执行默认的安装命令安装的包都是安装到当前目录下的，只能在当前目录下使用</strong>。但是假如我们需要使用一些全局的软件，如<code>grunt</code>，我们可以在安装的时候，添加<code>-g</code>选项来安装，方便后面在任何目录下都可以使用<code>grunt</code>相关的命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g grunt</span><br></pre></td></tr></table></figure>
+
+<p>同理，更新全局的安装包只需要执行命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm update -g</span><br></pre></td></tr></table></figure>
+
+<p>为了查看当前哪些包需要更新，可以使用如下命令来查看</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ npm outdated -g --depth=0</span><br><span class="line">Package             Current  Wanted  Latest  Location</span><br><span class="line">vue-cli               2.7.0   2.8.1   2.8.1</span><br><span class="line">webpack              1.13.2   2.2.1   2.2.1</span><br><span class="line">webpack-dev-server   1.14.1   2.4.1   2.4.1</span><br></pre></td></tr></table></figure>
+
+<p>卸载全局安装的包也只需要加上<code>-g</code>选项即可。如</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm uninstall -g jshint</span><br></pre></td></tr></table></figure>
+
+<h1 id="包-Pacakges-和模块-Modules"><a href="#包-Pacakges-和模块-Modules" class="headerlink" title="包(Pacakges)和模块(Modules)"></a>包(Pacakges)和模块(Modules)</h1><p>在使用npm的时候，有两个概念容易搞混，那就是包(Pacakges)和模块(Modules)。简单来说，包和模块的区别如下：</p>
+<ul>
+<li>包是一个被<code>package.json</code>文件描述了的文件或者目录</li>
+<li>模块是可以被Node.js引用的文件或目录</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://loverain.tech/[object%20Object]/Tech/Node.js/npm%E4%BD%BF%E7%94%A8/" data-id="cl3tukw3s000crw6d5h5ug56o" data-title="npm使用" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nodejs/" rel="tag">Nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/" rel="tag">npm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Tech/Node.js/nvm使用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/%5Bobject%20Object%5D/Tech/Node.js/nvm%E4%BD%BF%E7%94%A8/" class="article-date">
+  <time class="dt-published" datetime="2022-05-31T04:55:47.259Z" itemprop="datePublished">2022-05-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tech/">Tech</a>►<a class="article-category-link" href="/categories/Tech/Nodejs/">Nodejs</a>►<a class="article-category-link" href="/categories/Tech/Nodejs/nvm/">nvm</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/%5Bobject%20Object%5D/Tech/Node.js/nvm%E4%BD%BF%E7%94%A8/">nvm使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash</span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> ~/.bashrc</span><br></pre></td></tr></table></figure>
+
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><ul>
+<li>使用NVM安装node v8.16.0</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install 8.16.0</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>切换node版本到v14.17.3</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm use 14.17.3</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>切换到iojs</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm use iojs-v3.2.0</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>列出已经安装的版本</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm <span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>卸载node v8.16.0</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm uninstall 8.16.0</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://loverain.tech/[object%20Object]/Tech/Node.js/nvm%E4%BD%BF%E7%94%A8/" data-id="cl3tukw3w000grw6d3nma7u4l" data-title="nvm使用" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm-Nodejs/" rel="tag">npm - Nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nvm/" rel="tag">nvm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Tech/Git/Git总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/%5Bobject%20Object%5D/Tech/Git/Git%E6%80%BB%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2022-05-31T04:55:47.255Z" itemprop="datePublished">2022-05-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tech/">Tech</a>►<a class="article-category-link" href="/categories/Tech/Git/">Git</a>►<a class="article-category-link" href="/categories/Tech/Git/Summary/">Summary</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/%5Bobject%20Object%5D/Tech/Git/Git%E6%80%BB%E7%BB%93/">Git总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="第一阶段——基础使用"><a href="#第一阶段——基础使用" class="headerlink" title="第一阶段——基础使用"></a>第一阶段——基础使用</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git config --global **</span><br><span class="line">git add *</span><br><span class="line">git commit -m <span class="string">&quot;tips&quot;</span></span><br><span class="line">git remote add origin &lt;server&gt;</span><br><span class="line">git push origin main -f</span><br></pre></td></tr></table></figure>
+
+<h1 id="第二阶段——分支、更新与合并"><a href="#第二阶段——分支、更新与合并" class="headerlink" title="第二阶段——分支、更新与合并"></a>第二阶段——分支、更新与合并</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://loverain.tech/[object%20Object]/Tech/Git/Git%E6%80%BB%E7%BB%93/" data-id="cl3tukw3i0003rw6d261n9udc" data-title="Git总结" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Summary/" rel="tag">Summary</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Tech/Git/Git-QuickStart" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/%5Bobject%20Object%5D/Tech/Git/Git-QuickStart/" class="article-date">
+  <time class="dt-published" datetime="2022-05-31T04:55:47.255Z" itemprop="datePublished">2022-05-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tech/">Tech</a>►<a class="article-category-link" href="/categories/Tech/Git/">Git</a>►<a class="article-category-link" href="/categories/Tech/Git/QuickStart/">QuickStart</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/%5Bobject%20Object%5D/Tech/Git/Git-QuickStart/">Git-1-QuickStart</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="创建新仓库"><a href="#创建新仓库" class="headerlink" title="创建新仓库"></a>创建新仓库</h1><ul>
+<li><p>创建新文件夹，打开</p>
+</li>
+<li><p>执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建成功</p>
+</li>
+</ul>
+<h1 id="检出仓库"><a href="#检出仓库" class="headerlink" title="检出仓库"></a>检出仓库</h1><p>执行如下命令以创建一个本地仓库的克隆版本</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> /path/to/repository</span><br></pre></td></tr></table></figure>
+
+<p>如果是远端服务器上的仓库，你的命令会是这个样子</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> username@host:/path/to/repository</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h1><p>你的本地仓库由git维护的三棵“树”组成。</p>
+<ul>
+<li>第一个是你的<code>工作目录</code>——它持有实际文件</li>
+<li>第二个是<code>暂存区</code>——它像个缓存区域，临时保存你的改动</li>
+<li>最后是<code>HEAD</code>——它指向你最后一次提交的结果</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205302111666.png" alt="image-20220530211138602"></p>
+<h1 id="提交和添加"><a href="#提交和添加" class="headerlink" title="提交和添加"></a>提交和添加</h1><p>你可以提出更改（把它们添加到暂存区），使用如下命令：<br><code>git add &lt;filename&gt;</code><br><code>git add *</code></p>
+<p>使用如下命令以实际提交改动：<br><code>git commit -m &quot;代码提交信息&quot;</code><br>现在，你的改动已经提交到了 <strong>HEAD</strong>，但是还没到你的远端仓库。</p>
+<h1 id="推送改动"><a href="#推送改动" class="headerlink" title="推送改动"></a>推送改动</h1><p>你的改动现在已经在本地仓库的 <strong>HEAD</strong> 中了。执行如下命令以将这些改动提交到远端仓库：<br><code>git push origin master</code><br>可以把 <em>master</em> 换成你想要推送的任何分支。</p>
+<p>如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：<br><code>git remote add origin &lt;server&gt;</code><br>如此你就能够将你的改动推送到所添加的服务器上去了。</p>
+<blockquote>
+<p>此时可能会产生错误</p>
+<p>“<a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#64;&#x67;&#x69;&#116;&#104;&#x75;&#98;&#x2e;&#99;&#x6f;&#x6d;</a>: Permission denied (publickey).</p>
+<p>解决方案见下一个条目</p>
+</blockquote>
+<h1 id="SSH-Keys配置"><a href="#SSH-Keys配置" class="headerlink" title="SSH Keys配置"></a>SSH Keys配置</h1><ol>
+<li><p>验证邮箱是否与Github注册时输入的是否一致<img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205302129853.png" alt="image-20220530212953813" style="zoom: 200%;" /></p>
+</li>
+<li><p>在<code>/Users/***/</code>路径下生成一个.ssh文件夹，密钥存储在其中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C </span><br></pre></td></tr></table></figure>
+
+<p>ssh-keygen -t rsa -C “这里换上你的邮箱”，一路回车，在出现选择时输入Y，再一路回车直到生成密钥</p>
+</li>
+<li><p>到git仓库，添加密钥<img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205302136034.png" alt="image-20220530213602990"></p>
+<p>不是上图所在的项目设置，而是下图所示的帐号设置</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205302138253.png" alt="image-20220530213840199"></p>
+</li>
+</ol>
+<p>​					<img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205302142393.png" alt="image-20220530214235336">				</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205302143147.png" alt="image-20220530214323095"></p>
+<ul>
+<li>title中输入sshKey的名称</li>
+<li>Key中输入pub文件的内容</li>
+</ul>
+<ol start="4">
+<li>再次使用push查看是否能够推送项目内容</li>
+</ol>
+<blockquote>
+<p>! [rejected]        main -&gt; main (fetch first)<br>error: 推送一些引用到 ‘<a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;">&#x67;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#x6d;</a>:jdccccc&#x2F;MyNotes.git’ 失败<br>提示：更新被拒绝，因为远程仓库包含您本地尚不存在的提交。这通常是因为另外<br>提示：一个仓库已向该引用进行了推送。再次推送前，您可能需要先整合远程变更<br>提示：（如 ‘git pull …’）。<br>提示：详见 ‘git push –help’ 中的 ‘Note about fast-forwards’ 小节。</p>
+</blockquote>
+<!--此时推送可能会出现上述错误，请不要灰心，还剩最后一步pull就可以完成基本的操作啦-->
+
+<h1 id="更新与合并"><a href="#更新与合并" class="headerlink" title="更新与合并"></a>更新与合并</h1><ol>
+<li><p>更新修改（<strong>git fetch</strong> 命令用于从远程获取代码库。）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch origin</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看分支</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>合并</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge origin/master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>初学者可以选择强行覆盖，这样以本地为准</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin master -f</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><p>分支是用来将特性开发绝缘开来的。在你创建仓库的时候，<em>master</em> 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205302155390.png" alt="image-20220530215500378"></p>
+<p>创建一个叫做“feature_x”的分支，并切换过去：<br><code>git checkout -b feature_x</code><br>切换回主分支：<br><code>git checkout master</code><br>再把新建的分支删掉：<br><code>git branch -d feature_x</code><br>除非你将分支推送到远端仓库，不然该分支就是 <em>不为他人所见的</em>：<br><code>git push origin &lt;branch&gt;</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://loverain.tech/[object%20Object]/Tech/Git/Git-QuickStart/" data-id="cl3tukw3m0006rw6d2wx6euqn" data-title="Git-1-QuickStart" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QuickStart/" rel="tag">QuickStart</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Tech/Hexo/Hexo文章迁移" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/%5Bobject%20Object%5D/Tech/Hexo/Hexo%E6%96%87%E7%AB%A0%E8%BF%81%E7%A7%BB/" class="article-date">
+  <time class="dt-published" datetime="2022-05-31T04:55:47.251Z" itemprop="datePublished">2022-05-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://loverain.tech/[object%20Object]/Tech/Hexo/Hexo%E6%96%87%E7%AB%A0%E8%BF%81%E7%A7%BB/" data-id="cl3tukw3b0001rw6d60vuex6k" data-title="" class="article-share-link">分享</a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Tech/Hexo/Hexo+GitPage+绑定域名" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/%5Bobject%20Object%5D/Tech/Hexo/Hexo+GitPage+%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/" class="article-date">
+  <time class="dt-published" datetime="2022-05-31T04:55:47.251Z" itemprop="datePublished">2022-05-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tech/">Tech</a>►<a class="article-category-link" href="/categories/Tech/Hexo/">Hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/%5Bobject%20Object%5D/Tech/Hexo/Hexo+GitPage+%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/">Hexo+GitPage+绑定域名</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000017986794">参考文档</a></p>
+</blockquote>
+<h1 id="部署到gitpage上"><a href="#部署到gitpage上" class="headerlink" title="部署到gitpage上"></a>部署到gitpage上</h1><h2 id="创建仓库-lt-username-gt-github-io"><a href="#创建仓库-lt-username-gt-github-io" class="headerlink" title="创建仓库&lt;username&gt;.github.io"></a>创建仓库<code>&lt;username&gt;.github.io</code></h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310933296.png" alt="image-20220531093316260"></p>
+<h2 id="配置hexo配置文件"><a href="#配置hexo配置文件" class="headerlink" title="配置hexo配置文件"></a>配置hexo配置文件</h2><p>此时，本地和Github的工作做得差不了，是时候把它们两个连接起来了。你也可以查看官网的<a target="_blank" rel="noopener" href="https://link.segmentfault.com/?enc=dN02Q0sqSAN5+BqivzbPEA==.x+WYsbR7uzbUhdA3Gunw8rHqtkYxJ1Xd0no8muPe0Msn/CxcLUAJ4NcnW8jdGpnP">部署</a>教程。<br>先不着急，部署之前还需要修改配置和安装部署插件。</p>
+<p>第一：打开项目根目录下的 _config.yml 配置文件配置参数。拉到文件末尾，填上如下配置（也可同时部署到多个仓库，后面再说）：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310914320.jpeg" alt="image"></p>
+<p>或者使用ssh方式</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310922257.png" alt="image-20220531092221222"></p>
+<p>第二：要安装一个部署插件 <a target="_blank" rel="noopener" href="https://link.segmentfault.com/?enc=6SRl78U569dKjJ/UlbF7+Q==.YXWWneUk+t9x5PtjBTpOQqgRIZDpvH2DWldDGEz70nURFoZNgcoX/S237IRxDXit">hexo-deployer-git</a>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>最后执行以下命令就可以部署上传啦，以下 g 是 generate 缩写，d 是 deploy 缩写：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+
+<p>稍等一会，在浏览器访问网址： <a target="_blank" rel="noopener" href="https://link.segmentfault.com/?enc=cRQ4jlkzZcy9HNfjBn3n0A==.8ey6SxdfQ6MtSoIwrP+LpawRSp0B/pTzOjIzf4gNpAhWyrAx7KzWNKI+vmO1SGxo0zc0CoZIcC6EQPqsY0BSoA==">https:&#x2F;&#x2F;你的用户名.github.io</a> 就会看到你的博客啦！！</p>
+<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>首先需要在云平台注册一个域名，方法请另行查阅</p>
+<p>此处以华为云为例说明</p>
+<ol>
+<li><p>首先进入到华为云的域名管理界面<img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310938660.png" alt="image-20220531093836616"></p>
+</li>
+<li><p>点击解析进入解析界面<img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310940839.png" alt="image-20220531094021805"></p>
+</li>
+<li><p>添加解析记录集,如图仿照添加两条<img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310945826.png" alt="image-20220531094520762"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310946157.png" alt="image-20220531094620116"></p>
+</li>
+<li><p>进入仓库在设置中找到自定义域名选项，如图<img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310951285.png" alt="image-20220531095149186"></p>
+</li>
+<li><p>此时仓库中会生成一个CNAME文件<img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310953903.png" alt="image-20220531095341861"></p>
+</li>
+<li><p>将CNAME文件设置到本地，即本地新建CNAME文件填入相同内容，放入到hexo博客所在目录的source文件夹下，否则每次更新博客上传后CNAME文件都会被删除，从而导致域名无法解析</p>
+</li>
+<li><p>设置完成后，既可以使用自己的域名访问博客啦<img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310959342.png" alt="image-20220531095913030"></p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://loverain.tech/[object%20Object]/Tech/Hexo/Hexo+GitPage+%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/" data-id="cl3tukw3o0007rw6dg3piaioz" data-title="Hexo+GitPage+绑定域名" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/GitPage-%E5%9F%9F%E5%90%8D/" rel="tag">GitPage - 域名</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Tech/Hexo/Hexo-QuickStart" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/%5Bobject%20Object%5D/Tech/Hexo/Hexo-QuickStart/" class="article-date">
+  <time class="dt-published" datetime="2022-05-31T04:55:47.247Z" itemprop="datePublished">2022-05-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tech/">Tech</a>►<a class="article-category-link" href="/categories/Tech/Hexo/">Hexo</a>►<a class="article-category-link" href="/categories/Tech/Hexo/QuickStart/">QuickStart</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/%5Bobject%20Object%5D/Tech/Hexo/Hexo-QuickStart/">Hexo-QuickStart</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h1><h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>见Git相关博客</p>
+<h2 id="安装Node-js见"><a href="#安装Node-js见" class="headerlink" title="安装Node.js见"></a>安装Node.js见</h2><p>Node.js相关博客</p>
+<h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<h1 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h1><p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+
+<p>新建完成后，指定文件夹的目录如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+
+<h2 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h2><p>网站的 <a target="_blank" rel="noopener" href="https://hexo.bootcss.com/docs/configuration.html">配置</a> 信息，您可以在此配置大部分的参数。</p>
+<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><p>应用程序的信息。<a target="_blank" rel="noopener" href="https://ejs.co/">EJS</a>, <a target="_blank" rel="noopener" href="http://learnboost.github.io/stylus/">Stylus</a> 和 <a target="_blank" rel="noopener" href="http://daringfireball.net/projects/markdown/">Markdown</a> renderer 已默认安装，您可以自由移除。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package.json<span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;hexo-site&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;private&quot;</span><span class="punctuation">:</span> <span class="keyword">true</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;hexo&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;dependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;hexo&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^3.8.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-generator-archive&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^0.1.5&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-generator-category&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^0.1.3&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-generator-index&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^0.2.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-generator-tag&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^0.2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-renderer-ejs&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^0.3.1&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-renderer-stylus&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^0.3.3&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-renderer-marked&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^0.3.2&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-server&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^0.3.3&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h2><p><a target="_blank" rel="noopener" href="https://hexo.bootcss.com/docs/writing.html">模版</a> 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。</p>
+<p>Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果您修改scaffold&#x2F;post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</p>
+<h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><p>资源文件夹是存放用户资源的地方。除 <code>_posts</code> 文件夹之外，开头命名为 <code>_</code> (下划线)的文件 &#x2F; 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 <code>public</code> 文件夹，而其他文件会被拷贝过去。</p>
+<h2 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h2><p><a target="_blank" rel="noopener" href="https://hexo.bootcss.com/docs/themes.html">主题</a> 文件夹。Hexo 会根据主题来生成静态页面。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://hexo.bootcss.com/docs/configuration.html">https://hexo.bootcss.com/docs/configuration.html</a>)</p>
+</blockquote>
+<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><h2 id="init"><a href="#init" class="headerlink" title="init"></a>init</h2><p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init [folder]</span><br></pre></td></tr></table></figure>
+
+<h2 id="new"><a href="#new" class="headerlink" title="new"></a>new</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>新建一篇文章。如果没有设置 <code>layout</code> 的话，默认使用 <a target="_blank" rel="noopener" href="https://hexo.bootcss.com/docs/configuration.html">_config.yml</a> 中的 <code>default_layout</code> 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;post title with whitespace&quot;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-p</code>, <code>--path</code></td>
+<td align="left">自定义新文章的路径</td>
+</tr>
+<tr>
+<td align="left"><code>-r</code>, <code>--replace</code></td>
+<td align="left">如果存在同名文章，将其替换</td>
+</tr>
+<tr>
+<td align="left"><code>-s</code>, <code>--slug</code></td>
+<td align="left">文章的 Slug，作为新文章的文件名和发布后的 URL</td>
+</tr>
+</tbody></table>
+<p>默认情况下，Hexo 会使用文章的标题来决定文章文件的路径。对于独立页面来说，Hexo 会创建一个以标题为名字的目录，并在目录中放置一个 <code>index.md</code> 文件。你可以使用 <code>--path</code> 参数来覆盖上述行为、自行决定文件的目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page --path about/me &quot;About me&quot;</span><br></pre></td></tr></table></figure>
+
+<p>以上命令会创建一个 <code>source/about/me.md</code> 文件，同时 Front Matter 中的 title 为 <code>&quot;About me&quot;</code></p>
+<p>注意！title 是必须指定的！如果你这么做并不能达到你的目的：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page --path about/me</span><br></pre></td></tr></table></figure>
+
+<p>此时 Hexo 会创建 <code>source/_posts/about/me.md</code>，同时 <code>me.md</code> 的 Front Matter 中的 title 为 <code>&quot;page&quot;</code>。这是因为在上述命令中，hexo-cli 将 <code>page</code> 视为指定文章的标题、并采用默认的 <code>layout</code>。</p>
+<h2 id="generate"><a href="#generate" class="headerlink" title="generate"></a>generate</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>生成静态文件。</p>
+<h2 id="server"><a href="#server" class="headerlink" title="server"></a>server</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>启动服务器。默认情况下，访问网址为： <code>http://localhost:4000/</code>。</p>
+<h2 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>部署网站。</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-g</code>, <code>--generate</code></td>
+<td align="left">部署之前预先生成静态文件</td>
+</tr>
+</tbody></table>
+<p>该命令可以简写为：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
+
+<h2 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
+
+<p>清除缓存文件 (<code>db.json</code>) 和已生成的静态文件 (<code>public</code>)。</p>
+<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
+<h1 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h1><p>你可以执行下列命令来创建一篇新文章或者新的页面。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>您可以在命令中指定文章的布局（layout），默认为 <code>post</code>，可以通过修改 <code>_config.yml</code> 中的 <code>default_layout</code> 参数来指定默认布局。</p>
+<h2 id="布局（Layout）"><a href="#布局（Layout）" class="headerlink" title="布局（Layout）"></a>布局（Layout）</h2><p>Hexo 有三种默认布局：<code>post</code>、<code>page</code> 和 <code>draft</code>。在创建这三种不同类型的文件时，它们将会被保存到不同的路径；而您自定义的其他布局和 <code>post</code> 相同，都将储存到 <code>source/_posts</code> 文件夹。</p>
+<table>
+<thead>
+<tr>
+<th align="left">布局</th>
+<th align="left">路径</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>post</code></td>
+<td align="left"><code>source/_posts</code></td>
+</tr>
+<tr>
+<td align="left"><code>page</code></td>
+<td align="left"><code>source</code></td>
+</tr>
+<tr>
+<td align="left"><code>draft</code></td>
+<td align="left"><code>source/_drafts</code></td>
+</tr>
+</tbody></table>
+<h2 id="文件名称"><a href="#文件名称" class="headerlink" title="文件名称"></a>文件名称</h2><p>Hexo 默认以标题做为文件名称，但您可编辑 <code>new_post_name</code> 参数来改变默认的文件名称，举例来说，设为 <code>:year-:month-:day-:title.md</code> 可让您更方便的通过日期来管理文章。</p>
+<table>
+<thead>
+<tr>
+<th align="left">变量</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>:title</code></td>
+<td align="left">标题（小写，空格将会被替换为短杠）</td>
+</tr>
+<tr>
+<td align="left"><code>:year</code></td>
+<td align="left">建立的年份，比如， <code>2015</code></td>
+</tr>
+<tr>
+<td align="left"><code>:month</code></td>
+<td align="left">建立的月份（有前导零），比如， <code>04</code></td>
+</tr>
+<tr>
+<td align="left"><code>:i_month</code></td>
+<td align="left">建立的月份（无前导零），比如， <code>4</code></td>
+</tr>
+<tr>
+<td align="left"><code>:day</code></td>
+<td align="left">建立的日期（有前导零），比如， <code>07</code></td>
+</tr>
+<tr>
+<td align="left"><code>:i_day</code></td>
+<td align="left">建立的日期（无前导零），比如， <code>7</code></td>
+</tr>
+</tbody></table>
+<h2 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h2><p>刚刚提到了 Hexo 的一种特殊布局：<code>draft</code>，这种布局在建立时会被保存到 <code>source/_drafts</code> 文件夹，您可通过 <code>publish</code> 命令将草稿移动到 <code>source/_posts</code> 文件夹，该命令的使用方式与 <code>new</code> 十分类似，您也可在命令中指定 <code>layout</code> 来指定布局。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo publish [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure>
+
+<p>草稿默认不会显示在页面中，您可在执行时加上 <code>--draft</code> 参数，或是把 <code>render_drafts</code> 参数设为 <code>true</code> 来预览草稿。</p>
+<h2 id="模版（Scaffold）"><a href="#模版（Scaffold）" class="headerlink" title="模版（Scaffold）"></a>模版（Scaffold）</h2><p>在新建文章时，Hexo 会根据 <code>scaffolds</code> 文件夹内相对应的文件来建立文件，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new photo &quot;My Gallery&quot;</span><br></pre></td></tr></table></figure>
+
+<p>在执行这行指令时，Hexo 会尝试在 <code>scaffolds</code> 文件夹中寻找 <code>photo.md</code>，并根据其内容建立文章，以下是您可以在模版中使用的变量：</p>
+<table>
+<thead>
+<tr>
+<th align="left">变量</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>layout</code></td>
+<td align="left">布局</td>
+</tr>
+<tr>
+<td align="left"><code>title</code></td>
+<td align="left">标题</td>
+</tr>
+<tr>
+<td align="left"><code>date</code></td>
+<td align="left">文件建立日期</td>
+</tr>
+</tbody></table>
+<h1 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h1><p>Front-matter 是文件最上方以 <code>---</code> 分隔的区域，用于指定个别文件的变量，举例来说：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">date: 2013/7/13 20:46:25</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>以下是预先定义的参数，您可在模板中使用这些参数值并加以利用。</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+<th align="left">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>layout</code></td>
+<td align="left">布局</td>
+<td align="left"><a target="_blank" rel="noopener" href="https://hexo.bootcss.com/zh-cn/docs/configuration#%E6%96%87%E7%AB%A0"><code>config.default_layout</code></a></td>
+</tr>
+<tr>
+<td align="left"><code>title</code></td>
+<td align="left">标题</td>
+<td align="left">文章的文件名</td>
+</tr>
+<tr>
+<td align="left"><code>date</code></td>
+<td align="left">建立日期</td>
+<td align="left">文件建立日期</td>
+</tr>
+<tr>
+<td align="left"><code>updated</code></td>
+<td align="left">更新日期</td>
+<td align="left">文件更新日期</td>
+</tr>
+<tr>
+<td align="left"><code>comments</code></td>
+<td align="left">开启文章的评论功能</td>
+<td align="left">true</td>
+</tr>
+<tr>
+<td align="left"><code>tags</code></td>
+<td align="left">标签（不适用于分页）</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>categories</code></td>
+<td align="left">分类（不适用于分页）</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="分类和标签"><a href="#分类和标签" class="headerlink" title="分类和标签"></a>分类和标签</h2><p>只有文章支持分类和标签，您可以在 Front-matter 中设置。在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性，也就是说 <code>Foo, Bar</code> 不等于 <code>Bar, Foo</code>；而标签没有顺序和层次。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">- Diary</span><br><span class="line">tags:</span><br><span class="line">- PS3</span><br><span class="line">- Games</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>分类方法的分歧</p>
+<p>如果您有过使用 WordPress 的经验，就很容易误解 Hexo 的分类方式。WordPress 支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是 Hexo 不支持指定多个同级分类。下面的指定方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">  - Diary</span><br><span class="line">  - Life</span><br></pre></td></tr></table></figure>
+
+<p>会使分类<code>Life</code>成为<code>Diary</code>的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p>
+<p>如果你需要为文章添加多个分类，可以尝试以下 list 中的方法。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">categories:</span><br><span class="line">- [Diary, PlayStation]</span><br><span class="line">- [Diary, Games]</span><br><span class="line">- [Life]</span><br></pre></td></tr></table></figure>
+
+<p>此时这篇文章同时包括三个分类： <code>PlayStation</code> 和 <code>Games</code> 分别都是父分类 <code>Diary</code> 的子分类，同时 <code>Life</code> 是一个没有子分类的分类。</p>
+</blockquote>
+<h1 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h1><h2 id="静态模式"><a href="#静态模式" class="headerlink" title="静态模式"></a>静态模式</h2><p>在静态模式下，服务器只处理 <code>public</code> 文件夹内的文件，而不会处理文件变动，在执行时，您应该先自行执行 <code>hexo generate</code>，此模式通常用于生产环境（production mode）下。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server -s</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://loverain.tech/[object%20Object]/Tech/Hexo/Hexo-QuickStart/" data-id="cl3tukw3p0008rw6de2r8c9fq" data-title="Hexo-QuickStart" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/QuickStart/" rel="tag">QuickStart</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-Tech/Hexo/Hexo总结" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/%5Bobject%20Object%5D/Tech/Hexo/Hexo%E6%80%BB%E7%BB%93/" class="article-date">
+  <time class="dt-published" datetime="2022-05-31T04:55:47.247Z" itemprop="datePublished">2022-05-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tech/">Tech</a>►<a class="article-category-link" href="/categories/Tech/Hexo/">Hexo</a>►<a class="article-category-link" href="/categories/Tech/Hexo/Summary/">Summary</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/%5Bobject%20Object%5D/Tech/Hexo/Hexo%E6%80%BB%E7%BB%93/">Hexo总结</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h1 id="第一阶段——本地使用"><a href="#第一阶段——本地使用" class="headerlink" title="第一阶段——本地使用"></a>第一阶段——本地使用</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">hexo new &lt;filename&gt;</span><br><span class="line">hexo generate</span><br><span class="line">hexo serve</span><br></pre></td></tr></table></figure>
+
+<h1 id="第二阶段——推送部署"><a href="#第二阶段——推送部署" class="headerlink" title="第二阶段——推送部署"></a>第二阶段——推送部署</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<h1 id="第三阶段——文章迁移"><a href="#第三阶段——文章迁移" class="headerlink" title="第三阶段——文章迁移"></a>第三阶段——文章迁移</h1>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://loverain.tech/[object%20Object]/Tech/Hexo/Hexo%E6%80%BB%E7%BB%93/" data-id="cl3tukw3r000brw6d3byj22r5" data-title="Hexo总结" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Summary/" rel="tag">Summary</a></li></ul>
 
     </footer>
   </div>
@@ -114,18 +1042,20 @@
   
 
 
+  <nav id="page-nav">
+    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+  </nav>
+
 </section>
         
           <aside id="sidebar">
   
     
-
-  
-    
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">分类</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Design/">Design</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/">Tech</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Git/">Git</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Git/QuickStart/">QuickStart</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Git/Summary/">Summary</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Hexo/">Hexo</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Hexo/QuickStart/">QuickStart</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Hexo/Summary/">Summary</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Nodejs/">Nodejs</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Nodejs/npm/">npm</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Nodejs/nvm/">nvm</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Qv2ray/">Qv2ray</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/Typora/">Typora</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tech/deepin/">deepin</a></li></ul></li></ul>
     </div>
   </div>
 
@@ -133,18 +1063,28 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Blog/" rel="tag">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Deepin/" rel="tag">Deepin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/" rel="tag">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GitPage-%E5%9F%9F%E5%90%8D/" rel="tag">GitPage - 域名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nodejs/" rel="tag">Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PicGO/" rel="tag">PicGO</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/QuickStart/" rel="tag">QuickStart</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Qv2ray-V2Ray/" rel="tag">Qv2ray - V2Ray</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Structure/" rel="tag">Structure</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Summary/" rel="tag">Summary</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/" rel="tag">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/apt/" rel="tag">apt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deepin/" rel="tag">deepin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dpkg/" rel="tag">dpkg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/" rel="tag">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm-Nodejs/" rel="tag">npm - Nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nvm/" rel="tag">nvm</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 10px;">测试</a>
+      <a href="/tags/Blog/" style="font-size: 10px;">Blog</a> <a href="/tags/Deepin/" style="font-size: 10px;">Deepin</a> <a href="/tags/Git/" style="font-size: 15px;">Git</a> <a href="/tags/GitPage-%E5%9F%9F%E5%90%8D/" style="font-size: 10px;">GitPage - 域名</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/Nodejs/" style="font-size: 10px;">Nodejs</a> <a href="/tags/PicGO/" style="font-size: 10px;">PicGO</a> <a href="/tags/QuickStart/" style="font-size: 15px;">QuickStart</a> <a href="/tags/Qv2ray-V2Ray/" style="font-size: 10px;">Qv2ray - V2Ray</a> <a href="/tags/Structure/" style="font-size: 10px;">Structure</a> <a href="/tags/Summary/" style="font-size: 15px;">Summary</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/apt/" style="font-size: 10px;">apt</a> <a href="/tags/deepin/" style="font-size: 10px;">deepin</a> <a href="/tags/dpkg/" style="font-size: 10px;">dpkg</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/npm-Nodejs/" style="font-size: 10px;">npm - Nodejs</a> <a href="/tags/nvm/" style="font-size: 10px;">nvm</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li></ul>
     </div>
   </div>
 
@@ -152,12 +1092,28 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2022/05/31/Hello/">Hello</a>
+            <a href="/%5Bobject%20Object%5D/Tech/Hexo/Hexo%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/">Hexo个性化配置</a>
+          </li>
+        
+          <li>
+            <a href="/%5Bobject%20Object%5D/%E5%8D%9A%E5%AE%A2%E7%BB%93%E6%9E%84/">博客结构</a>
+          </li>
+        
+          <li>
+            <a href="/%5Bobject%20Object%5D/Tech/Node.js/npm%E4%BD%BF%E7%94%A8/">npm使用</a>
+          </li>
+        
+          <li>
+            <a href="/%5Bobject%20Object%5D/Tech/Node.js/nvm%E4%BD%BF%E7%94%A8/">nvm使用</a>
+          </li>
+        
+          <li>
+            <a href="/%5Bobject%20Object%5D/Tech/Git/Git%E6%80%BB%E7%BB%93/">Git总结</a>
           </li>
         
       </ul>
@@ -173,7 +1129,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       
-      &copy; 2022 John Doe<br>
+      &copy; 2022 LoveRain<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
