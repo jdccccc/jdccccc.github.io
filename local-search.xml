@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>第一章_引言</title>
+    <link href="/%5Bobject%20Object%5D/Theory/Computer%20Architecture/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AC%AC%E4%B8%80%E7%AB%A0_%E5%BC%95%E8%A8%80/"/>
+    <url>/%5Bobject%20Object%5D/Theory/Computer%20Architecture/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AC%AC%E4%B8%80%E7%AB%A0_%E5%BC%95%E8%A8%80/</url>
+    
+    <content type="html"><![CDATA[<h1 id="计算机体系结构的研究内容"><a href="#计算机体系结构的研究内容" class="headerlink" title="计算机体系结构的研究内容"></a>计算机体系结构的研究内容</h1><p>纵向来看：</p><ul><li><p><strong>指令系统结构</strong>和<strong>CPU的微结构</strong>为核心</p></li><li><p>向下到晶体管级的电路结构</p></li><li><p>向上到应用程序编程接口（Application Programming Interface，简称API）</p></li></ul><p>横向来看：</p><ul><li><strong>个人计算机</strong>和<strong>服务器</strong>的体系结构为核心</li><li>低端到手持移动终端和微控制器（Micro‑Controller<br>Unit，简称MCU）的体系结构</li><li>高端到高性能计算机（High Performance Computer，简称HPC）的体系结构</li></ul><h2 id="一以贯之"><a href="#一以贯之" class="headerlink" title="一以贯之"></a>一以贯之</h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206011813125.png" alt="image-20220601181234820"></p><p>计算机系统分成</p><ul><li>应用程序</li><li>操作系统</li><li>硬件系统</li><li>晶体管</li></ul><p>三个界面：</p><ul><li>应用程序编程接口 API（Application Programming Interface），也可以称作 “操作系统的指令系统”<ul><li>一种 API 编写的应用程序经重新编译后可以在支持该 API 的不同计算机上运行。</li><li>API 是建生态的起点。</li></ul></li><li>指令系统 ISA（Instruction Set Architecture）<ul><li>指令系统是实现目标码兼容的关键，由于 IT 产业的主要应用都是通过目标码的形态发布的</li><li>ISA 是软件兼容的关键，是生态建设的终点。</li></ul></li><li>工艺模型</li></ul><p>需要指出：</p><ul><li><p>在 API 和 ISA 之间还有一层应用程序二进制接口（Application Binary Interface，简<br>称 ABI）。ABI 是应用程序访问计算机硬件及操作系统服务的接口，由计算机的用户态指令和操作<br>系统的系统调用组成</p></li><li><p>为了实现多进程访问共享资源的安全性，处理器设有 “用户态” 与 “核心态”。</p><ul><li>用户程序在用户态下执行，操作系统向用户程序提供具有预定功能的系统调用函数来访问<br>只有核心态才能访问的硬件资源。</li><li>当用户程序调用系统调用函数时，处理器进入核心态执行诸如访问 IO 设备、修改处理器状态等只有核心态才能执行的指令。</li><li>处理完系统调用后，处理器返回用户态执行用户代码。</li><li>相同的应用程序二进制代码可以在相同 ABI 的不同计算机上运行。</li></ul></li></ul><p>从一般意义上说，计算机体系结构的研究内容包括</p><ul><li>指令系统结构</li><li>硬件系统结构</li><li>CPU内部的微结构</li></ul><h2 id="什么是计算机"><a href="#什么是计算机" class="headerlink" title="什么是计算机"></a>什么是计算机</h2><p>不管这个计算机的规模有多大，都是计算机体系结构的研究对象。</p><h2 id="计算机的基本组成"><a href="#计算机的基本组成" class="headerlink" title="计算机的基本组成"></a>计算机的基本组成</h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206011940126.png" alt="image-20220601194040384"></p><p>冯·诺依曼结构的基本思想：</p><p>数据和程序都在存储器中，CPU 从内存中取指令和数据进行运算并把结果也放到内存中。</p><p><strong>冯·诺依曼结构最核心的思想是什么？</strong></p><ul><li><strong>存储程序</strong></li><li><strong>指令驱动执行</strong></li></ul><h1 id="衡量计算机的指标"><a href="#衡量计算机的指标" class="headerlink" title="衡量计算机的指标"></a>衡量计算机的指标</h1><h2 id="计算机的性能"><a href="#计算机的性能" class="headerlink" title="计算机的性能"></a>计算机的性能</h2><ul><li><p>计算机的首要指标</p></li><li><p>性能的最本质定义是 “<strong>完成一个任务所需要的时间</strong>”</p></li><li><p>完成一个任务所需要的时间可以由</p><p>完成该任务需要的指令数</p><p>完成每条指令需要的拍数</p><p>以及每拍需要的时间三个量相乘得到。</p><ul><li>完成任务需要的指令数与算法、编译器和指令的功能有关；</li><li>每条指令需要的拍数与编译器、指令功能、微结构设计相关；</li><li>每拍需要的时间，也就是时钟周期，与结构、电路设计、工艺等因素有关。</li></ul></li><li><p>在指令系统确定后，结构设计需要重点考虑如何<strong>降低每条指令的平均执行周期</strong>（Cycles Per In‑struction，简称CPI），或提高每个时钟周期平均执行的指令数（Instructions Per Cycle，简称IPC），这是<br><strong>处理器微结构研究的主要内容</strong>。</p></li></ul><h2 id="计算机的价格"><a href="#计算机的价格" class="headerlink" title="计算机的价格"></a>计算机的价格</h2><p>计算机的成本跟芯片成本紧密相关，计算机中芯片的成本包括</p><ul><li>该芯片的制造成本</li><li>一次性成本NRE（如研发成本）的分摊部分。</li><li>随着不断重复生产，工程经验和工艺水平都不断提高，生产成本可以持续地降低。</li><li>产量的提高能够加速学习过程，提高成品率，还可以降低一次性成本。</li></ul><h2 id="计算机的功耗"><a href="#计算机的功耗" class="headerlink" title="计算机的功耗"></a>计算机的功耗</h2><p>近几年来，性能功耗比（Performance per Watt）成为计算机非常重要的一个指标。</p><p>芯片功耗是计算机功耗的重要组成部分。</p><p>芯片的功耗主要由晶体管工作产生。</p><p>反相器由一个 PMOS 管和一个 NMOS 管组成。其功耗主要可以分为三类：</p><ul><li>开关功耗</li><li>短路功耗</li><li>漏电功耗。</li></ul><p>芯片的功耗是一个全局量，与每一个设计阶段都相关。<strong>功耗优化</strong>的层次从<strong>系统级、算法级、逻辑级、电路级</strong>，直至版图和工艺级，是一个全系统工程。</p><h1 id="计算机体系结构的发展"><a href="#计算机体系结构的发展" class="headerlink" title="计算机体系结构的发展"></a>计算机体系结构的发展</h1><ol><li>20 世纪五六十年代，由于工艺技术的限制，计算机都做得很简单，计算机体系结构主要研究怎么做加减乘除，Computer Architecture基本上等于Computer Arithmetic。</li><li>20世纪七八十年代的时候，以精简指令集（Reduced Instruction Set Computer，简称RISC）兴起为<br>标志，指令系统结构（Instruction Set Architecture，简称 ISA）成为计算机体系结构的研究重点。</li><li>20 世纪 90 年代以后，计算机体系结构要考虑的问题把 CPU、存储系统、IO 系统和多处理器也包括在内。</li><li>到了 21 世纪，网络就是计算机，计算机体系结构要覆盖的面更广了：向上突破了软硬件界面，需要考虑软硬件的紧密协同；向下突破了逻辑设计和工艺实现的界面，需要从晶体管的角度考虑结构设计。<ol><li>随着虚拟机和二进制翻译系统的出现，<br>软硬件的界面模糊了</li><li>计算机体系结构需要更多地考虑电路和工艺的行为</li></ol></li></ol><p>工艺技术的发展和应用需求的提高是计算机体系结构发展的主要动力</p><ul><li>在2010年之前，计算机工业的发展主要是工艺驱动为主，应用驱动为辅，都是计算机工艺厂家先挖空心思发明出应用然后让大家去接受。</li><li>在2010年之后，随着计算机基础软硬件的不断成熟，IT<br>产业的主要创新从工艺转向应用。可以预计，未来计算机应用对体系结构的影响将超过工艺技术，<br>成为计算机体系结构发展的首要动力。</li></ul><h2 id="摩尔定律和工艺的发展"><a href="#摩尔定律和工艺的发展" class="headerlink" title="摩尔定律和工艺的发展"></a>摩尔定律和工艺的发展</h2><h3 id="工艺技术的发展"><a href="#工艺技术的发展" class="headerlink" title="工艺技术的发展"></a>工艺技术的发展</h3><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206012029431.png" alt="image-20220601202939282"></p><p>大多数集成电路生产厂家在 45nm 工艺之后已经停止了新工艺的研究，</p><p>一方面是由于技术上越来越难，另一方面是由于研发成本越来越高。在 32nm 工艺节点以后，只有英特尔、三星、台积<br>电和中芯国际等少数厂家还在继续研发。</p><p><strong>摩尔定律是半导体产业的一个共同预测和奋斗目标</strong>，但随着工艺的发展逐渐逼近极限，人们发现越来越难跟上这个目标。</p><p>伴随着新材料和器件结构的发展，半导体制造已经转向“材料时代”</p><h3 id="工艺和计算机结构"><a href="#工艺和计算机结构" class="headerlink" title="工艺和计算机结构"></a>工艺和计算机结构</h3><ol><li><p>第一个阶段是晶体管不够用的阶段。那时计算机由很多独立的芯片构成，由于集成度的限制，计算机体系结构不可能设计得太复杂。</p></li><li><p>第二个阶段随着集成电路集成度越来越高，摩尔定律为计算机体系结构设计提供 “更多、更快、更省电” 的晶体管，微处理器蓬勃发展。</p></li><li><p>第三个阶段，晶体管越来越多，但是越来越难用，晶体管变得 “复杂、不快、不省电、不便宜”。</p><p>第三阶段结构设计的一个特点是不得已向多核（Multi‑Core）发展，以降低<br><strong>设计验证复杂度、增加设计局部性、降低功耗</strong></p></li></ol><p>​</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Theory</category>
+      
+      <category>计算机系统结构</category>
+      
+      <category>学习记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>计算机系统结构</tag>
+      
+      <tag>学习记录</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>目录与综述</title>
+    <link href="/%5Bobject%20Object%5D/Theory/Computer%20Architecture/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AC%AC%E9%9B%B6%E7%AB%A0%E7%9B%AE%E5%BD%95%E4%B8%8E%E7%BB%BC%E8%BF%B0/"/>
+    <url>/%5Bobject%20Object%5D/Theory/Computer%20Architecture/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AC%AC%E9%9B%B6%E7%AB%A0%E7%9B%AE%E5%BD%95%E4%B8%8E%E7%BB%BC%E8%BF%B0/</url>
+    
+    <content type="html"><![CDATA[<h1 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h1><ol><li>引言部分——宏观介绍计算机系统结构学科特点</li><li>指令系统结构<ol><li>指令系统</li><li>特权指令系统</li><li>软硬件协同</li></ol></li><li>计算机硬件结构<ol><li>计算机组成原理和结构</li><li>计算机总线接口技术</li><li>计算机启动过程分析</li></ol></li><li>CPU的微结构<ol><li>运算器设计</li><li>指令流水线</li></ol></li><li>并行处理结构<ol><li>并行编程基础</li><li>多核处理结构</li></ol></li><li>系统性能评价与分析<ol><li>计算机系统性能评价与性能分析</li></ol></li></ol><h1 id="编写特点"><a href="#编写特点" class="headerlink" title="编写特点"></a>编写特点</h1><ul><li>系统性</li><li>基础性</li><li>实践性</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Theory</category>
+      
+      <category>计算机系统结构</category>
+      
+      <category>学习记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>计算机系统结构</tag>
+      
+      <tag>学习记录</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hexo个性化配置</title>
+    <link href="/%5Bobject%20Object%5D/Tech/Hexo/Hexo%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/"/>
+    <url>/%5Bobject%20Object%5D/Tech/Hexo/Hexo%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置<code>_config.yml</code></h1><h2 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h2><table><thead><tr><th align="left">参数</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left"><code>title</code></td><td align="left">网站标题</td></tr><tr><td align="left"><code>subtitle</code></td><td align="left">网站副标题</td></tr><tr><td align="left"><code>description</code></td><td align="left">网站描述</td></tr><tr><td align="left"><code>keywords</code></td><td align="left">网站的关键词。支持多个关键词。</td></tr><tr><td align="left"><code>author</code></td><td align="left">您的名字</td></tr><tr><td align="left"><code>language</code></td><td align="left">网站使用的语言。对于简体中文用户来说，使用不同的主题可能需要设置成不同的值，请参考你的主题的文档自行设置，常见的有 <code>zh-Hans</code>和 <code>zh-CN</code>。</td></tr><tr><td align="left"><code>timezone</code></td><td align="left">网站时区。Hexo 默认使用您电脑的时区。请参考 <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">时区列表</a> 进行设置，如 <code>America/New_York</code>, <code>Japan</code>, 和 <code>UTC</code> 。一般的，对于中国大陆地区可以使用 <code>Asia/Shanghai</code>。</td></tr></tbody></table><p>其中，<code>description</code>主要用于SEO，告诉搜索引擎一个关于您站点的简单描述，通常建议在其中包含您网站的关键词。<code>author</code>参数用于主题显示文章的作者。</p><blockquote><p>我们强烈建议你将所有的主题配置集中在一处。</p><p>如果你不得不在多处配置你的主题，那么这些信息对你将会非常有用：Hexo 在合并主题配置时，Hexo 配置文件中的 <code>theme_config</code> 的优先级最高，</p><p>其次是 <code>_config.[theme].yml</code> 文件，</p><p>最后是位于主题目录下的 <code>_config.yml</code> 文件。</p></blockquote><h1 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h1><p>Front-matter 是文件最上方以 <code>---</code> 分隔的区域，用于指定个别文件的变量</p><table><thead><tr><th align="left">参数</th><th align="left">描述</th><th align="left">默认值</th></tr></thead><tbody><tr><td align="left"><code>layout</code></td><td align="left">布局</td><td align="left"><a href="https://hexo.io/zh-cn/docs/configuration#%E6%96%87%E7%AB%A0"><code>config.default_layout</code></a></td></tr><tr><td align="left"><code>title</code></td><td align="left">标题</td><td align="left">文章的文件名</td></tr><tr><td align="left"><code>date</code></td><td align="left">建立日期</td><td align="left">文件建立日期</td></tr><tr><td align="left"><code>updated</code></td><td align="left">更新日期</td><td align="left">文件更新日期</td></tr><tr><td align="left"><code>comments</code></td><td align="left">开启文章的评论功能</td><td align="left">true</td></tr><tr><td align="left"><code>tags</code></td><td align="left">标签（不适用于分页）</td><td align="left"></td></tr><tr><td align="left"><code>categories</code></td><td align="left">分类（不适用于分页）</td><td align="left"></td></tr><tr><td align="left"><code>permalink</code></td><td align="left">覆盖文章网址</td><td align="left"></td></tr></tbody></table><h1 id="分类和标签"><a href="#分类和标签" class="headerlink" title="分类和标签"></a>分类和标签</h1><p>只有文章支持分类和标签，您可以在 Front-matter 中设置。在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性，也就是说 <code>Foo, Bar</code> 不等于 <code>Bar, Foo</code>；而标签没有顺序和层次。</p><p>下面的指定方法：</p><figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">categories</span><span class="hljs-punctuation">:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Diary</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Life</span><br></code></pre></td></tr></table></figure><p>会使分类<code>Life</code>成为<code>Diary</code>的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p><p>如果你需要为文章添加多个分类，可以尝试以下 list 中的方法。</p><figure class="highlight ldif"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ldif"><span class="hljs-attribute">categories</span>:<br><span class="hljs-literal">-</span> [Diary, PlayStation]<br><span class="hljs-literal">-</span> [Diary, Games]<br><span class="hljs-literal">-</span> [Life]<br></code></pre></td></tr></table></figure><p>此时这篇文章同时包括三个分类： <code>PlayStation</code> 和 <code>Games</code> 分别都是父分类 <code>Diary</code> 的子分类，同时 <code>Life</code> 是一个没有子分类的分类。</p><h1 id="主题设置"><a href="#主题设置" class="headerlink" title="主题设置"></a>主题设置</h1><p>创建 Hexo 主题非常容易，您只要在 <code>themes</code> 文件夹内，新增一个任意名称的文件夹，并修改 <code>_config.yml</code> 内的 <code>theme</code> 设定，即可切换主题。一个主题可能会有以下的结构：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">.<br>├── _config.yml<br>├── languages<br>├── layout<br>├── scripts<br>└── <span class="hljs-built_in">source</span><br></code></pre></td></tr></table></figure><p>经过挑选后，最终选择了korilin主题</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> git@github.com:korilin/hexo-theme-particle.git<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tech</category>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>博客结构</title>
+    <link href="/%5Bobject%20Object%5D/%E5%8D%9A%E5%AE%A2%E7%BB%93%E6%9E%84/"/>
+    <url>/%5Bobject%20Object%5D/%E5%8D%9A%E5%AE%A2%E7%BB%93%E6%9E%84/</url>
+    
+    <content type="html"><![CDATA[<h1 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h1><ul><li>如果博客结构复杂不便于浏览和制作</li><li>故而规定到博文界面最多有三层分类选项</li><li>三层分类<ul><li>第一层分类主要按照技术和理论分类</li><li>第二层分类按照具体的技术和理论的名称分类</li><li>第三层分类按照该博文在具体技术和理论中讨论的部分分类</li></ul></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Design</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Blog</tag>
+      
+      <tag>Structure</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>npm使用</title>
+    <link href="/%5Bobject%20Object%5D/Tech/Node.js/npm%E4%BD%BF%E7%94%A8/"/>
+    <url>/%5Bobject%20Object%5D/Tech/Node.js/npm%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>作者：宁静的夜<br>链接：<a href="https://www.jianshu.com/p/4643a8e43b79">https://www.jianshu.com/p/4643a8e43b79</a><br>来源：简书<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p><p>简单来说，npm就是javascript的包管理工具，类似java语法当中的maven, gradle, python的pip。</p></blockquote><h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>npm是和Node.js一起发布的，只要安装了Node.js，npm也安装好了，可以从Node.js的<a href="https://link.jianshu.com/?t=https://nodejs.org/en/download/">下载页</a>下载对应操作系统的安装包安装即可。 安装好后，执行如下命令，检查是否安装成功。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ node -v<br>v6.10.0<br><br>$ npm -v<br>4.4.1<br></code></pre></td></tr></table></figure><p>但是由于npm自身的更新频率比Node.js高很多，所以通过上面的命令安装的npm可能不是最新版本，可以通过下面的命令单独更新npm</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm install npm@latest -g<br></code></pre></td></tr></table></figure><h1 id="安装包"><a href="#安装包" class="headerlink" title="安装包"></a>安装包</h1><p>执行命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm install &lt;package_name&gt;<br></code></pre></td></tr></table></figure><p>便可以安装对应的包<strong>到执行命令的当前目录</strong>，并创建一个<code>node_modules</code>的文件夹,然后把需要安装的安装包下载到里面。</p><h1 id="使用package-json"><a href="#使用package-json" class="headerlink" title="使用package.json"></a>使用<code>package.json</code></h1><p>通过上面的命令，直接安装的包默认都是最新版本的。但是在项目中，我们怎么让一起开发的同事知道项目中用了哪些包，具体包的版本信息呢？这时<code>package.json</code>就上场了，可以把它想成是java语言中的<code>pom.xml</code>,</p><p>一个基本的<code>package.json</code>文件至少需要包含两个重要信息: 包名<code>name</code>和版本信息<code>version</code>。<br>例如:</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;my-awesome-package&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;1.0.0&quot;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure><h2 id="创建package-json"><a href="#创建package-json" class="headerlink" title="创建package.json"></a>创建<code>package.json</code></h2><p>我们可以使用命令<code>npm init</code>来初始化一个<code>package.json</code>文件，运行这个命令后，它会询问一些关于包的基本信息，根据实际情况回答即可。如果不喜欢这种方式，可以使用<code>npm init --yes</code>命令直接使用默认的配置来创建<code>package.json</code>文件，最后根据需要修改创建好的<code>package.json</code>文件即可。</p><h1 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h1><p>使用<code>npm install</code>会读取<code>package.json</code>文件来安装模块。安装的模块分为两类</p><p><code>dependencies</code>和<code>devDependencies</code>，分别对应生产环境需要的安装包和开发环境需要的安装包。</p><p>同样在安装模块的时候，可以通过指定参数来修改<code>package.json</code>文件，如</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm install &lt;package_name&gt; --save<br><br>$ npm install &lt;package_name&gt; --save-dev<br></code></pre></td></tr></table></figure><p>来将新安装的模块信息记录到<code>package.json</code>文件。</p><h1 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm update<br></code></pre></td></tr></table></figure><h1 id="卸载模块"><a href="#卸载模块" class="headerlink" title="卸载模块"></a>卸载模块</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm uninstall &lt;package_name&gt;<br></code></pre></td></tr></table></figure><p>如果要在卸载模块的同时，也将他从package.json文件中移除，可以添加跟安装时候一样的参数，例如:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm uninstall --save lodash<br></code></pre></td></tr></table></figure><h1 id="全局包管理"><a href="#全局包管理" class="headerlink" title="全局包管理"></a>全局包管理</h1><p>默认情况下。我们<strong>执行默认的安装命令安装的包都是安装到当前目录下的，只能在当前目录下使用</strong>。但是假如我们需要使用一些全局的软件，如<code>grunt</code>，我们可以在安装的时候，添加<code>-g</code>选项来安装，方便后面在任何目录下都可以使用<code>grunt</code>相关的命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm install -g grunt<br></code></pre></td></tr></table></figure><p>同理，更新全局的安装包只需要执行命令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm update -g<br></code></pre></td></tr></table></figure><p>为了查看当前哪些包需要更新，可以使用如下命令来查看</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm outdated -g --depth=0<br>Package             Current  Wanted  Latest  Location<br>vue-cli               2.7.0   2.8.1   2.8.1<br>webpack              1.13.2   2.2.1   2.2.1<br>webpack-dev-server   1.14.1   2.4.1   2.4.1<br></code></pre></td></tr></table></figure><p>卸载全局安装的包也只需要加上<code>-g</code>选项即可。如</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm uninstall -g jshint<br></code></pre></td></tr></table></figure><h1 id="包-Pacakges-和模块-Modules"><a href="#包-Pacakges-和模块-Modules" class="headerlink" title="包(Pacakges)和模块(Modules)"></a>包(Pacakges)和模块(Modules)</h1><p>在使用npm的时候，有两个概念容易搞混，那就是包(Pacakges)和模块(Modules)。简单来说，包和模块的区别如下：</p><ul><li>包是一个被<code>package.json</code>文件描述了的文件或者目录</li><li>模块是可以被Node.js引用的文件或目录</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tech</category>
+      
+      <category>Nodejs</category>
+      
+      <category>npm</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>npm</tag>
+      
+      <tag>Nodejs</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>nvm使用</title>
+    <link href="/%5Bobject%20Object%5D/Tech/Node.js/nvm%E4%BD%BF%E7%94%A8/"/>
+    <url>/%5Bobject%20Object%5D/Tech/Node.js/nvm%E4%BD%BF%E7%94%A8/</url>
+    
+    <content type="html"><![CDATA[<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash<br><br><span class="hljs-built_in">source</span> ~/.bashrc<br></code></pre></td></tr></table></figure><h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><ul><li>使用NVM安装node v8.16.0</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nvm install 8.16.0<br></code></pre></td></tr></table></figure><ul><li>切换node版本到v14.17.3</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nvm use 14.17.3<br></code></pre></td></tr></table></figure><ul><li>切换到iojs</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nvm use iojs-v3.2.0<br></code></pre></td></tr></table></figure><ul><li>列出已经安装的版本</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nvm <span class="hljs-built_in">ls</span><br></code></pre></td></tr></table></figure><ul><li>卸载node v8.16.0</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">nvm uninstall 8.16.0<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tech</category>
+      
+      <category>Nodejs</category>
+      
+      <category>nvm</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>npm - Nodejs</tag>
+      
+      <tag>nvm</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Git-1-QuickStart</title>
+    <link href="/%5Bobject%20Object%5D/Tech/Git/Git-QuickStart/"/>
+    <url>/%5Bobject%20Object%5D/Tech/Git/Git-QuickStart/</url>
+    
+    <content type="html"><![CDATA[<h1 id="创建新仓库"><a href="#创建新仓库" class="headerlink" title="创建新仓库"></a>创建新仓库</h1><ul><li><p>创建新文件夹，打开</p></li><li><p>执行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git init<br></code></pre></td></tr></table></figure></li><li><p>创建成功</p></li></ul><h1 id="检出仓库"><a href="#检出仓库" class="headerlink" title="检出仓库"></a>检出仓库</h1><p>执行如下命令以创建一个本地仓库的克隆版本</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> /path/to/repository<br></code></pre></td></tr></table></figure><p>如果是远端服务器上的仓库，你的命令会是这个样子</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> username@host:/path/to/repository<br></code></pre></td></tr></table></figure><h1 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h1><p>你的本地仓库由git维护的三棵“树”组成。</p><ul><li>第一个是你的<code>工作目录</code>——它持有实际文件</li><li>第二个是<code>暂存区</code>——它像个缓存区域，临时保存你的改动</li><li>最后是<code>HEAD</code>——它指向你最后一次提交的结果</li></ul><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205302111666.png" alt="image-20220530211138602"></p><h1 id="提交和添加"><a href="#提交和添加" class="headerlink" title="提交和添加"></a>提交和添加</h1><p>你可以提出更改（把它们添加到暂存区），使用如下命令：<br><code>git add &lt;filename&gt;</code><br><code>git add *</code></p><p>使用如下命令以实际提交改动：<br><code>git commit -m &quot;代码提交信息&quot;</code><br>现在，你的改动已经提交到了 <strong>HEAD</strong>，但是还没到你的远端仓库。</p><h1 id="推送改动"><a href="#推送改动" class="headerlink" title="推送改动"></a>推送改动</h1><p>你的改动现在已经在本地仓库的 <strong>HEAD</strong> 中了。执行如下命令以将这些改动提交到远端仓库：<br><code>git push origin master</code><br>可以把 <em>master</em> 换成你想要推送的任何分支。</p><p>如果你还没有克隆现有仓库，并欲将你的仓库连接到某个远程服务器，你可以使用如下命令添加：<br><code>git remote add origin &lt;server&gt;</code><br>如此你就能够将你的改动推送到所添加的服务器上去了。</p><blockquote><p>此时可能会产生错误</p><p>“<a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#x69;&#116;&#104;&#117;&#98;&#46;&#99;&#x6f;&#x6d;">&#103;&#x69;&#x74;&#64;&#103;&#x69;&#116;&#104;&#117;&#98;&#46;&#99;&#x6f;&#x6d;</a>: Permission denied (publickey).</p><p>解决方案见下一个条目</p></blockquote><h1 id="SSH-Keys配置"><a href="#SSH-Keys配置" class="headerlink" title="SSH Keys配置"></a>SSH Keys配置</h1><ol><li><p>验证邮箱是否与Github注册时输入的是否一致<img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205302129853.png" alt="image-20220530212953813" style="zoom: 200%;" /></p></li><li><p>在<code>/Users/***/</code>路径下生成一个.ssh文件夹，密钥存储在其中</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa -C <br></code></pre></td></tr></table></figure><p>ssh-keygen -t rsa -C “这里换上你的邮箱”，一路回车，在出现选择时输入Y，再一路回车直到生成密钥</p></li><li><p>到git仓库，添加密钥<img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205302136034.png" alt="image-20220530213602990"></p><p>不是上图所在的项目设置，而是下图所示的帐号设置</p><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205302138253.png" alt="image-20220530213840199"></p></li></ol><p>​<img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205302142393.png" alt="image-20220530214235336"></p><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205302143147.png" alt="image-20220530214323095"></p><ul><li>title中输入sshKey的名称</li><li>Key中输入pub文件的内容</li></ul><ol start="4"><li>再次使用push查看是否能够推送项目内容</li></ol><blockquote><p>! [rejected]        main -&gt; main (fetch first)<br>error: 推送一些引用到 ‘<a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#x68;&#117;&#98;&#46;&#99;&#111;&#x6d;">&#103;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#x68;&#117;&#98;&#46;&#99;&#111;&#x6d;</a>:jdccccc&#x2F;MyNotes.git’ 失败<br>提示：更新被拒绝，因为远程仓库包含您本地尚不存在的提交。这通常是因为另外<br>提示：一个仓库已向该引用进行了推送。再次推送前，您可能需要先整合远程变更<br>提示：（如 ‘git pull …’）。<br>提示：详见 ‘git push –help’ 中的 ‘Note about fast-forwards’ 小节。</p></blockquote><!--此时推送可能会出现上述错误，请不要灰心，还剩最后一步pull就可以完成基本的操作啦--><h1 id="更新与合并"><a href="#更新与合并" class="headerlink" title="更新与合并"></a>更新与合并</h1><ol><li><p>更新修改（<strong>git fetch</strong> 命令用于从远程获取代码库。）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git fetch origin<br></code></pre></td></tr></table></figure></li><li><p>查看分支</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git branch -a<br></code></pre></td></tr></table></figure></li><li><p>合并</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git merge origin/master<br></code></pre></td></tr></table></figure></li><li><p>初学者可以选择强行覆盖，这样以本地为准</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git push origin master -f<br></code></pre></td></tr></table></figure></li></ol><h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><p>分支是用来将特性开发绝缘开来的。在你创建仓库的时候，<em>master</em> 是“默认的”分支。在其他分支上进行开发，完成后再将它们合并到主分支上。</p><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205302155390.png" alt="image-20220530215500378"></p><p>创建一个叫做“feature_x”的分支，并切换过去：<br><code>git checkout -b feature_x</code><br>切换回主分支：<br><code>git checkout master</code><br>再把新建的分支删掉：<br><code>git branch -d feature_x</code><br>除非你将分支推送到远端仓库，不然该分支就是 <em>不为他人所见的</em>：<br><code>git push origin &lt;branch&gt;</code></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tech</category>
+      
+      <category>Git</category>
+      
+      <category>QuickStart</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>QuickStart</tag>
+      
+      <tag>Git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Git总结</title>
+    <link href="/%5Bobject%20Object%5D/Tech/Git/Git%E6%80%BB%E7%BB%93/"/>
+    <url>/%5Bobject%20Object%5D/Tech/Git/Git%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="第一阶段——基础使用"><a href="#第一阶段——基础使用" class="headerlink" title="第一阶段——基础使用"></a>第一阶段——基础使用</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">git init<br>git config --global **<br>git add *<br>git commit -m <span class="hljs-string">&quot;tips&quot;</span><br>git remote add origin &lt;server&gt;<br>git push origin main -f<br></code></pre></td></tr></table></figure><h1 id="第二阶段——分支、更新与合并"><a href="#第二阶段——分支、更新与合并" class="headerlink" title="第二阶段——分支、更新与合并"></a>第二阶段——分支、更新与合并</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tech</category>
+      
+      <category>Git</category>
+      
+      <category>Summary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Git</tag>
+      
+      <tag>Summary</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title></title>
+    <link href="/%5Bobject%20Object%5D/Tech/Hexo/Hexo%E6%96%87%E7%AB%A0%E8%BF%81%E7%A7%BB/"/>
+    <url>/%5Bobject%20Object%5D/Tech/Hexo/Hexo%E6%96%87%E7%AB%A0%E8%BF%81%E7%A7%BB/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hexo+GitPage+绑定域名</title>
+    <link href="/%5Bobject%20Object%5D/Tech/Hexo/Hexo+GitPage+%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/"/>
+    <url>/%5Bobject%20Object%5D/Tech/Hexo/Hexo+GitPage+%E7%BB%91%E5%AE%9A%E5%9F%9F%E5%90%8D/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p><a href="https://segmentfault.com/a/1190000017986794">参考文档</a></p></blockquote><h1 id="部署到gitpage上"><a href="#部署到gitpage上" class="headerlink" title="部署到gitpage上"></a>部署到gitpage上</h1><h2 id="创建仓库-lt-username-gt-github-io"><a href="#创建仓库-lt-username-gt-github-io" class="headerlink" title="创建仓库&lt;username&gt;.github.io"></a>创建仓库<code>&lt;username&gt;.github.io</code></h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310933296.png" alt="image-20220531093316260"></p><h2 id="配置hexo配置文件"><a href="#配置hexo配置文件" class="headerlink" title="配置hexo配置文件"></a>配置hexo配置文件</h2><p>此时，本地和Github的工作做得差不了，是时候把它们两个连接起来了。你也可以查看官网的<a href="https://link.segmentfault.com/?enc=dN02Q0sqSAN5+BqivzbPEA==.x+WYsbR7uzbUhdA3Gunw8rHqtkYxJ1Xd0no8muPe0Msn/CxcLUAJ4NcnW8jdGpnP">部署</a>教程。<br>先不着急，部署之前还需要修改配置和安装部署插件。</p><p>第一：打开项目根目录下的 _config.yml 配置文件配置参数。拉到文件末尾，填上如下配置（也可同时部署到多个仓库，后面再说）：</p><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310914320.jpeg" alt="image"></p><p>或者使用ssh方式</p><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310922257.png" alt="image-20220531092221222"></p><p>第二：要安装一个部署插件 <a href="https://link.segmentfault.com/?enc=6SRl78U569dKjJ/UlbF7+Q==.YXWWneUk+t9x5PtjBTpOQqgRIZDpvH2DWldDGEz70nURFoZNgcoX/S237IRxDXit">hexo-deployer-git</a>。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure><p>最后执行以下命令就可以部署上传啦，以下 g 是 generate 缩写，d 是 deploy 缩写：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo g -d<br></code></pre></td></tr></table></figure><p>稍等一会，在浏览器访问网址： <a href="https://link.segmentfault.com/?enc=cRQ4jlkzZcy9HNfjBn3n0A==.8ey6SxdfQ6MtSoIwrP+LpawRSp0B/pTzOjIzf4gNpAhWyrAx7KzWNKI+vmO1SGxo0zc0CoZIcC6EQPqsY0BSoA==">https:&#x2F;&#x2F;你的用户名.github.io</a> 就会看到你的博客啦！！</p><h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><p>首先需要在云平台注册一个域名，方法请另行查阅</p><p>此处以华为云为例说明</p><ol><li><p>首先进入到华为云的域名管理界面<img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310938660.png" alt="image-20220531093836616"></p></li><li><p>点击解析进入解析界面<img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310940839.png" alt="image-20220531094021805"></p></li><li><p>添加解析记录集,如图仿照添加两条<img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310945826.png" alt="image-20220531094520762"></p><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310946157.png" alt="image-20220531094620116"></p></li><li><p>进入仓库在设置中找到自定义域名选项，如图<img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310951285.png" alt="image-20220531095149186"></p></li><li><p>此时仓库中会生成一个CNAME文件<img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310953903.png" alt="image-20220531095341861"></p></li><li><p>将CNAME文件设置到本地，即本地新建CNAME文件填入相同内容，放入到hexo博客所在目录的source文件夹下，否则每次更新博客上传后CNAME文件都会被删除，从而导致域名无法解析</p></li><li><p>设置完成后，既可以使用自己的域名访问博客啦<img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202205310959342.png" alt="image-20220531095913030"></p></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tech</category>
+      
+      <category>Hexo</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Hexo</tag>
+      
+      <tag>GitPage - 域名</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hexo-QuickStart</title>
+    <link href="/%5Bobject%20Object%5D/Tech/Hexo/Hexo-QuickStart/"/>
+    <url>/%5Bobject%20Object%5D/Tech/Hexo/Hexo-QuickStart/</url>
+    
+    <content type="html"><![CDATA[<h1 id="安装前提"><a href="#安装前提" class="headerlink" title="安装前提"></a>安装前提</h1><h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><p>见Git相关博客</p><h2 id="安装Node-js见"><a href="#安装Node-js见" class="headerlink" title="安装Node.js见"></a>安装Node.js见</h2><p>Node.js相关博客</p><h2 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ npm install -g hexo-cli<br></code></pre></td></tr></table></figure><h1 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h1><p>安装 Hexo 完成后，请执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo init &lt;folder&gt;<br>$ <span class="hljs-built_in">cd</span> &lt;folder&gt;<br>$ npm install<br></code></pre></td></tr></table></figure><p>新建完成后，指定文件夹的目录如下：</p><figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs sqf">.<br>├── <span class="hljs-variable">_config</span>.yml<br>├── package.json<br>├── scaffolds<br>├── source<br>|   ├── <span class="hljs-variable">_drafts</span><br>|   └── <span class="hljs-variable">_posts</span><br>└── themes<br></code></pre></td></tr></table></figure><h2 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h2><p>网站的 <a href="https://hexo.bootcss.com/docs/configuration.html">配置</a> 信息，您可以在此配置大部分的参数。</p><h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><p>应用程序的信息。<a href="https://ejs.co/">EJS</a>, <a href="http://learnboost.github.io/stylus/">Stylus</a> 和 <a href="http://daringfireball.net/projects/markdown/">Markdown</a> renderer 已默认安装，您可以自由移除。</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs json">package.json<span class="hljs-punctuation">&#123;</span><br>  <span class="hljs-attr">&quot;name&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;hexo-site&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;0.0.0&quot;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;private&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;hexo&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;version&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&quot;</span><br>  <span class="hljs-punctuation">&#125;</span><span class="hljs-punctuation">,</span><br>  <span class="hljs-attr">&quot;dependencies&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;hexo&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^3.8.0&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;hexo-generator-archive&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^0.1.5&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;hexo-generator-category&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^0.1.3&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;hexo-generator-index&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^0.2.1&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;hexo-generator-tag&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^0.2.0&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;hexo-renderer-ejs&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^0.3.1&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;hexo-renderer-stylus&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^0.3.3&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;hexo-renderer-marked&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^0.3.2&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;hexo-server&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;^0.3.3&quot;</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure><h2 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds"></a>scaffolds</h2><p><a href="https://hexo.bootcss.com/docs/writing.html">模版</a> 文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。</p><p>Hexo的模板是指在新建的文章文件中默认填充的内容。例如，如果您修改scaffold&#x2F;post.md中的Front-matter内容，那么每次新建一篇文章时都会包含这个修改。</p><h2 id="source"><a href="#source" class="headerlink" title="source"></a>source</h2><p>资源文件夹是存放用户资源的地方。除 <code>_posts</code> 文件夹之外，开头命名为 <code>_</code> (下划线)的文件 &#x2F; 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 <code>public</code> 文件夹，而其他文件会被拷贝过去。</p><h2 id="themes"><a href="#themes" class="headerlink" title="themes"></a>themes</h2><p><a href="https://hexo.bootcss.com/docs/themes.html">主题</a> 文件夹。Hexo 会根据主题来生成静态页面。</p><blockquote><p><a href="https://hexo.bootcss.com/docs/configuration.html">https://hexo.bootcss.com/docs/configuration.html</a>)</p></blockquote><h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><h2 id="init"><a href="#init" class="headerlink" title="init"></a>init</h2><p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo init [folder]<br></code></pre></td></tr></table></figure><h2 id="new"><a href="#new" class="headerlink" title="new"></a>new</h2><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss">$ hexo <span class="hljs-keyword">new</span> [layout] &lt;<span class="hljs-built_in">title</span>&gt;<br></code></pre></td></tr></table></figure><p>新建一篇文章。如果没有设置 <code>layout</code> 的话，默认使用 <a href="https://hexo.bootcss.com/docs/configuration.html">_config.yml</a> 中的 <code>default_layout</code> 参数代替。如果标题包含空格的话，请使用引号括起来。</p><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs actionscript">$ hexo <span class="hljs-keyword">new</span> <span class="hljs-string">&quot;post title with whitespace&quot;</span><br></code></pre></td></tr></table></figure><table><thead><tr><th align="left">参数</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left"><code>-p</code>, <code>--path</code></td><td align="left">自定义新文章的路径</td></tr><tr><td align="left"><code>-r</code>, <code>--replace</code></td><td align="left">如果存在同名文章，将其替换</td></tr><tr><td align="left"><code>-s</code>, <code>--slug</code></td><td align="left">文章的 Slug，作为新文章的文件名和发布后的 URL</td></tr></tbody></table><p>默认情况下，Hexo 会使用文章的标题来决定文章文件的路径。对于独立页面来说，Hexo 会创建一个以标题为名字的目录，并在目录中放置一个 <code>index.md</code> 文件。你可以使用 <code>--path</code> 参数来覆盖上述行为、自行决定文件的目录：</p><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs haxe">hexo <span class="hljs-keyword">new</span> <span class="hljs-type">page</span> --path about/me <span class="hljs-string">&quot;About me&quot;</span><br></code></pre></td></tr></table></figure><p>以上命令会创建一个 <code>source/about/me.md</code> 文件，同时 Front Matter 中的 title 为 <code>&quot;About me&quot;</code></p><p>注意！title 是必须指定的！如果你这么做并不能达到你的目的：</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ada">hexo <span class="hljs-keyword">new</span> page <span class="hljs-comment">--path about/me</span><br></code></pre></td></tr></table></figure><p>此时 Hexo 会创建 <code>source/_posts/about/me.md</code>，同时 <code>me.md</code> 的 Front Matter 中的 title 为 <code>&quot;page&quot;</code>。这是因为在上述命令中，hexo-cli 将 <code>page</code> 视为指定文章的标题、并采用默认的 <code>layout</code>。</p><h2 id="generate"><a href="#generate" class="headerlink" title="generate"></a>generate</h2><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs verilog">$ hexo <span class="hljs-keyword">generate</span><br></code></pre></td></tr></table></figure><p>生成静态文件。</p><h2 id="server"><a href="#server" class="headerlink" title="server"></a>server</h2><figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs axapta">$ hexo <span class="hljs-keyword">server</span><br></code></pre></td></tr></table></figure><p>启动服务器。默认情况下，访问网址为： <code>http://localhost:4000/</code>。</p><h2 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h2><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crystal"><span class="hljs-variable">$ </span>hexo deploy<br></code></pre></td></tr></table></figure><p>部署网站。</p><table><thead><tr><th align="left">参数</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left"><code>-g</code>, <code>--generate</code></td><td align="left">部署之前预先生成静态文件</td></tr></tbody></table><p>该命令可以简写为：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo d<br></code></pre></td></tr></table></figure><h2 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo clean<br></code></pre></td></tr></table></figure><p>清除缓存文件 (<code>db.json</code>) 和已生成的静态文件 (<code>public</code>)。</p><p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p><h1 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h1><p>你可以执行下列命令来创建一篇新文章或者新的页面。</p><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs gauss">$ hexo <span class="hljs-keyword">new</span> [layout] &lt;<span class="hljs-built_in">title</span>&gt;<br></code></pre></td></tr></table></figure><p>您可以在命令中指定文章的布局（layout），默认为 <code>post</code>，可以通过修改 <code>_config.yml</code> 中的 <code>default_layout</code> 参数来指定默认布局。</p><h2 id="布局（Layout）"><a href="#布局（Layout）" class="headerlink" title="布局（Layout）"></a>布局（Layout）</h2><p>Hexo 有三种默认布局：<code>post</code>、<code>page</code> 和 <code>draft</code>。在创建这三种不同类型的文件时，它们将会被保存到不同的路径；而您自定义的其他布局和 <code>post</code> 相同，都将储存到 <code>source/_posts</code> 文件夹。</p><table><thead><tr><th align="left">布局</th><th align="left">路径</th></tr></thead><tbody><tr><td align="left"><code>post</code></td><td align="left"><code>source/_posts</code></td></tr><tr><td align="left"><code>page</code></td><td align="left"><code>source</code></td></tr><tr><td align="left"><code>draft</code></td><td align="left"><code>source/_drafts</code></td></tr></tbody></table><h2 id="文件名称"><a href="#文件名称" class="headerlink" title="文件名称"></a>文件名称</h2><p>Hexo 默认以标题做为文件名称，但您可编辑 <code>new_post_name</code> 参数来改变默认的文件名称，举例来说，设为 <code>:year-:month-:day-:title.md</code> 可让您更方便的通过日期来管理文章。</p><table><thead><tr><th align="left">变量</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left"><code>:title</code></td><td align="left">标题（小写，空格将会被替换为短杠）</td></tr><tr><td align="left"><code>:year</code></td><td align="left">建立的年份，比如， <code>2015</code></td></tr><tr><td align="left"><code>:month</code></td><td align="left">建立的月份（有前导零），比如， <code>04</code></td></tr><tr><td align="left"><code>:i_month</code></td><td align="left">建立的月份（无前导零），比如， <code>4</code></td></tr><tr><td align="left"><code>:day</code></td><td align="left">建立的日期（有前导零），比如， <code>07</code></td></tr><tr><td align="left"><code>:i_day</code></td><td align="left">建立的日期（无前导零），比如， <code>7</code></td></tr></tbody></table><h2 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h2><p>刚刚提到了 Hexo 的一种特殊布局：<code>draft</code>，这种布局在建立时会被保存到 <code>source/_drafts</code> 文件夹，您可通过 <code>publish</code> 命令将草稿移动到 <code>source/_posts</code> 文件夹，该命令的使用方式与 <code>new</code> 十分类似，您也可在命令中指定 <code>layout</code> 来指定布局。</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs xml">$ hexo publish [layout] <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><br></code></pre></td></tr></table></figure><p>草稿默认不会显示在页面中，您可在执行时加上 <code>--draft</code> 参数，或是把 <code>render_drafts</code> 参数设为 <code>true</code> 来预览草稿。</p><h2 id="模版（Scaffold）"><a href="#模版（Scaffold）" class="headerlink" title="模版（Scaffold）"></a>模版（Scaffold）</h2><p>在新建文章时，Hexo 会根据 <code>scaffolds</code> 文件夹内相对应的文件来建立文件，例如：</p><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs haxe">$ hexo <span class="hljs-keyword">new</span> <span class="hljs-type">photo</span> <span class="hljs-string">&quot;My Gallery&quot;</span><br></code></pre></td></tr></table></figure><p>在执行这行指令时，Hexo 会尝试在 <code>scaffolds</code> 文件夹中寻找 <code>photo.md</code>，并根据其内容建立文章，以下是您可以在模版中使用的变量：</p><table><thead><tr><th align="left">变量</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left"><code>layout</code></td><td align="left">布局</td></tr><tr><td align="left"><code>title</code></td><td align="left">标题</td></tr><tr><td align="left"><code>date</code></td><td align="left">文件建立日期</td></tr></tbody></table><h1 id="Front-matter"><a href="#Front-matter" class="headerlink" title="Front-matter"></a>Front-matter</h1><p>Front-matter 是文件最上方以 <code>---</code> 分隔的区域，用于指定个别文件的变量，举例来说：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-meta">---</span><br><span class="hljs-attr">title:</span> <span class="hljs-string">Hello</span> <span class="hljs-string">World</span><br><span class="hljs-attr">date:</span> <span class="hljs-number">2013</span><span class="hljs-string">/7/13</span> <span class="hljs-number">20</span><span class="hljs-string">:46:25</span><br><span class="hljs-meta">---</span><br></code></pre></td></tr></table></figure><p>以下是预先定义的参数，您可在模板中使用这些参数值并加以利用。</p><table><thead><tr><th align="left">参数</th><th align="left">描述</th><th align="left">默认值</th></tr></thead><tbody><tr><td align="left"><code>layout</code></td><td align="left">布局</td><td align="left"><a href="https://hexo.bootcss.com/zh-cn/docs/configuration#%E6%96%87%E7%AB%A0"><code>config.default_layout</code></a></td></tr><tr><td align="left"><code>title</code></td><td align="left">标题</td><td align="left">文章的文件名</td></tr><tr><td align="left"><code>date</code></td><td align="left">建立日期</td><td align="left">文件建立日期</td></tr><tr><td align="left"><code>updated</code></td><td align="left">更新日期</td><td align="left">文件更新日期</td></tr><tr><td align="left"><code>comments</code></td><td align="left">开启文章的评论功能</td><td align="left">true</td></tr><tr><td align="left"><code>tags</code></td><td align="left">标签（不适用于分页）</td><td align="left"></td></tr><tr><td align="left"><code>categories</code></td><td align="left">分类（不适用于分页）</td><td align="left"></td></tr></tbody></table><h2 id="分类和标签"><a href="#分类和标签" class="headerlink" title="分类和标签"></a>分类和标签</h2><p>只有文章支持分类和标签，您可以在 Front-matter 中设置。在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性，也就是说 <code>Foo, Bar</code> 不等于 <code>Bar, Foo</code>；而标签没有顺序和层次。</p><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs subunit">categories:<br>- Diary<br><span class="hljs-keyword">tags:</span><br>- PS3<br>- Games<br></code></pre></td></tr></table></figure><blockquote><p>分类方法的分歧</p><p>如果您有过使用 WordPress 的经验，就很容易误解 Hexo 的分类方式。WordPress 支持对一篇文章设置多个分类，而且这些分类可以是同级的，也可以是父子分类。但是 Hexo 不支持指定多个同级分类。下面的指定方法：</p><figure class="highlight nestedtext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs nestedtext"><span class="hljs-attribute">categories</span><span class="hljs-punctuation">:</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Diary</span><br>  <span class="hljs-bullet">-</span> <span class="hljs-string">Life</span><br></code></pre></td></tr></table></figure><p>会使分类<code>Life</code>成为<code>Diary</code>的子分类，而不是并列分类。因此，有必要为您的文章选择尽可能准确的分类。</p><p>如果你需要为文章添加多个分类，可以尝试以下 list 中的方法。</p><figure class="highlight ldif"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs ldif"><span class="hljs-attribute">categories</span>:<br><span class="hljs-literal">-</span> [Diary, PlayStation]<br><span class="hljs-literal">-</span> [Diary, Games]<br><span class="hljs-literal">-</span> [Life]<br></code></pre></td></tr></table></figure><p>此时这篇文章同时包括三个分类： <code>PlayStation</code> 和 <code>Games</code> 分别都是父分类 <code>Diary</code> 的子分类，同时 <code>Life</code> 是一个没有子分类的分类。</p></blockquote><h1 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h1><h2 id="静态模式"><a href="#静态模式" class="headerlink" title="静态模式"></a>静态模式</h2><p>在静态模式下，服务器只处理 <code>public</code> 文件夹内的文件，而不会处理文件变动，在执行时，您应该先自行执行 <code>hexo generate</code>，此模式通常用于生产环境（production mode）下。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server -s<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tech</category>
+      
+      <category>Hexo</category>
+      
+      <category>QuickStart</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>QuickStart</tag>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Hexo总结</title>
+    <link href="/%5Bobject%20Object%5D/Tech/Hexo/Hexo%E6%80%BB%E7%BB%93/"/>
+    <url>/%5Bobject%20Object%5D/Tech/Hexo/Hexo%E6%80%BB%E7%BB%93/</url>
+    
+    <content type="html"><![CDATA[<h1 id="第一阶段——本地使用"><a href="#第一阶段——本地使用" class="headerlink" title="第一阶段——本地使用"></a>第一阶段——本地使用</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo init<br>hexo new &lt;filename&gt;<br>hexo generate<br>hexo serve<br></code></pre></td></tr></table></figure><h1 id="第二阶段——推送部署"><a href="#第二阶段——推送部署" class="headerlink" title="第二阶段——推送部署"></a>第二阶段——推送部署</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo d<br></code></pre></td></tr></table></figure><h1 id="第三阶段——文章迁移"><a href="#第三阶段——文章迁移" class="headerlink" title="第三阶段——文章迁移"></a>第三阶段——文章迁移</h1>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tech</category>
+      
+      <category>Hexo</category>
+      
+      <category>Summary</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Summary</tag>
+      
+      <tag>Hexo</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Qv2ray科学上网</title>
+    <link href="/%5Bobject%20Object%5D/Tech/Qv2ray/Qv2ray%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
+    <url>/%5Bobject%20Object%5D/Tech/Qv2ray/Qv2ray%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/</url>
+    
+    <content type="html"><![CDATA[<h1 id="获取Qv2ray"><a href="#获取Qv2ray" class="headerlink" title="获取Qv2ray"></a>获取Qv2ray</h1><h2 id="来自软件包管理器"><a href="#来自软件包管理器" class="headerlink" title="来自软件包管理器"></a>来自软件包管理器</h2><h3 id="Linux：Deepin"><a href="#Linux：Deepin" class="headerlink" title="Linux：Deepin"></a>Linux：Deepin</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install gnupg ca-certificates curl<br></code></pre></td></tr></table></figure><h3 id="为Debian安装Qv2ray稳定版本"><a href="#为Debian安装Qv2ray稳定版本" class="headerlink" title="为Debian安装Qv2ray稳定版本"></a>为Debian安装Qv2ray稳定版本</h3><p>添加Qv2ray公钥到你的系统：</p><p>导入我们的GPG密钥</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">curl https://raw.fastgit.org/Qv2ray/debian/master/pubkey.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/qv2ray-stable-archive.gpg<br></code></pre></td></tr></table></figure><h3 id="主存储库"><a href="#主存储库" class="headerlink" title="主存储库"></a>主存储库</h3><p>添加官方APT存储库</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;deb [arch=amd64] https://qv2ray.net/debian/ stable main&quot;</span> | sudo <span class="hljs-built_in">tee</span> /etc/apt/sources.list.d/qv2ray.list<br></code></pre></td></tr></table></figure><p>更新APT索引</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt update<br></code></pre></td></tr></table></figure><p>安装Qv2ray</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install qv2ray<br></code></pre></td></tr></table></figure><blockquote><p>出现错误：E: 无法修正错误，因为您要求某些软件包保持现状，就是它们破坏了软件包间的依赖关系。</p><p>解决办法：（最终aptitude也希望不安装qv2ray故而失败）</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment">#使用aptitude进行安装，aptitude 会对依赖关系进行智能处理</span><br>sudo apt-get install aptitude<br>sudo aptitude install &lt;package name&gt;<br></code></pre></td></tr></table></figure></blockquote><!--最终本方法失败，可能是由于qv2ray版本过老--><h2 id="来自应用商店"><a href="#来自应用商店" class="headerlink" title="来自应用商店"></a>来自应用商店</h2><p>商店中直接搜索<code>qv2ray</code>下载</p><h1 id="配置V2Ray-Core"><a href="#配置V2Ray-Core" class="headerlink" title="配置V2Ray Core"></a>配置V2Ray Core</h1><ul><li>V2Ray仓库下载V2ray压缩文件</li><li>解压到Qv2ray的默认核心目录</li></ul><blockquote><p>注意不能够使用v5版本的v2ray,尽量使用v4版本的v2ray</p><p>v5版本的v2ray可能会出现qv2ray执行权限不足的情况</p></blockquote><h1 id="订阅"><a href="#订阅" class="headerlink" title="订阅"></a>订阅</h1><ol><li>在主窗口中点击 <strong>组编辑器</strong> 按钮打开 <strong>组编辑器</strong></li><li>点击 <strong>在左下角添加</strong> 组图标按钮 <strong><a href="qv2ray://open/group/connection">组编辑器</a></strong> 窗口。</li><li>选择 <strong>分组列表</strong>中创建的项目，其详细信息将显示在右侧。</li><li>切换到<strong>订阅设置</strong>面板并完成配置：<ol><li>编辑 <strong>分组名称</strong>。</li><li>勾选 <strong>此组是一个订阅</strong>。</li><li>设置以下字段：<ul><li><strong>订阅地址</strong>：使用上面提到的 <strong>订阅链接</strong></li><li><strong>订阅类型</strong>：如果默认值无法工作，请将其更改为另一值。</li></ul></li><li>可选更改这些字段：<ul><li><strong>更新间隔</strong>：当订阅需要在启动时更新时，Qv2ray 会通知您。根据您自己的要求更改它。</li><li><strong>导入过滤器</strong>：Qv2ray 可以过滤从您的订阅中导入的节点。你可以自己研究出使用方法。</li></ul></li></ol></li><li>点击 <strong>更新订阅</strong> 按钮并等待完成。</li><li>点击 <strong>确定</strong> 应用设置并关闭对话框。</li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tech</category>
+      
+      <category>Qv2ray</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Deepin</tag>
+      
+      <tag>Qv2ray - V2Ray</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>如何在Typora中使用图床</title>
+    <link href="/%5Bobject%20Object%5D/Tech/Typora/%E5%A6%82%E4%BD%95%E5%9C%A8Typora%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%9B%BE%E5%BA%8A/"/>
+    <url>/%5Bobject%20Object%5D/Tech/Typora/%E5%A6%82%E4%BD%95%E5%9C%A8Typora%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%9B%BE%E5%BA%8A/</url>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.jianshu.com/p/4a29945ad69c">Github+PicGO+jsDelivr创建免费、稳定图床</a></p><p><a href="https://www.jianshu.com/p/a3371dc5802e">Typora如何通过PicGo自动上传图片到图床</a></p><h1 id="工具选择"><a href="#工具选择" class="headerlink" title="工具选择"></a>工具选择</h1><ol><li>Github——用来存放图片，目前投入微软怀抱，后台硬，不会随便倒闭</li><li>PicGo是一个用于快速上传图片并获取URL链接的工具，通过访问该链接访问网络图片资源</li><li>jsDelivr是用于开源项目的免费公共CDN（内容分发网络），用来加速Github的访问速度</li></ol><h1 id="如何创建图床"><a href="#如何创建图床" class="headerlink" title="如何创建图床"></a>如何创建图床</h1><ol><li><p>在GitHub上新建一个仓库</p><ul><li>可以叫做PictureBed</li></ul></li><li><p>在GitHub中生成一个Token</p><ul><li>进入个人设置 <code>Settings -&gt; Developer settings -&gt; Personal access tokens -&gt; Generate new token</code></li><li>在<code>Note</code>中填好描述，勾选<code>repo</code>，然后点击<code>Generate token</code>生成一个Token</li><li>注意这个Token只会显示一次，所以，需要保存下来</li></ul></li><li><p>配置PicGo</p><ol><li><p>前往PicGo的GitHub仓库下载，<a href="https://links.jianshu.com/go?to=https://github.com/Molunerfinn/PicGo/releases">传送门</a>。如果下载较慢，可以复制地址到迅雷下载，非常快！</p></li><li><p>下载后点击安装，弹出配置窗口</p><ul><li>设定仓库名：按照 <code>用户名/图床仓库名</code> 的格式填写</li></ul></li></ol><ul><li>设定分支名：<code>master</code><ul><li>设定Token：填写之前在GitHub生成的Token</li></ul></li><li>指定存储路径：填写想要储存的路径，如 <code>BlogImg/</code>，这样就会在仓库下创建一个名为<code>BlogImg</code> 的文件夹，图片将会储存在此文件夹中<ul><li>设定自定义域名：图片上传后，PicGo 会按照 <code>自定义域名+储存路径+上传的图片名</code> 的方式生成访问链接，并放到粘贴板上</li></ul></li></ul><p></p><ol start="3"><li><p>设定自定义域名：我的自定义域名设置为 <code>https://cdn.jsdelivr.net/gh/chenshifangcheng/PictureBed</code>，</p><p>因为我们要使用 jsDelivr 加速访问，所以自定义域名可以设置为 <code>https://cdn.jsdelivr.net/gh/用户名/图床仓库名</code>，上传完毕后，就可以通过 <code>https://cdn.jsdelivr.net/gh/用户名/图床仓库名/储存路径/上传的图片名</code> 加速访问我们的图片了。存储路径为<code>BlogImg/</code>,  所以通过<code>https://cdn.jsdelivr.net/gh/chenshifangcheng/PictureBed/BlogImg/上传的图片名</code> 来加速访问。</p></li></ol></li></ol><h1 id="设置Typora插入图片时自动上传图片"><a href="#设置Typora插入图片时自动上传图片" class="headerlink" title="设置Typora插入图片时自动上传图片"></a>设置Typora插入图片时自动上传图片</h1><ol><li>进入“文件 -&gt; 偏好设置 -&gt; 图片”，在“插入图片时”区域，下拉框选择“上传图片”，勾选如下三项（勾选即开启自动上传）：</li></ol><ul><li><p>对本地位置的图片应用上述规则</p><ul><li><p>即当插入本地图片（包括从菜单中插入，截图，copy &amp; paste，drag &amp; drop）时，会自动上传该图片</p></li><li><p>插入截图时，首先会将截图自动保存在本地，然后再自动上传</p><p>本地路径：C:\Users&lt;User&gt;\AppData\Roaming\Typora\typora-user-images</p></li></ul></li><li><p>对网络位置的图片应用上述规则</p><ul><li>重新上传网络图片到你的图床（<del>我试验没成功</del>, 在最新的版本0.9.94中可以直接对网络图片上传，右击“上传图片”）</li></ul></li><li><p>允许根据 YAML 设置自动上传图片</p><ul><li><p>通过读取 YAML 配置来决定是否自动上传图片</p></li><li><p>在勾选该选项的前提下，在 Markdown 文件的 YAML front matter 中添加如下配置，则Typora会在你插入图片时自动上传图片：</p><p><code>typora-copy-images-to: upload</code></p></li></ul></li></ul><p></p><ol start="2"><li>在“上传服务设定”区域：</li></ol><ul><li>上传服务：下拉框选择 “PicGo(app)”，即通过PicGo app来上传图片</li><li>PicGo路径：选择PicGo的安装路径</li><li>下载PicGo(app)：如果本地没有安装，点击该按钮时会引导到PicGo安装页面</li><li>验证图片上传选项：点击该按钮来验证当前配置是否能成功上传图片到图床<ul><li>如果成功的话，会将Typora的两个logo上传到你的图床</li></ul></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tech</category>
+      
+      <category>Typora</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Typora</tag>
+      
+      <tag>PicGO</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>deepin优化设置</title>
+    <link href="/%5Bobject%20Object%5D/Tech/deepin/deepin%E4%BC%98%E5%8C%96%E8%AE%BE%E7%BD%AE/"/>
+    <url>/%5Bobject%20Object%5D/Tech/deepin/deepin%E4%BC%98%E5%8C%96%E8%AE%BE%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h1><h2 id="29-05-22"><a href="#29-05-22" class="headerlink" title="29.05.22"></a>29.05.22</h2><p>deepin美化主要使用系统设置</p><p>KDE、GNOME等设置暂时没有能力和精力配置，暂时搁置</p><h3 id="桌面美化"><a href="#桌面美化" class="headerlink" title="桌面美化"></a>桌面美化</h3><ul><li><p>桌面图标全部隐藏</p></li><li><p>在任务栏的启动器中搜索应用，运行应用后可在任务栏中固定</p></li><li><p>智能隐藏任务栏，会在其他窗口遮盖任务栏时隐藏任务栏</p></li></ul><h3 id="终端美化"><a href="#终端美化" class="headerlink" title="终端美化"></a>终端美化</h3><ul><li><p>点击终端右上角浏览菜单中的主题，可以更换颜色</p></li><li><p>设置中可以调整透明度</p></li></ul><h1 id="应用安装"><a href="#应用安装" class="headerlink" title="应用安装"></a>应用安装</h1><h2 id="29-05-22-1"><a href="#29-05-22-1" class="headerlink" title="29.05.22"></a>29.05.22</h2><p>目前我还不清楚Linux的软件安装机制，需要详细学习一下</p><h3 id="包管理及概念"><a href="#包管理及概念" class="headerlink" title="包管理及概念"></a>包管理及概念</h3><ul><li><p>包管理的作用是<strong>管理整个系统环境中的所有软件包</strong></p></li><li><p>支持从远程仓库下载、安装并自动处理依赖</p></li><li><p>deepin是基于Debian的Linux发行版</p><ul><li><p>因此使用apt作为包管理器</p></li><li><p>dpkg作为包管理器基础</p></li><li><p>两者都作为系统的一部分被预装在操作系统环境中</p></li></ul></li></ul><h4 id="软件包"><a href="#软件包" class="headerlink" title="软件包"></a>软件包</h4><ul><li><p>软件包可以看作整个系统的<strong>组成单元</strong>，操作系统由若干软件包和文件组成。</p></li><li><p>在deepin或其他基于Debian的发行版中，软件包的后缀名为<code>.deb</code>。</p></li><li><p>当在系统中安装某软件包时，需要先补齐该软件包所需的<strong>依赖</strong>。</p></li></ul><h4 id="包名"><a href="#包名" class="headerlink" title="包名"></a>包名</h4><p>软件包的<strong>唯一标识</strong>，一般情况下，相同包名的软件包不允许在系统中安装多个，即使版本不同。</p><h4 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h4><p>安装软件包时<strong>所需要的其他软件包</strong>。</p><ul><li><p>依赖可以设置版本作为可选条件，若系统中存在的依赖软件包版本与所需软件包要求不符，则视为该依赖包不满足</p></li><li><p><em>依赖地狱</em>：当软件包的依赖树过于复杂时，系统可能无法同时满足所有软件的依赖需求，此时我们可以将这种现象称为依赖地狱。举个简单的例子：软件包A依赖于1.0版本的软件包C，软件包B依赖于2.0版本的软件包C，此时软件包A和软件包C的1.0版本已经被安装，此时若想要安装软件包B，则需将软件包C的版本升级至2.0，但若这么做便导致软件包A的依赖无法被满足。</p></li></ul><h4 id="软件仓库"><a href="#软件仓库" class="headerlink" title="软件仓库"></a>软件仓库</h4><p>现代的软件包管理器支持从远程的软件包仓库中下载软件包机器依赖，减轻用户的依赖管理问题</p><h4 id="镜像仓库"><a href="#镜像仓库" class="headerlink" title="镜像仓库"></a>镜像仓库</h4><p>针对某些发行版所维护的软件仓库提供的镜像仓库</p><ul><li><p>某些发行版所提供的仓库可能由于种种原因，对于特定区域人群来说难以访问</p></li><li><p>镜像同步原仓库内容需要时间，可能更新略有延迟</p></li></ul><h3 id="apt的基本用法"><a href="#apt的基本用法" class="headerlink" title="apt的基本用法"></a>apt的基本用法</h3><h4 id="安装软件包"><a href="#安装软件包" class="headerlink" title="安装软件包"></a>安装软件包</h4><ul><li>安装一个本地包</li></ul><p>    自动从远程仓库中查找所需要的依赖，并同时安装到系统中。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install 包文件名 <br></code></pre></td></tr></table></figure><blockquote><p>包文件名必须是一个路径，可以是相对路径也可以是绝对路径，即使包文件就在当前目录下，也必须写成<code>./包文件名</code>的格式。</p></blockquote><ul><li><p>根据包名从远程仓库安装软件包</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install 包名<br></code></pre></td></tr></table></figure></li></ul><blockquote><p>deepin&#x2F;UOS 应用商店的规范要求应用的包名需要是域名倒置的格式，因此，gimp在应用商店仓库中的包名为：<code>org.gimp</code>。实际情况中，两者都可以成功安装gimp。这两者存在于不同的仓库中，<code>gimp</code>来自 Debian 上游的打包，而<code>org.gimp</code>则来自 deepin 商店团队的打包。</p></blockquote><h4 id="删除软件包"><a href="#删除软件包" class="headerlink" title="删除软件包"></a>删除软件包</h4><ul><li>删除一个已经安装成功的软件包</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt remove 包名     <br></code></pre></td></tr></table></figure><blockquote><p>不删除软件的配置文件</p></blockquote><ul><li>同时删除配置文件</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt purge 包名<br></code></pre></td></tr></table></figure><ul><li>删除一些版本更新导致的冗余依赖</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt autoremove<br></code></pre></td></tr></table></figure><h4 id="更新本地缓存"><a href="#更新本地缓存" class="headerlink" title="更新本地缓存"></a>更新本地缓存</h4><p>apt可以从远程仓库搜索和下载软件包，其机制是从远程仓库获取仓库中所有软件包的列表，并在需要的时候读取本地的列表文件。</p><p>列表中描述了<strong>软件仓库中存在哪些软件包以及基本信息</strong>，需要从远程仓库中获取软件包之间，需要先更新本地缓存，以保证本地的软件包列表与远程仓库中的列表保持一致。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt update<br></code></pre></td></tr></table></figure><blockquote><p>该操作会将远程仓库信息缓存到<code>/var/lib/apt/lists</code> </p></blockquote><h4 id="同步本地软件包版本（升级系统）"><a href="#同步本地软件包版本（升级系统）" class="headerlink" title="同步本地软件包版本（升级系统）"></a>同步本地软件包版本（升级系统）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt upgrade<br></code></pre></td></tr></table></figure><h3 id="dpkg的基本用法"><a href="#dpkg的基本用法" class="headerlink" title="dpkg的基本用法"></a>dpkg的基本用法</h3><p>dpkg作为包管理器的底层部分，通常情况下不推荐日常使用</p><ul><li><p>不能自动处理依赖关系</p></li><li><p>不支持从远程仓库获取软件包</p></li></ul><h4 id="安装软件包（-i-选项）"><a href="#安装软件包（-i-选项）" class="headerlink" title="安装软件包（-i 选项）"></a>安装软件包（-i 选项）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo dpkg -i 软件包文件名<br></code></pre></td></tr></table></figure><blockquote><p>这里无需像apt一样必须提供一个路径，若包文件就在当前目录，可直接输入文件名即可。</p></blockquote><h4 id="卸载软件包"><a href="#卸载软件包" class="headerlink" title="卸载软件包"></a>卸载软件包</h4><p>可以使用<code>-r</code>或<code>-P</code>选项，这两者可类比apt的<code>remove</code>命令和<code>purge</code>命令。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo dpkg -r 包名<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo dpkg -P 包名<br></code></pre></td></tr></table></figure><h4 id="查看文件所属包"><a href="#查看文件所属包" class="headerlink" title="查看文件所属包"></a>查看文件所属包</h4><p>系统中的文件可能所属于某个软件包，当软件包被卸载时将此类文件将被删除，要查看此类文件所对应的软件包，可使用<code>-S</code>选项：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo dpkg -S 文件名<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Tech</category>
+      
+      <category>deepin</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>deepin</tag>
+      
+      <tag>apt</tag>
+      
+      <tag>dpkg</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>

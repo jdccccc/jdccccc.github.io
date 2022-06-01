@@ -1,0 +1,820 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="LoveRain">
+  <meta name="keywords" content="Technology and Science">
+  
+    <meta name="description" content="计算机体系结构的研究内容纵向来看：  指令系统结构和CPU的微结构为核心  向下到晶体管级的电路结构  向上到应用程序编程接口（Application Programming Interface，简称API）   横向来看：  个人计算机和服务器的体系结构为核心 低端到手持移动终端和微控制器（Micro‑ControllerUnit，简称MCU）的体系结构 高端到高性能计算机（High Perfo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一章_引言">
+<meta property="og:url" content="http://loverain.tech/[object%20Object]/Theory/Computer%20Architecture/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AC%AC%E4%B8%80%E7%AB%A0_%E5%BC%95%E8%A8%80/index.html">
+<meta property="og:site_name" content="StarAndRain">
+<meta property="og:description" content="计算机体系结构的研究内容纵向来看：  指令系统结构和CPU的微结构为核心  向下到晶体管级的电路结构  向上到应用程序编程接口（Application Programming Interface，简称API）   横向来看：  个人计算机和服务器的体系结构为核心 低端到手持移动终端和微控制器（Micro‑ControllerUnit，简称MCU）的体系结构 高端到高性能计算机（High Perfo">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206011813125.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206011940126.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206012029431.png">
+<meta property="article:published_time" content="2022-06-01T09:54:08.849Z">
+<meta property="article:modified_time" content="2022-06-01T12:52:32.275Z">
+<meta property="article:author" content="LoveRain">
+<meta property="article:tag" content="计算机系统结构">
+<meta property="article:tag" content="学习记录">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206011813125.png">
+  
+  
+  
+  <title>第一章_引言 - StarAndRain</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"loverain.tech","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="第一章_引言"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-06-01 17:54" pubdate>
+          2022年6月1日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          22 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">第一章_引言</h1>
+            
+            <div class="markdown-body">
+              
+              <h1 id="计算机体系结构的研究内容"><a href="#计算机体系结构的研究内容" class="headerlink" title="计算机体系结构的研究内容"></a>计算机体系结构的研究内容</h1><p>纵向来看：</p>
+<ul>
+<li><p><strong>指令系统结构</strong>和<strong>CPU的微结构</strong>为核心</p>
+</li>
+<li><p>向下到晶体管级的电路结构</p>
+</li>
+<li><p>向上到应用程序编程接口（Application Programming Interface，简称API）</p>
+</li>
+</ul>
+<p>横向来看：</p>
+<ul>
+<li><strong>个人计算机</strong>和<strong>服务器</strong>的体系结构为核心</li>
+<li>低端到手持移动终端和微控制器（Micro‑Controller<br>Unit，简称MCU）的体系结构</li>
+<li>高端到高性能计算机（High Performance Computer，简称HPC）的体系结构</li>
+</ul>
+<h2 id="一以贯之"><a href="#一以贯之" class="headerlink" title="一以贯之"></a>一以贯之</h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206011813125.png" srcset="/img/loading.gif" lazyload alt="image-20220601181234820"></p>
+<p>计算机系统分成</p>
+<ul>
+<li>应用程序</li>
+<li>操作系统</li>
+<li>硬件系统</li>
+<li>晶体管</li>
+</ul>
+<p>三个界面：</p>
+<ul>
+<li>应用程序编程接口 API（Application Programming Interface），也可以称作 “操作系统的指令系统”<ul>
+<li>一种 API 编写的应用程序经重新编译后可以在支持该 API 的不同计算机上运行。</li>
+<li>API 是建生态的起点。</li>
+</ul>
+</li>
+<li>指令系统 ISA（Instruction Set Architecture）<ul>
+<li>指令系统是实现目标码兼容的关键，由于 IT 产业的主要应用都是通过目标码的形态发布的</li>
+<li>ISA 是软件兼容的关键，是生态建设的终点。</li>
+</ul>
+</li>
+<li>工艺模型</li>
+</ul>
+<p>需要指出：</p>
+<ul>
+<li><p>在 API 和 ISA 之间还有一层应用程序二进制接口（Application Binary Interface，简<br>称 ABI）。ABI 是应用程序访问计算机硬件及操作系统服务的接口，由计算机的用户态指令和操作<br>系统的系统调用组成</p>
+</li>
+<li><p>为了实现多进程访问共享资源的安全性，处理器设有 “用户态” 与 “核心态”。</p>
+<ul>
+<li>用户程序在用户态下执行，操作系统向用户程序提供具有预定功能的系统调用函数来访问<br>只有核心态才能访问的硬件资源。</li>
+<li>当用户程序调用系统调用函数时，处理器进入核心态执行诸如访问 IO 设备、修改处理器状态等只有核心态才能执行的指令。</li>
+<li>处理完系统调用后，处理器返回用户态执行用户代码。</li>
+<li>相同的应用程序二进制代码可以在相同 ABI 的不同计算机上运行。</li>
+</ul>
+</li>
+</ul>
+<p>从一般意义上说，计算机体系结构的研究内容包括</p>
+<ul>
+<li>指令系统结构</li>
+<li>硬件系统结构</li>
+<li>CPU内部的微结构</li>
+</ul>
+<h2 id="什么是计算机"><a href="#什么是计算机" class="headerlink" title="什么是计算机"></a>什么是计算机</h2><p>不管这个计算机的规模有多大，都是计算机体系结构的研究对象。</p>
+<h2 id="计算机的基本组成"><a href="#计算机的基本组成" class="headerlink" title="计算机的基本组成"></a>计算机的基本组成</h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206011940126.png" srcset="/img/loading.gif" lazyload alt="image-20220601194040384"></p>
+<p>冯·诺依曼结构的基本思想：</p>
+<p>数据和程序都在存储器中，CPU 从内存中取指令和数据进行运算并把结果也放到内存中。</p>
+<p><strong>冯·诺依曼结构最核心的思想是什么？</strong></p>
+<ul>
+<li><strong>存储程序</strong></li>
+<li><strong>指令驱动执行</strong></li>
+</ul>
+<h1 id="衡量计算机的指标"><a href="#衡量计算机的指标" class="headerlink" title="衡量计算机的指标"></a>衡量计算机的指标</h1><h2 id="计算机的性能"><a href="#计算机的性能" class="headerlink" title="计算机的性能"></a>计算机的性能</h2><ul>
+<li><p>计算机的首要指标</p>
+</li>
+<li><p>性能的最本质定义是 “<strong>完成一个任务所需要的时间</strong>”</p>
+</li>
+<li><p>完成一个任务所需要的时间可以由</p>
+<p>完成该任务需要的指令数</p>
+<p>完成每条指令需要的拍数</p>
+<p>以及每拍需要的时间三个量相乘得到。</p>
+<ul>
+<li>完成任务需要的指令数与算法、编译器和指令的功能有关；</li>
+<li>每条指令需要的拍数与编译器、指令功能、微结构设计相关；</li>
+<li>每拍需要的时间，也就是时钟周期，与结构、电路设计、工艺等因素有关。</li>
+</ul>
+</li>
+<li><p>在指令系统确定后，结构设计需要重点考虑如何<strong>降低每条指令的平均执行周期</strong>（Cycles Per In‑struction，简称CPI），或提高每个时钟周期平均执行的指令数（Instructions Per Cycle，简称IPC），这是<br><strong>处理器微结构研究的主要内容</strong>。</p>
+</li>
+</ul>
+<h2 id="计算机的价格"><a href="#计算机的价格" class="headerlink" title="计算机的价格"></a>计算机的价格</h2><p>计算机的成本跟芯片成本紧密相关，计算机中芯片的成本包括</p>
+<ul>
+<li>该芯片的制造成本</li>
+<li>一次性成本NRE（如研发成本）的分摊部分。</li>
+<li>随着不断重复生产，工程经验和工艺水平都不断提高，生产成本可以持续地降低。</li>
+<li>产量的提高能够加速学习过程，提高成品率，还可以降低一次性成本。</li>
+</ul>
+<h2 id="计算机的功耗"><a href="#计算机的功耗" class="headerlink" title="计算机的功耗"></a>计算机的功耗</h2><p>近几年来，性能功耗比（Performance per Watt）成为计算机非常重要的一个指标。</p>
+<p>芯片功耗是计算机功耗的重要组成部分。</p>
+<p>芯片的功耗主要由晶体管工作产生。</p>
+<p>反相器由一个 PMOS 管和一个 NMOS 管组成。其功耗主要可以分为三类：</p>
+<ul>
+<li>开关功耗</li>
+<li>短路功耗</li>
+<li>漏电功耗。</li>
+</ul>
+<p>芯片的功耗是一个全局量，与每一个设计阶段都相关。<strong>功耗优化</strong>的层次从<strong>系统级、算法级、逻辑级、电路级</strong>，直至版图和工艺级，是一个全系统工程。</p>
+<h1 id="计算机体系结构的发展"><a href="#计算机体系结构的发展" class="headerlink" title="计算机体系结构的发展"></a>计算机体系结构的发展</h1><ol>
+<li>20 世纪五六十年代，由于工艺技术的限制，计算机都做得很简单，计算机体系结构主要研究怎么做加减乘除，Computer Architecture基本上等于Computer Arithmetic。</li>
+<li>20世纪七八十年代的时候，以精简指令集（Reduced Instruction Set Computer，简称RISC）兴起为<br>标志，指令系统结构（Instruction Set Architecture，简称 ISA）成为计算机体系结构的研究重点。</li>
+<li>20 世纪 90 年代以后，计算机体系结构要考虑的问题把 CPU、存储系统、IO 系统和多处理器也包括在内。</li>
+<li>到了 21 世纪，网络就是计算机，计算机体系结构要覆盖的面更广了：向上突破了软硬件界面，需要考虑软硬件的紧密协同；向下突破了逻辑设计和工艺实现的界面，需要从晶体管的角度考虑结构设计。<ol>
+<li>随着虚拟机和二进制翻译系统的出现，<br>软硬件的界面模糊了</li>
+<li>计算机体系结构需要更多地考虑电路和工艺的行为</li>
+</ol>
+</li>
+</ol>
+<p>工艺技术的发展和应用需求的提高是计算机体系结构发展的主要动力</p>
+<ul>
+<li>在2010年之前，计算机工业的发展主要是工艺驱动为主，应用驱动为辅，都是计算机工艺厂家先挖空心思发明出应用然后让大家去接受。</li>
+<li>在2010年之后，随着计算机基础软硬件的不断成熟，IT<br>产业的主要创新从工艺转向应用。可以预计，未来计算机应用对体系结构的影响将超过工艺技术，<br>成为计算机体系结构发展的首要动力。</li>
+</ul>
+<h2 id="摩尔定律和工艺的发展"><a href="#摩尔定律和工艺的发展" class="headerlink" title="摩尔定律和工艺的发展"></a>摩尔定律和工艺的发展</h2><h3 id="工艺技术的发展"><a href="#工艺技术的发展" class="headerlink" title="工艺技术的发展"></a>工艺技术的发展</h3><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206012029431.png" srcset="/img/loading.gif" lazyload alt="image-20220601202939282"></p>
+<p>大多数集成电路生产厂家在 45nm 工艺之后已经停止了新工艺的研究，</p>
+<p>一方面是由于技术上越来越难，另一方面是由于研发成本越来越高。在 32nm 工艺节点以后，只有英特尔、三星、台积<br>电和中芯国际等少数厂家还在继续研发。</p>
+<p><strong>摩尔定律是半导体产业的一个共同预测和奋斗目标</strong>，但随着工艺的发展逐渐逼近极限，人们发现越来越难跟上这个目标。</p>
+<p>伴随着新材料和器件结构的发展，半导体制造已经转向“材料时代”</p>
+<h3 id="工艺和计算机结构"><a href="#工艺和计算机结构" class="headerlink" title="工艺和计算机结构"></a>工艺和计算机结构</h3><ol>
+<li><p>第一个阶段是晶体管不够用的阶段。那时计算机由很多独立的芯片构成，由于集成度的限制，计算机体系结构不可能设计得太复杂。</p>
+</li>
+<li><p>第二个阶段随着集成电路集成度越来越高，摩尔定律为计算机体系结构设计提供 “更多、更快、更省电” 的晶体管，微处理器蓬勃发展。</p>
+</li>
+<li><p>第三个阶段，晶体管越来越多，但是越来越难用，晶体管变得 “复杂、不快、不省电、不便宜”。</p>
+<p>第三阶段结构设计的一个特点是不得已向多核（Multi‑Core）发展，以降低<br><strong>设计验证复杂度、增加设计局部性、降低功耗</strong></p>
+</li>
+</ol>
+<p>​				</p>
+
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Theory/" class="category-chain-item">Theory</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Theory/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/" class="category-chain-item">计算机系统结构</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Theory/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" class="category-chain-item">学习记录</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/">#计算机系统结构</a>
+      
+        <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">#学习记录</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>第一章_引言</div>
+      <div>http://loverain.tech/[object Object]/Theory/Computer Architecture/《计算机系统基础》学习笔记/第一章_引言/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>LoveRain</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年6月1日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/%5Bobject%20Object%5D/Theory/Computer%20Architecture/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E5%9F%BA%E7%A1%80%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/%E7%AC%AC%E9%9B%B6%E7%AB%A0%E7%9B%AE%E5%BD%95%E4%B8%8E%E7%BB%BC%E8%BF%B0/" title="目录与综述">
+                        <span class="hidden-mobile">目录与综述</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

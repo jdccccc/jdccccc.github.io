@@ -1,229 +1,278 @@
 
+
 <!DOCTYPE html>
-<html lang="zh-CN ">
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StarAndRain || deepin优化设置</title>
-    <meta name="author" content="LoveRain">
-    <meta name="description" content="To Record some Graceful Time ">
-    <meta name="keywords" content="Technology and Science ">
-    <link rel="icon" href="/images/loverain.jpeg">
-    <link rel="stylesheet" href="/css/antd.min.css">
-    
-    <link rel="stylesheet" href="/css/maiden-theme.css">
-    
-    <script src="/js/vue.js"></script>
-    <script src="/js/antd.min.js"></script>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="LoveRain">
+  <meta name="keywords" content="Technology and Science">
+  
+    <meta name="description" content="美化29.05.22deepin美化主要使用系统设置 KDE、GNOME等设置暂时没有能力和精力配置，暂时搁置 桌面美化 桌面图标全部隐藏  在任务栏的启动器中搜索应用，运行应用后可在任务栏中固定  智能隐藏任务栏，会在其他窗口遮盖任务栏时隐藏任务栏   终端美化 点击终端右上角浏览菜单中的主题，可以更换颜色  设置中可以调整透明度   应用安装29.05.22目前我还不清楚Linux的软件安装机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="deepin优化设置">
+<meta property="og:url" content="http://loverain.tech/[object%20Object]/Tech/deepin/deepin%E4%BC%98%E5%8C%96%E8%AE%BE%E7%BD%AE/index.html">
+<meta property="og:site_name" content="StarAndRain">
+<meta property="og:description" content="美化29.05.22deepin美化主要使用系统设置 KDE、GNOME等设置暂时没有能力和精力配置，暂时搁置 桌面美化 桌面图标全部隐藏  在任务栏的启动器中搜索应用，运行应用后可在任务栏中固定  智能隐藏任务栏，会在其他窗口遮盖任务栏时隐藏任务栏   终端美化 点击终端右上角浏览菜单中的主题，可以更换颜色  设置中可以调整透明度   应用安装29.05.22目前我还不清楚Linux的软件安装机">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-05-31T04:55:47.231Z">
+<meta property="article:modified_time" content="2022-05-31T07:36:28.356Z">
+<meta property="article:author" content="LoveRain">
+<meta property="article:tag" content="deepin">
+<meta property="article:tag" content="apt">
+<meta property="article:tag" content="dpkg">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>deepin优化设置 - StarAndRain</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"loverain.tech","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+
+  
 <meta name="generator" content="Hexo 6.2.0"></head>
 
+
 <body>
+  
 
-    <div id="loading"
-        style="height: 100vh; width: 100%; position: fixed;display: flex;z-index: 200; justify-content: space-between;">
-        <div id="loadleft" style="width: 50%;background-color: #ffffff;transition: width 0.6s ease-out;"></div>
-        <div id="loadright" style="width: 50%;background-color: #ffffff;transition: width 0.6s ease-out;"></div>
-        <div
-            style="position: fixed; height: 100vh; width: 100%;display: flex;justify-content: center;align-items: center;">
-            <div id="loadcontent"
-                style="width:400px;height:400px;padding:50px;border-radius:50%;display:flex;justify-content:center;align-items:center;border:solid 10px#a3ddfb; text-align:center;opacity:1;transition:opacity 0.3s ease-out;">
-                <div>
-                    <h2>LOADING...</h2>
-                    <p>加载过慢请开启缓存(浏览器默认开启)</p>
-                    <div>
-                        <img src="/dancingkitty.gif" alt="loading">
-                    </div>
-                </div>
-            </div>
-        </div>
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
     </div>
-
-    <div id="layout">
-        <transition name="into">
-            <div v-show="show_page" style="display: none;">
-                <div id="menu_show">
-                     
-<nav id="menu">
-    <div class="desktop-menu">
-        <a href="/">
-            <span class="title">StarAndRain</span>
-        </a>
-        
-        <a href="/">
-            <span>
-                <a-icon type="home" theme="filled" />
-            </span>
-            <span>home</span>
-        </a>
-        
-        <a href="/about">
-            <span>
-                <a-icon type="idcard" theme="filled" />
-            </span>
-            <span>about</span>
-        </a>
-        
-        <a href="/archives">
-            <span>
-                <a-icon type="folder" theme="filled" />
-            </span>
-            <span>archives</span>
-        </a>
-        
-        <a href="/like/categories">
-            <span>
-                <a-icon type="book" theme="filled" />
-            </span>
-            <span>categories</span>
-        </a>
-        
-        <a href="/like/tags">
-            <span>
-                <a-icon type="tags" theme="filled" />
-            </span>
-            <span>tags</span>
-        </a>
-        
-        <a target="_blank" rel="noopener" href="https://en.korilin.com">
-            <span>
-                <a-icon type="compass" theme="filled" />
-            </span>
-            <span>英文博客</span>
-        </a>
-        
-    </div>
-
-    <div :class="'phone-menu ' + menu_show" id="phone-menu">
-        <div :class="'title'" @click="menu_show=!menu_show">
-            <span style="margin-right: 10px;">
-                <a-icon type="appstore" theme="filled" />
-            </span>
-            <span>StarAndRain</span>
-        </div>
-        <div class="items" v-show="menu_show">
-            
-            <a href="/">
-                <div class="item">
-                    <div style="min-width:20px; max-width:50px; width: 10%">
-                        <a-icon type="home" theme="filled" />
-                    </div>
-                    <div style="min-width:100px;max-width: 150%;width: 20%;">home</div>
-                </div>
-            </a>
-            
-            <a href="/about">
-                <div class="item">
-                    <div style="min-width:20px; max-width:50px; width: 10%">
-                        <a-icon type="idcard" theme="filled" />
-                    </div>
-                    <div style="min-width:100px;max-width: 150%;width: 20%;">about</div>
-                </div>
-            </a>
-            
-            <a href="/archives">
-                <div class="item">
-                    <div style="min-width:20px; max-width:50px; width: 10%">
-                        <a-icon type="folder" theme="filled" />
-                    </div>
-                    <div style="min-width:100px;max-width: 150%;width: 20%;">archives</div>
-                </div>
-            </a>
-            
-            <a href="/like/categories">
-                <div class="item">
-                    <div style="min-width:20px; max-width:50px; width: 10%">
-                        <a-icon type="book" theme="filled" />
-                    </div>
-                    <div style="min-width:100px;max-width: 150%;width: 20%;">categories</div>
-                </div>
-            </a>
-            
-            <a href="/like/tags">
-                <div class="item">
-                    <div style="min-width:20px; max-width:50px; width: 10%">
-                        <a-icon type="tags" theme="filled" />
-                    </div>
-                    <div style="min-width:100px;max-width: 150%;width: 20%;">tags</div>
-                </div>
-            </a>
-            
-            <a target="_blank" rel="noopener" href="https://en.korilin.com">
-                <div class="item">
-                    <div style="min-width:20px; max-width:50px; width: 10%">
-                        <a-icon type="compass" theme="filled" />
-                    </div>
-                    <div style="min-width:100px;max-width: 150%;width: 20%;">英文博客</div>
-                </div>
-            </a>
-            
-        </div>
-        <div class="curtain" v-show="menu_show"></div>
-    </div>
-
+  </div>
 </nav>
-                </div>
 
-                <div id="main">
-                     
-<link rel="stylesheet" href="/css/post-body.css">
-<div class="article">
-    <div>
-        <h1>deepin优化设置 </h1>
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="deepin优化设置"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-05-31 12:55" pubdate>
+          2022年5月31日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.7k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          15 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
     </div>
-    <div class="info">
-        <span class="date">
-            <span class="icon">
-                <a-icon type="calendar" theme="filled" />
-            </span>
-            2022/5/31
-        </span>
+  </div>
+</div>
 
-        
-        <span class="category">
-            <a href="/categories/Tech">
-                <span class="icon">
-                    <a-icon type="book" theme="filled" />
-                </span>
-                Tech
-            </a>
-        </span>
-        
+</div>
 
-        
+  </header>
 
-        <span class="tags">
-            <span class="icon">
-                <a-icon type="tags" theme="filled" />
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/deepin" style=color:#1bccbc>
-                    deepin
-                </a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/apt" style=color:#879cff>
-                    apt
-                </a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/dpkg" style=color:#1bccbc>
-                    dpkg
-                </a>
-            </span>
-            
-        </span>
-        
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
     </div>
 
-    <div class="content" v-pre>
-        <h1 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h1><h2 id="29-05-22"><a href="#29-05-22" class="headerlink" title="29.05.22"></a>29.05.22</h2><p>deepin美化主要使用系统设置</p>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">deepin优化设置</h1>
+            
+            <div class="markdown-body">
+              
+              <h1 id="美化"><a href="#美化" class="headerlink" title="美化"></a>美化</h1><h2 id="29-05-22"><a href="#29-05-22" class="headerlink" title="29.05.22"></a>29.05.22</h2><p>deepin美化主要使用系统设置</p>
 <p>KDE、GNOME等设置暂时没有能力和精力配置，暂时搁置</p>
 <h3 id="桌面美化"><a href="#桌面美化" class="headerlink" title="桌面美化"></a>桌面美化</h3><ul>
 <li><p>桌面图标全部隐藏</p>
@@ -284,16 +333,14 @@
 <li>安装一个本地包</li>
 </ul>
 <p>    自动从远程仓库中查找所需要的依赖，并同时安装到系统中。</p>
-<pre><code class="bash">sudo apt install 包文件名 
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install 包文件名 <br></code></pre></td></tr></table></figure>
+
 <blockquote>
 <p>包文件名必须是一个路径，可以是相对路径也可以是绝对路径，即使包文件就在当前目录下，也必须写成<code>./包文件名</code>的格式。</p>
 </blockquote>
 <ul>
 <li><p>根据包名从远程仓库安装软件包</p>
-<pre><code class="bash">sudo apt install 包名
-</code></pre>
-</li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install 包名<br></code></pre></td></tr></table></figure></li>
 </ul>
 <blockquote>
 <p>deepin&#x2F;UOS 应用商店的规范要求应用的包名需要是域名倒置的格式，因此，gimp在应用商店仓库中的包名为：<code>org.gimp</code>。实际情况中，两者都可以成功安装gimp。这两者存在于不同的仓库中，<code>gimp</code>来自 Debian 上游的打包，而<code>org.gimp</code>则来自 deepin 商店团队的打包。</p>
@@ -301,30 +348,36 @@
 <h4 id="删除软件包"><a href="#删除软件包" class="headerlink" title="删除软件包"></a>删除软件包</h4><ul>
 <li>删除一个已经安装成功的软件包</li>
 </ul>
-<pre><code class="bash">sudo apt remove 包名     
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt remove 包名     <br></code></pre></td></tr></table></figure>
+
 <blockquote>
 <p>不删除软件的配置文件</p>
 </blockquote>
 <ul>
 <li>同时删除配置文件</li>
 </ul>
-<pre><code class="bash">sudo apt purge 包名
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt purge 包名<br></code></pre></td></tr></table></figure>
+
+
+
 <ul>
 <li>删除一些版本更新导致的冗余依赖</li>
 </ul>
-<pre><code class="bash">sudo apt autoremove
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt autoremove<br></code></pre></td></tr></table></figure>
+
+
+
 <h4 id="更新本地缓存"><a href="#更新本地缓存" class="headerlink" title="更新本地缓存"></a>更新本地缓存</h4><p>apt可以从远程仓库搜索和下载软件包，其机制是从远程仓库获取仓库中所有软件包的列表，并在需要的时候读取本地的列表文件。</p>
 <p>列表中描述了<strong>软件仓库中存在哪些软件包以及基本信息</strong>，需要从远程仓库中获取软件包之间，需要先更新本地缓存，以保证本地的软件包列表与远程仓库中的列表保持一致。</p>
-<pre><code class="bash">sudo apt update
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt update<br></code></pre></td></tr></table></figure>
+
 <blockquote>
 <p>该操作会将远程仓库信息缓存到<code>/var/lib/apt/lists</code> </p>
 </blockquote>
-<h4 id="同步本地软件包版本（升级系统）"><a href="#同步本地软件包版本（升级系统）" class="headerlink" title="同步本地软件包版本（升级系统）"></a>同步本地软件包版本（升级系统）</h4><pre><code class="bash">sudo apt upgrade
-</code></pre>
+<h4 id="同步本地软件包版本（升级系统）"><a href="#同步本地软件包版本（升级系统）" class="headerlink" title="同步本地软件包版本（升级系统）"></a>同步本地软件包版本（升级系统）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt upgrade<br></code></pre></td></tr></table></figure>
+
+
+
 <h3 id="dpkg的基本用法"><a href="#dpkg的基本用法" class="headerlink" title="dpkg的基本用法"></a>dpkg的基本用法</h3><p>dpkg作为包管理器的底层部分，通常情况下不推荐日常使用</p>
 <ul>
 <li><p>不能自动处理依赖关系</p>
@@ -332,109 +385,428 @@
 <li><p>不支持从远程仓库获取软件包</p>
 </li>
 </ul>
-<h4 id="安装软件包（-i-选项）"><a href="#安装软件包（-i-选项）" class="headerlink" title="安装软件包（-i 选项）"></a>安装软件包（-i 选项）</h4><pre><code class="bash">sudo dpkg -i 软件包文件名
-</code></pre>
+<h4 id="安装软件包（-i-选项）"><a href="#安装软件包（-i-选项）" class="headerlink" title="安装软件包（-i 选项）"></a>安装软件包（-i 选项）</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo dpkg -i 软件包文件名<br></code></pre></td></tr></table></figure>
+
 <blockquote>
 <p>这里无需像apt一样必须提供一个路径，若包文件就在当前目录，可直接输入文件名即可。</p>
 </blockquote>
 <h4 id="卸载软件包"><a href="#卸载软件包" class="headerlink" title="卸载软件包"></a>卸载软件包</h4><p>可以使用<code>-r</code>或<code>-P</code>选项，这两者可类比apt的<code>remove</code>命令和<code>purge</code>命令。</p>
-<pre><code class="bash">sudo dpkg -r 包名
-</code></pre>
-<pre><code class="bash">sudo dpkg -P 包名
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo dpkg -r 包名<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo dpkg -P 包名<br></code></pre></td></tr></table></figure>
+
+
+
 <h4 id="查看文件所属包"><a href="#查看文件所属包" class="headerlink" title="查看文件所属包"></a>查看文件所属包</h4><p>系统中的文件可能所属于某个软件包，当软件包被卸载时将此类文件将被删除，要查看此类文件所对应的软件包，可使用<code>-S</code>选项：</p>
-<pre><code class="bash">sudo dpkg -S 文件名
-</code></pre>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo dpkg -S 文件名<br></code></pre></td></tr></table></figure>
 
-    </div>
 
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <div id="comment">
-        <div id="gitalk-container">
-        </div>
-    </div>
-    
-</div>
-                     
-<footer id="footer">
-    <div class="footer-wrap">
-        <div>
-            © 2018 - 2022 StarAndRain
-            <span class="footer-icon">
-                <a-icon type="flag" theme="filled" /></span>
-            @LoveRain
-        </div>
-        <div></div>
-        <div>Based on the <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo Engine</a> & <a
-                target="_blank" rel="noopener" href="https://github.com/korilin/hexo-theme-particle">Particle Theme</a></div>
-        
-    </div>
 
-</footer>
 
-<script src="/js/highlight.min.js"></script>
-<script src="/js/particle.js"></script>
-                </div>
+              
             </div>
-        </transition>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Tech/" class="category-chain-item">Tech</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Tech/deepin/" class="category-chain-item">deepin</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/deepin/">#deepin</a>
+      
+        <a href="/tags/apt/">#apt</a>
+      
+        <a href="/tags/dpkg/">#dpkg</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>deepin优化设置</div>
+      <div>http://loverain.tech/[object Object]/Tech/deepin/deepin优化设置/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>LoveRain</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年5月31日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/%5Bobject%20Object%5D/Tech/Typora/%E5%A6%82%E4%BD%95%E5%9C%A8Typora%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%9B%BE%E5%BA%8A/" title="如何在Typora中使用图床">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">如何在Typora中使用图床</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
     </div>
 
-    <script>
-    new Vue({
-        el: "#layout",
-        data: {
-            show_page: false,
-            onload_menu: false,
-            menu_show: false,
-            card_top: 100
-        },
-        created: function () {
-            var that = this
-            window.onload = function () {
-                that.show_page = true
-                document.getElementById("loadcontent").style.opacity = 0
-                setTimeout(function () {
-                    document.getElementById("loadleft").style.width = 0
-                    document.getElementById("loadright").style.width = 0
-                }, 300)
-                setTimeout(function () {
-                    document.getElementById("loading").style = "display:none"
-                }, 600)
-            }
-        },
-        mounted: function () {
-            var that = this
-            window.addEventListener('scroll', function (e) {
-                that.menu_show = false
-            })
-        },
-        methods: {
-            home_click: function () {
-                window.scrollTo({
-                    top: window.innerHeight - 80,
-                    behavior: "smooth",
-                });
-            }
-        }
-    })
-</script>
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
 
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
 <script>
-    const gitalk = new Gitalk({
-        clientID: '',
-        clientSecret: '',
-        repo: 'hexo-theme-particle',      // The repository of store comments,
-        owner: 'korilin',
-        admin: ['korilin'],
-        language: 'en',
-        id: location.pathname,      // Ensure uniqueness and length less than 50
-        distractionFreeMode: true  // Facebook-like distraction free mode
-    })
-    gitalk.render('gitalk-container')
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
 </script>
 
-</body>
 
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
 </html>
