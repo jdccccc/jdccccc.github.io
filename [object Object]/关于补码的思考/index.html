@@ -16,22 +16,22 @@
   <meta name="author" content="LoveRain">
   <meta name="keywords" content="Technology and Science">
   
-    <meta name="description" content="单选（15×1’） 下列哪个计算机系统层级不属于虚拟机层级？——传统机器语言机器、微程序机器  计算机系统结构属于哪一个计算机系统层级？——机器语言级  透明性指的是？——原本存在（不存在）的事物或属性，但从某种角度看又好像不存在（存在）了（组合出四个选项）  Flynn分类法的分类标准是什么？——指令流和数据流的多倍性  哪一种Flynn分类的机器没有实际的机器？——MISD  下列哪一种兼容性">
+    <meta name="description" content="考虑时钟模型： 对于0～12有双重含义，当时钟顺时针转7个单位时相当于逆时针转5个单位，也就是顺时针转-5个单位。 定义运算mod:$$a\in N^*,m \in N^\a\in[0,m)时，a\ mod\ m&#x3D; a\a\in (-m,0),a\ mod \ m&#x3D;m+a\a\in [m,+\infin),a\ mod \ m&#x3D;m-a%mm\a\in [-\infin">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机系统结构期末预测">
-<meta property="og:url" content="http://loverain.tech/[object%20Object]/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E9%A2%84%E6%B5%8B/index.html">
+<meta property="og:title" content="关于补码的思考">
+<meta property="og:url" content="http://loverain.tech/[object%20Object]/%E5%85%B3%E4%BA%8E%E8%A1%A5%E7%A0%81%E7%9A%84%E6%80%9D%E8%80%83/index.html">
 <meta property="og:site_name" content="StarAndRain">
-<meta property="og:description" content="单选（15×1’） 下列哪个计算机系统层级不属于虚拟机层级？——传统机器语言机器、微程序机器  计算机系统结构属于哪一个计算机系统层级？——机器语言级  透明性指的是？——原本存在（不存在）的事物或属性，但从某种角度看又好像不存在（存在）了（组合出四个选项）  Flynn分类法的分类标准是什么？——指令流和数据流的多倍性  哪一种Flynn分类的机器没有实际的机器？——MISD  下列哪一种兼容性">
+<meta property="og:description" content="考虑时钟模型： 对于0～12有双重含义，当时钟顺时针转7个单位时相当于逆时针转5个单位，也就是顺时针转-5个单位。 定义运算mod:$$a\in N^*,m \in N^\a\in[0,m)时，a\ mod\ m&#x3D; a\a\in (-m,0),a\ mod \ m&#x3D;m+a\a\in [m,+\infin),a\ mod \ m&#x3D;m-a%mm\a\in [-\infin">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-06-08T07:35:55.375Z">
-<meta property="article:modified_time" content="2022-06-08T12:13:15.607Z">
+<meta property="article:published_time" content="2022-06-10T14:55:07.166Z">
+<meta property="article:modified_time" content="2022-06-10T14:56:08.205Z">
 <meta property="article:author" content="LoveRain">
-<meta property="article:tag" content="计算机系统结构">
+<meta property="article:tag" content="补码">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>计算机系统结构期末预测 - StarAndRain</title>
+  <title>关于补码的思考 - StarAndRain</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -194,7 +194,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="计算机系统结构期末预测"></span>
+            <span id="subtitle" data-typed-text="关于补码的思考"></span>
           
         </div>
 
@@ -205,8 +205,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-08 15:35" pubdate>
-          2022年6月8日 下午
+        <time datetime="2022-06-10 22:55" pubdate>
+          2022年6月10日 晚上
         </time>
       </span>
     
@@ -217,7 +217,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.7k 字
+          2.6k 字
         
       </span>
     
@@ -228,7 +228,7 @@
         
         
         
-          15 分钟
+          22 分钟
         
       </span>
     
@@ -266,142 +266,110 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">计算机系统结构期末预测</h1>
+            <h1 style="display: none">关于补码的思考</h1>
             
             <div class="markdown-body">
               
-              <h1 id="单选（15×1’）"><a href="#单选（15×1’）" class="headerlink" title="单选（15×1’）"></a>单选（15×1’）</h1><ol>
-<li><p>下列哪个计算机系统层级不属于虚拟机层级？——传统机器语言机器、微程序机器</p>
+              <h2 id=""><a href="#" class="headerlink" title=""></a><!--关于补码的思考--></h2><p>考虑时钟模型：</p>
+<p>对于0～12有双重含义，当时钟顺时针转7个单位时相当于逆时针转5个单位，也就是顺时针转-5个单位。</p>
+<p>定义运算mod:<br>$$<br>a\in N^*,m \in N^<em>\<br>a\in[0,m)时，a\ mod\ m&#x3D; a\<br>a\in (-m,0),a\ mod \ m&#x3D;m+a\<br>a\in [m,+\infin),a\ mod \ m&#x3D;m-a%m</em>m\<br>a\in [-\infin, -m],a\ mod \ m&#x3D;m+a+(-a)%m*m<br>$$<br>该运算具有如下性质：<br>$$<br>b&gt;0,(a+b)mod \ m&#x3D; (a-(m-b))mod \ m\<br>b&lt;0,(a+b)mod \ m&#x3D;(a+(m+b))mod\ m<br>$$<br>时钟模型解释以上定义：</p>
+<ul>
+<li><p>时钟顺时针转17个单位等效于顺时针转5个单位</p>
 </li>
-<li><p>计算机系统结构属于哪一个计算机系统层级？——机器语言级</p>
+<li><p>时钟逆时针转17个单位等效于顺时针转（12+（-17）+（17%12）×12）&#x3D;7个单位</p>
 </li>
-<li><p>透明性指的是？——原本存在（不存在）的事物或属性，但从某种角度看又好像不存在（存在）了（组合出四个选项）</p>
+<li><p>顺时针转n个单位和逆时针转12-n个单位具有等效性</p>
 </li>
-<li><p>Flynn分类法的分类标准是什么？——指令流和数据流的多倍性</p>
+</ul>
+<p>故而在该运算定义下中在进行加法运算时可以有以下等式：<br>$$<br>b\in (-\infin,0),b&#x3D;m+b<br>$$<br>时钟模型举例:</p>
+<ul>
+<li>-3 &#x3D; 9</li>
+<li>-5 &#x3D; 7</li>
+</ul>
+<p>现在定义补码：</p>
+<p>定义8位补码:<br>$$<br>m &#x3D; 256_{10}&#x3D;100000000_{2}\<br>对于N\in[0,127]<em>{10},N</em>{补码}&#x3D;N\<br>对于N\in[-128,-1]<em>{10},N</em>{补码}&#x3D;256+N<br>$$<br>解释：</p>
+<ul>
+<li><p>当$N&#x3D;-60$时，$N_{补码}&#x3D;196$</p>
 </li>
-<li><p>哪一种Flynn分类的机器没有实际的机器？——MISD</p>
+<li><p>可以看出在上述定义的mod256运算当中，N和N补码是互相等效的</p>
 </li>
-<li><p>下列哪一种兼容性是系列机必须要做到的？——向后兼容</p>
+<li><p>mod256+运算中每一个正数b代表本身和-(256-b)两重含义，但是编码不能具有两重含义</p>
 </li>
-<li><p>关于模拟与仿真下列说法正确的是？——仿真是用微程序解释执行的，模拟是用机器语言执行的</p>
-</li>
-<li><p>什么时候初步具有并行性？什么时候正式进入到并行处理？——字串位并、字并位串</p>
-</li>
-<li><p>以下哪项名词解释正确？——CISC（复杂指令集计算机）、RISC（精简指令集计算机）</p>
-</li>
-<li><p>下列有关向量处理方式的纵横处理方式的说法正确的是？</p>
-<p>组内纵向、组间横向</p>
-</li>
-<li><p>下列说法正确的是？——随着存储系统层次的提高，价格越来越便宜、访问速度越来越慢、容量越来越大</p>
-</li>
-<li><p>下列有关存储系统透明性说法正确的是？</p>
-<p>Cache-主存层次由硬件实现，对所有程序员透明</p>
-<p>主存-辅存层次对应用程序员透明、常常用来实现虚拟存储器</p>
-</li>
-<li><p>下列关于Cache映像规则中组相联的说法正确的是</p>
-<p>组间直接映像，组内全相联（考试如此认为，实际并非如此）</p>
-</li>
-<li><p>小计算——Amdahl定律</p>
-</li>
-<li><p>小计算——互联函数</p>
-</li>
-<li><p>互联函数概念</p>
-<p>多级立方体网络——STARAN网络和间接二进制n方体网络——实现的是Cubei互联函数</p>
-<p>Omega网络——多级洗牌置换网络</p>
-</li>
-</ol>
-<h1 id="简答（5×6’）"><a href="#简答（5×6’）" class="headerlink" title="简答（5×6’）"></a>简答（5×6’）</h1><ol>
-<li><p><strong>请解释计算机组成、计算机实现和计算机系统结构之间的区别和联系</strong></p>
-<ol>
-<li>计算机系统结构——计算机系统软、硬件的交界面</li>
-<li>计算机组成——计算机系统结构的逻辑实现</li>
-<li>计算机实现——计算机组成的物理实现</li>
-</ol>
-</li>
-<li><p>请写出三种Flynn分类法下对应的典型机器</p>
-<ol>
-<li>SISD——传统的顺序处理机</li>
-<li>SIMD——阵列处理机</li>
-<li>MISD——没有实际的机器实现</li>
-<li>MIMD——多处理机机器</li>
-</ol>
-</li>
-<li><p><strong>请指出计算机系统设计的三种方法，并且说明什么是“中间”？</strong></p>
-<ol>
-<li>由上往下</li>
-<li>由下往上</li>
-<li>从中间开始——中间指的是<ul>
-<li>层次结构中的软硬件交界面</li>
-<li>目前一般是在传统机器语言机器级与操作系统机器级之间</li>
+<li><p>故而进一步的</p>
+<ul>
+<li>规定$N_{补码}\in[0,127]$代表$N_{补码}&#x3D;N,N\ge0$</li>
+<li>规定$N_{补码}\in[128,255]$代表$N_{补码}&#x3D;256+N,N&lt;0$</li>
 </ul>
 </li>
-</ol>
+<li><p>这中定义的指定使得补码的加法运算的结果</p>
+<ul>
+<li>落在[0,127]之间，仅表示时钟顺时针转</li>
+<li>落在[127,255]之间，仅表示时钟逆时针转</li>
+</ul>
 </li>
-<li><p>请说明什么是软件移植，并给出软件移植的方法？</p>
-<ol>
-<li>指一个软件可以不经修改或者少量修改就可以由一台计算机移植到另外一台计算机上运行。</li>
-<li>软件移植的三种方法：<ol>
-<li>统一高级语言</li>
-<li>采用系列机</li>
-<li>模拟与仿真</li>
-</ol>
+<li><p>这样做的目的是为了使得</p>
+<ul>
+<li>首位满足符号位要求</li>
+<li>编码的唯一性</li>
+<li>二进制加减法的实现</li>
+</ul>
 </li>
-</ol>
+<li><p>但是这种指定会产生溢出现象，因为本身正负等效的两部分被分别指派了正负性，这使得失效部分的定义成为了溢出。</p>
+<ul>
+<li>如果两个补码正数相加，补码结果b落在了[128,255]之间，如果是原先的定义则表示时钟顺时针转了[128,255]或者[-128,-1]，但是现在按照补码的只能表示顺时针转了[-128,-1]，两个正数的结果是一个负数，显然不符合二进制加法的规则，此时产生正溢出</li>
+<li>如果两个补码负数相加，结果落在了[0,127]之间，同理，产生了负数相加得到正数的结果，不符合实数加法的规则，此时产生负溢出。本来[0,127]等效于[-256,-129],但是此时只能表示[0,127]</li>
+</ul>
 </li>
-<li><p>请列举三种提高并行性的技术途径</p>
-<ol>
-<li>时间重叠——并行性</li>
-<li>空间重叠——同时性</li>
-<li>资源共享</li>
-</ol>
+<li><p>之所以引进补码，主要是为了利用mod+运算中的正负等效性将加减法映射为补码后统一由加法解决，补码正数+负数不会产生溢出，（<!--关于补码的思考--></p>
+<p>考虑时钟模型：</p>
+<p>对于0～12有双重含义，当时钟顺时针转7个单位时相当于逆时针转5个单位，也就是顺时针转-5个单位。</p>
+<p>定义运算mod:<br>$$<br>a\in N^*,m \in N^<em>\<br>a\in[0,m)时，a\ mod\ m&#x3D; a\<br>a\in (-m,0),a\ mod \ m&#x3D;m+a\<br>a\in [m,+\infin),a\ mod \ m&#x3D;m-a%m</em>m\<br>a\in [-\infin, -m],a\ mod \ m&#x3D;m+a+(-a)%m*m<br>$$<br>该运算具有如下性质：<br>$$<br>b&gt;0,(a+b)mod \ m&#x3D; (a-(m-b))mod \ m\<br>b&lt;0,(a+b)mod \ m&#x3D;(a+(m+b))mod\ m<br>$$<br>时钟模型解释以上定义：</p>
+<ul>
+<li><p>时钟顺时针转17个单位等效于顺时针转5个单位</p>
 </li>
-<li><p><strong>请简述Huffman思想</strong></p>
-<p>当发生各种事件的概率不相等时，可以对于发生概率最高的事件用最短的位数表示，而对于发生概率较低的事件用较长的位数表示，从而使平均位数缩短。</p>
+<li><p>时钟逆时针转17个单位等效于顺时针转（12+（-17）+（17%12）×12）&#x3D;7个单位</p>
 </li>
-<li><p><strong>请举出常见的流水线分类方法和实例</strong></p>
-<ol>
-<li>按功能分<ol>
-<li>单功能流水线</li>
-<li>多功能流水线</li>
-</ol>
+<li><p>顺时针转n个单位和逆时针转12-n个单位具有等效性</p>
 </li>
-<li>多功能流水线进一步分为<ol>
-<li>静态流水线——同一时间内，流水线内的各段只能按同一种功能的连接方式工作</li>
-<li>动态流水线——同一时间内，流水线内的各段可以按不同的方式连接</li>
-</ol>
+</ul>
+<p>故而在该运算定义下中在进行加法运算时可以有以下等式：<br>$$<br>b\in (-\infin,0),b&#x3D;m+b<br>$$<br>时钟模型举例:</p>
+<ul>
+<li>-3 &#x3D; 9</li>
+<li>-5 &#x3D; 7</li>
+</ul>
+<p>现在定义补码：</p>
+<p>定义8位补码:<br>$$<br>m &#x3D; 256_{10}&#x3D;100000000_{2}\<br>对于N\in[0,127]<em>{10},N</em>{补码}&#x3D;N\<br>对于N\in[-128,-1]<em>{10},N</em>{补码}&#x3D;256+N<br>$$<br>解释：</p>
+<ul>
+<li>当$N&#x3D;-60$时，$N_{补码}&#x3D;196$</li>
+<li>可以看出在上述定义的mod256运算当中，N和N补码是互相等效的</li>
+<li>mod256+运算中每一个正数b代表本身和-(256-b)两重含义，但是编码不能具有两重含义</li>
+<li>故而进一步的<ul>
+<li>规定$N_{补码}\in[0,127]$代表$N_{补码}&#x3D;N,N\ge0$</li>
+<li>规定$N_{补码}\in[128,255]$代表$N_{补码}&#x3D;256+N,N&lt;0$</li>
+</ul>
 </li>
-<li>按照是否存在反馈回路<ol>
-<li>线性流水线</li>
-<li>非线性流水线</li>
-</ol>
+<li>这中定义的指定使得补码的加法运算的结果<ul>
+<li>落在[0,127]之间，仅表示时钟顺时针转</li>
+<li>落在[127,255]之间，仅表示时钟逆时针转</li>
+</ul>
 </li>
-</ol>
+<li>这样做的目的是为了使得<ul>
+<li>首位满足符号位要求</li>
+<li>编码的唯一性</li>
+<li>二进制加减法的实现</li>
+</ul>
 </li>
-<li><p>请举出三种指令级并行处理技术并简单说明</p>
-<ol>
-<li>超标量处理机——在一个时钟周期内能够同时发射多条指令的处理机，且在三种指令级并行处理机中性能最优</li>
-<li>超流水线处理机——在一个时钟周期内能够分时发射多条指令的处理机</li>
-<li>超长指令字处理机——有编译程序找出指令间潜在的并行性，经过适当安排调整，把多个能够并行执行的操作组合在一起，构成一条具有多个操作段的超长指令</li>
-</ol>
+<li>但是这种指定会产生溢出现象，因为本身正负等效的两部分被分别指派了正负性，这使得失效部分的定义成为了溢出。<ul>
+<li>如果两个补码正数相加，补码结果b落在了[128,255]之间，如果是原先的定义则表示时钟顺时针转了[128,255]或者[-128,-1]，但是现在按照补码的只能表示顺时针转了[-128,-1]，两个正数的结果是一个负数，显然不符合二进制加法的规则，此时产生正溢出</li>
+<li>如果两个补码负数相加，结果落在了[0,127]之间，同理，产生了负数相加得到正数的结果，不符合实数加法的规则，此时产生负溢出。本来[0,127]等效于[-256,-129],但是此时只能表示[0,127]</li>
+</ul>
 </li>
-<li><p><strong>请举出“主存-辅存”层次存储系统使用的映像规则</strong></p>
-<ol>
-<li>段式——逻辑段映射到物理段</li>
-<li>页式——逻辑页（块）映射到物理页（块）</li>
-<li>段页式——逻辑段映射到物理段，段对系统程序员不透明;物理段中的逻辑页由硬件映射到物理页，物理页对于系统程序员透明</li>
-</ol>
+<li>之所以引进补码，主要是为了利用mod+运算中的正负等效性将加减法映射为补码后统一由加法解决，补码正数+负数不会产生溢出，（省略进位本身相当于mod运算）。</li>
+</ul>
 </li>
-</ol>
-<h1 id="计算与应用（8-7’）"><a href="#计算与应用（8-7’）" class="headerlink" title="计算与应用（8*7’）"></a>计算与应用（8*7’）</h1><ol>
-<li>（CPI公式）Exp1.3、作业1.7、作业1.11</li>
-<li>（Huffman编码、扩展编码、平均码长、<del>信息熵、信息冗余量</del>）<strong>作业2.11</strong>、作业2.12、作业2.13</li>
-<li>（流水线的性能指标{吞吐率、加速比、效率}{各段时间相同、存在瓶颈段}）</li>
-<li>（单流水线非线性的最优调度）</li>
-<li>（向量处理器链接后的执行拍数）</li>
-<li>（计算Cache命中率）</li>
-<li>（二维数组错位存放避免冲突，计算最小容量和体内地址）</li>
-<li>（LRU置换算法）</li>
-</ol>
+<li><p>省略进位本身相当于mod运算）。</p>
+</li>
+</ul>
 
               
             </div>
@@ -419,13 +387,20 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Examination/" class="category-chain-item">Examination</a>
+  <a href="/categories/Theory/" class="category-chain-item">Theory</a>
   
   
     <span>></span>
     
-  <a href="/categories/Examination/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/" class="category-chain-item">计算机系统结构</a>
+  <a href="/categories/Theory/%E6%95%B0%E5%88%B6/" class="category-chain-item">数制</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/Theory/%E6%95%B0%E5%88%B6/%E8%A1%A5%E7%A0%81/" class="category-chain-item">补码</a>
+  
+  
+
   
 
   
@@ -441,7 +416,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/">#计算机系统结构</a>
+        <a href="/tags/%E8%A1%A5%E7%A0%81/">#补码</a>
       
     </div>
   
@@ -453,8 +428,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>计算机系统结构期末预测</div>
-      <div>http://loverain.tech/[object Object]/计算机系统结构期末预测/</div>
+      <div>关于补码的思考</div>
+      <div>http://loverain.tech/[object Object]/关于补码的思考/</div>
     </div>
     <div class="license-meta">
       
@@ -466,7 +441,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年6月8日</div>
+          <div>2022年6月10日</div>
         </div>
       
       
@@ -500,8 +475,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/%5Bobject%20Object%5D/Examination/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/" title="软件工程期末复习总结">
-                        <span class="hidden-mobile">软件工程期末复习总结</span>
+                      <a href="/%5Bobject%20Object%5D/%E4%BA%8C%E8%BF%9B%E5%88%B6/" title="二进制">
+                        <span class="hidden-mobile">二进制</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

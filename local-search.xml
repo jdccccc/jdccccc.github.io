@@ -4,9 +4,113 @@
   
   
   <entry>
+    <title>关于补码的思考</title>
+    <link href="/%5Bobject%20Object%5D/%E5%85%B3%E4%BA%8E%E8%A1%A5%E7%A0%81%E7%9A%84%E6%80%9D%E8%80%83/"/>
+    <url>/%5Bobject%20Object%5D/%E5%85%B3%E4%BA%8E%E8%A1%A5%E7%A0%81%E7%9A%84%E6%80%9D%E8%80%83/</url>
+    
+    <content type="html"><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a><!--关于补码的思考--></h2><p>考虑时钟模型：</p><p>对于0～12有双重含义，当时钟顺时针转7个单位时相当于逆时针转5个单位，也就是顺时针转-5个单位。</p><p>定义运算mod:<br>$$<br>a\in N^*,m \in N^<em>\<br>a\in[0,m)时，a\ mod\ m&#x3D; a\<br>a\in (-m,0),a\ mod \ m&#x3D;m+a\<br>a\in [m,+\infin),a\ mod \ m&#x3D;m-a%m</em>m\<br>a\in [-\infin, -m],a\ mod \ m&#x3D;m+a+(-a)%m*m<br>$$<br>该运算具有如下性质：<br>$$<br>b&gt;0,(a+b)mod \ m&#x3D; (a-(m-b))mod \ m\<br>b&lt;0,(a+b)mod \ m&#x3D;(a+(m+b))mod\ m<br>$$<br>时钟模型解释以上定义：</p><ul><li><p>时钟顺时针转17个单位等效于顺时针转5个单位</p></li><li><p>时钟逆时针转17个单位等效于顺时针转（12+（-17）+（17%12）×12）&#x3D;7个单位</p></li><li><p>顺时针转n个单位和逆时针转12-n个单位具有等效性</p></li></ul><p>故而在该运算定义下中在进行加法运算时可以有以下等式：<br>$$<br>b\in (-\infin,0),b&#x3D;m+b<br>$$<br>时钟模型举例:</p><ul><li>-3 &#x3D; 9</li><li>-5 &#x3D; 7</li></ul><p>现在定义补码：</p><p>定义8位补码:<br>$$<br>m &#x3D; 256_{10}&#x3D;100000000_{2}\<br>对于N\in[0,127]<em>{10},N</em>{补码}&#x3D;N\<br>对于N\in[-128,-1]<em>{10},N</em>{补码}&#x3D;256+N<br>$$<br>解释：</p><ul><li><p>当$N&#x3D;-60$时，$N_{补码}&#x3D;196$</p></li><li><p>可以看出在上述定义的mod256运算当中，N和N补码是互相等效的</p></li><li><p>mod256+运算中每一个正数b代表本身和-(256-b)两重含义，但是编码不能具有两重含义</p></li><li><p>故而进一步的</p><ul><li>规定$N_{补码}\in[0,127]$代表$N_{补码}&#x3D;N,N\ge0$</li><li>规定$N_{补码}\in[128,255]$代表$N_{补码}&#x3D;256+N,N&lt;0$</li></ul></li><li><p>这中定义的指定使得补码的加法运算的结果</p><ul><li>落在[0,127]之间，仅表示时钟顺时针转</li><li>落在[127,255]之间，仅表示时钟逆时针转</li></ul></li><li><p>这样做的目的是为了使得</p><ul><li>首位满足符号位要求</li><li>编码的唯一性</li><li>二进制加减法的实现</li></ul></li><li><p>但是这种指定会产生溢出现象，因为本身正负等效的两部分被分别指派了正负性，这使得失效部分的定义成为了溢出。</p><ul><li>如果两个补码正数相加，补码结果b落在了[128,255]之间，如果是原先的定义则表示时钟顺时针转了[128,255]或者[-128,-1]，但是现在按照补码的只能表示顺时针转了[-128,-1]，两个正数的结果是一个负数，显然不符合二进制加法的规则，此时产生正溢出</li><li>如果两个补码负数相加，结果落在了[0,127]之间，同理，产生了负数相加得到正数的结果，不符合实数加法的规则，此时产生负溢出。本来[0,127]等效于[-256,-129],但是此时只能表示[0,127]</li></ul></li><li><p>之所以引进补码，主要是为了利用mod+运算中的正负等效性将加减法映射为补码后统一由加法解决，补码正数+负数不会产生溢出，（<!--关于补码的思考--></p><p>考虑时钟模型：</p><p>对于0～12有双重含义，当时钟顺时针转7个单位时相当于逆时针转5个单位，也就是顺时针转-5个单位。</p><p>定义运算mod:<br>$$<br>a\in N^*,m \in N^<em>\<br>a\in[0,m)时，a\ mod\ m&#x3D; a\<br>a\in (-m,0),a\ mod \ m&#x3D;m+a\<br>a\in [m,+\infin),a\ mod \ m&#x3D;m-a%m</em>m\<br>a\in [-\infin, -m],a\ mod \ m&#x3D;m+a+(-a)%m*m<br>$$<br>该运算具有如下性质：<br>$$<br>b&gt;0,(a+b)mod \ m&#x3D; (a-(m-b))mod \ m\<br>b&lt;0,(a+b)mod \ m&#x3D;(a+(m+b))mod\ m<br>$$<br>时钟模型解释以上定义：</p><ul><li><p>时钟顺时针转17个单位等效于顺时针转5个单位</p></li><li><p>时钟逆时针转17个单位等效于顺时针转（12+（-17）+（17%12）×12）&#x3D;7个单位</p></li><li><p>顺时针转n个单位和逆时针转12-n个单位具有等效性</p></li></ul><p>故而在该运算定义下中在进行加法运算时可以有以下等式：<br>$$<br>b\in (-\infin,0),b&#x3D;m+b<br>$$<br>时钟模型举例:</p><ul><li>-3 &#x3D; 9</li><li>-5 &#x3D; 7</li></ul><p>现在定义补码：</p><p>定义8位补码:<br>$$<br>m &#x3D; 256_{10}&#x3D;100000000_{2}\<br>对于N\in[0,127]<em>{10},N</em>{补码}&#x3D;N\<br>对于N\in[-128,-1]<em>{10},N</em>{补码}&#x3D;256+N<br>$$<br>解释：</p><ul><li>当$N&#x3D;-60$时，$N_{补码}&#x3D;196$</li><li>可以看出在上述定义的mod256运算当中，N和N补码是互相等效的</li><li>mod256+运算中每一个正数b代表本身和-(256-b)两重含义，但是编码不能具有两重含义</li><li>故而进一步的<ul><li>规定$N_{补码}\in[0,127]$代表$N_{补码}&#x3D;N,N\ge0$</li><li>规定$N_{补码}\in[128,255]$代表$N_{补码}&#x3D;256+N,N&lt;0$</li></ul></li><li>这中定义的指定使得补码的加法运算的结果<ul><li>落在[0,127]之间，仅表示时钟顺时针转</li><li>落在[127,255]之间，仅表示时钟逆时针转</li></ul></li><li>这样做的目的是为了使得<ul><li>首位满足符号位要求</li><li>编码的唯一性</li><li>二进制加减法的实现</li></ul></li><li>但是这种指定会产生溢出现象，因为本身正负等效的两部分被分别指派了正负性，这使得失效部分的定义成为了溢出。<ul><li>如果两个补码正数相加，补码结果b落在了[128,255]之间，如果是原先的定义则表示时钟顺时针转了[128,255]或者[-128,-1]，但是现在按照补码的只能表示顺时针转了[-128,-1]，两个正数的结果是一个负数，显然不符合二进制加法的规则，此时产生正溢出</li><li>如果两个补码负数相加，结果落在了[0,127]之间，同理，产生了负数相加得到正数的结果，不符合实数加法的规则，此时产生负溢出。本来[0,127]等效于[-256,-129],但是此时只能表示[0,127]</li></ul></li><li>之所以引进补码，主要是为了利用mod+运算中的正负等效性将加减法映射为补码后统一由加法解决，补码正数+负数不会产生溢出，（省略进位本身相当于mod运算）。</li></ul></li><li><p>省略进位本身相当于mod运算）。</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Theory</category>
+      
+      <category>数制</category>
+      
+      <category>补码</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>补码</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>二进制</title>
+    <link href="/%5Bobject%20Object%5D/%E4%BA%8C%E8%BF%9B%E5%88%B6/"/>
+    <url>/%5Bobject%20Object%5D/%E4%BA%8C%E8%BF%9B%E5%88%B6/</url>
+    
+    <content type="html"><![CDATA[<h1 id="控制复杂性的艺术"><a href="#控制复杂性的艺术" class="headerlink" title="控制复杂性的艺术"></a>控制复杂性的艺术</h1><h2 id="抽象（Abstraction）"><a href="#抽象（Abstraction）" class="headerlink" title="抽象（Abstraction）"></a>抽象（Abstraction）</h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206101601796.png" alt="image-20220610155907247"></p><h2 id="约束（Discipline）"><a href="#约束（Discipline）" class="headerlink" title="约束（Discipline）"></a>约束（Discipline）</h2><p>约束是对设计选择的一种内在限制，通过这种限制可以更有效地在更高的抽象层次上工作。</p><p>数字电路是模拟电路的子集。</p><p>通过数字电路的约束规则，我们很容易将组件组合成复杂的系统，而且这种数字系统在很多应用上都远远优于模拟组件组成的系统。</p><h2 id="三Y原则"><a href="#三Y原则" class="headerlink" title="三Y原则"></a>三Y原则</h2><ul><li><p>层次化（hierarchy）</p><p>将系统划分为若干模块，然后更进一步划分每个模块直到这些模块可以容易理解；</p></li><li><p>模块化（modularity）</p><p>所有模块有定义好的功能和接口，以便于他们之间可以更容易地相互连接而不会产生意想不到的副作用；</p></li><li><p>规整化（regularity）</p><p>在模块之间寻求一致，通用模块可以重复使用多次，以便减少设计不同模块的数量。</p><p>补：regularity有正规化、常规化的意思，就是指模块的功能和接口定义出来后最好能够具有更大的通用性和适用范围，或便于大规模生产。</p></li></ul><h1 id="数字抽象（The-Digital-Abstraction）"><a href="#数字抽象（The-Digital-Abstraction）" class="headerlink" title="数字抽象（The Digital Abstraction）"></a>数字抽象（The Digital Abstraction）</h1><p>数字系统使用<strong>离散值变量（discrete-valued variable）</strong>——变量是有限数目的不同离散值。</p><p>一个由N个不同状态的离散值变量的信息量D由位（bit）度量<br>$$<br>D&#x3D;log_2N位<br>$$<br><strong>布尔逻辑</strong>——针对二进制变量进行逻辑操作的系统，‘1’表示HIGH&#x2F;TRUE，‘0’表示LOW&#x2F;FALSE</p><h1 id="（进位）数制（Number-System）"><a href="#（进位）数制（Number-System）" class="headerlink" title="（进位）数制（Number System）"></a>（进位）数制（Number System）</h1><p><strong>基数</strong>：计数制中所用到的数字符号的个数。</p><p><strong>位权</strong>：指在一种进位计数制表示的数中，用来表明不同数位上数值大小的一个固定常数。</p><p><strong>进位表示法</strong>：对于R进制，逢R进一</p><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206101629564.png" alt="image-20220610162948466"></p><h2 id="十进制（Decimal）转二进制"><a href="#十进制（Decimal）转二进制" class="headerlink" title="十进制（Decimal）转二进制"></a>十进制（Decimal）转二进制</h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206101634086.png" alt="image-20220610163432005"></p><h2 id="二进制（Binary）转十进制"><a href="#二进制（Binary）转十进制" class="headerlink" title="二进制（Binary）转十进制"></a>二进制（Binary）转十进制</h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206101634596.png" alt="image-20220610163451524"></p><h2 id="二到八或十六进制（Hexadecimal）的转换"><a href="#二到八或十六进制（Hexadecimal）的转换" class="headerlink" title="二到八或十六进制（Hexadecimal）的转换"></a>二到八或十六进制（Hexadecimal）的转换</h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206101637273.png" alt="image-20220610163713211"></p><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206101638184.png" alt="image-20220610163843135"></p><h2 id="字节、半字节、全字"><a href="#字节、半字节、全字" class="headerlink" title="字节、半字节、全字"></a>字节、半字节、全字</h2><ul><li>byte——8位一组</li><li>nibble——4位一组</li><li>word——取决于微处理器的结构（寄存器的位数）</li><li>最低有效位（least significant bit&#x2F;lsb）——在一组位中，权为1的位</li><li>最高有效位（most significant bit&#x2F;msb）——处于另一端的位</li><li>最低有效字节&#x2F;最高有效字节(LSB&#x2F;MSB)</li></ul><p>$$<br>2^{10}&#x3D;1024\approx 1000&#x3D;10^3<br>$$</p><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206101647449.png" alt="image-20220610164704374"></p><h2 id="二进制加法"><a href="#二进制加法" class="headerlink" title="二进制加法"></a>二进制加法</h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206101656336.png" alt="image-20220610165629302"></p><p>进位carry bit——进位到相邻列的位</p><p>数字系统常对固定长度的数字进行操作。如果加法的结果太大，超出了数字的表示范围，那么将产生<strong>溢出</strong>（overflow）。</p><p>可以通过检查<strong>最高一列是否有进位</strong>来判断是否溢出。</p><h2 id="有符号的二进制数"><a href="#有符号的二进制数" class="headerlink" title="有符号的二进制数"></a>有符号的二进制数</h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206101707407.png" alt="image-20220610170716322"></p><h3 id="原码-x3D-符号位-真值绝对值"><a href="#原码-x3D-符号位-真值绝对值" class="headerlink" title="原码&#x3D;符号位+真值绝对值"></a>原码&#x3D;符号位+真值绝对值</h3><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206101708268.png" alt="image-20220610170823209"></p><p>缺点：</p><ul><li>二进制加法（减法）无法在原码下实现</li><li>0有两种表示方法，可能会造成麻烦</li></ul><h3 id="反码"><a href="#反码" class="headerlink" title="反码"></a>反码</h3><p>符号位与原码相同</p><p>数值部分：</p><ul><li>若符号位为0，正数的反码是正数本身，与原码形式相同</li><li>若符号位为1,数值部分由原码的数值部分按位取反得到</li></ul><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206101713882.png" alt="image-20220610171339817"></p><ul><li>反码依旧没有解决原码的问题</li></ul><h3 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h3><p>二进制补码的最高位的权为$-2^{n-1}$，其他位的表示方法与无符号二进制数相同。</p><ul><li>克服了带符号的原码格式中0有两种表示方法的缺点，即二进制补码中，0只有一种表示方法</li><li>二进制补码能够实现二进制加法</li></ul><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206101720677.png" alt="image-20220610172028616"></p><ul><li><p>符号位与原码相同</p></li><li><p>负数的补码的符号位为1,数值位为其反码的末位加1</p></li><li><p>减法是将第二个操作数改变符号后求取补码，然后与第一个操作数相加来完成</p></li><li><p>表示范围<br>$$<br>[-2^{n-1},2^{n-1}-1]<br>$$</p></li><li><p>4位补码表示范围[-8，7]</p></li><li><p>怪异数（weird number）$-2^{n-1}$,没有与之对应的正数</p></li><li><p>在二进制补码加法中，判定溢出的条件是：如果相加两个数的符号相同且结果的符号与被加数的符号相反，则表示发生溢出</p></li><li><p><strong>符号扩展</strong>：当二进制补码扩展到更多位数时，需要将符号位复制到所有的扩展高位中。</p></li></ul><h2 id="数制的比较"><a href="#数制的比较" class="headerlink" title="数制的比较"></a>数制的比较</h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206101741236.png" alt="image-20220610174108184"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Theory</category>
+      
+      <category>数字电路与逻辑设计</category>
+      
+      <category>《数字设计和计算机体系结构》</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>计算机系统结构</tag>
+      
+      <tag>数字电路</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>轴体</title>
+    <link href="/%5Bobject%20Object%5D/%E8%BD%B4%E4%BD%93/"/>
+    <url>/%5Bobject%20Object%5D/%E8%BD%B4%E4%BD%93/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>键帽</title>
+    <link href="/%5Bobject%20Object%5D/%E9%94%AE%E5%B8%BD/"/>
+    <url>/%5Bobject%20Object%5D/%E9%94%AE%E5%B8%BD/</url>
+    
+    <content type="html"><![CDATA[<h1 id="材质"><a href="#材质" class="headerlink" title="材质"></a>材质</h1><h2 id="ABS"><a href="#ABS" class="headerlink" title="ABS"></a>ABS</h2><ol><li><p>优缺点</p><ul><li><p>它的优点是爽脆、轻盈、耐热、有韧性、且表面光滑、触感很细腻</p></li><li><p>它的缺点是不耐磨且易打油，打油指的是表面容易被磨的很光滑</p></li></ul></li><li><p>价位——10元～1000元不等</p></li></ol><h2 id="PBT"><a href="#PBT" class="headerlink" title="PBT"></a>PBT</h2><ul><li>它的优点是硬度高、不易磨损、不易打油</li><li>它的缺点是易变形、色泽没有ABS键帽鲜艳</li></ul><h2 id="POM"><a href="#POM" class="headerlink" title="POM"></a>POM</h2><ul><li>密度大、不打油、自润滑、顺畅、丝滑</li><li>颜色单一、制作难度大、制作成本很高</li></ul><h1 id="键帽字符工艺"><a href="#键帽字符工艺" class="headerlink" title="键帽字符工艺"></a>键帽字符工艺</h1><h2 id="镭雕"><a href="#镭雕" class="headerlink" title="镭雕"></a>镭雕</h2><p>采用激光雕刻字符</p><ul><li>成本低、表面字符不平整、长期使用字符会被磨掉</li></ul><h2 id="二色工艺（二色成型、双色注塑）"><a href="#二色工艺（二色成型、双色注塑）" class="headerlink" title="二色工艺（二色成型、双色注塑）"></a>二色工艺（二色成型、双色注塑）</h2><ul><li>制作成本较高、基本不会被磨掉</li></ul><h2 id="热升华工艺"><a href="#热升华工艺" class="headerlink" title="热升华工艺"></a>热升华工艺</h2><p>在高温下，将固体树脂油墨升华为气态模式，然后让油墨渗透到键帽中，最后冷却凝华，形成完整键帽。</p><ul><li>只有PBT材质才能够进行热升华 </li><li>能让字符更具光泽，且不易被磨掉</li><li>热升华的大键位键帽容易出现弯曲变形的情况</li><li>成本适中，适合新手入门</li></ul><h1 id="键帽的高度"><a href="#键帽的高度" class="headerlink" title="键帽的高度"></a>键帽的高度</h1><h2 id="原厂高度"><a href="#原厂高度" class="headerlink" title="原厂高度"></a>原厂高度</h2><p>原厂指的是Cherry，使用较为舒适，能够还原各种轴的手感</p><h2 id="OEM"><a href="#OEM" class="headerlink" title="OEM"></a>OEM</h2><p>代工厂 ，比原厂高度高一层</p><h2 id="SA高球帽"><a href="#SA高球帽" class="headerlink" title="SA高球帽"></a>SA高球帽</h2><p>侧边有较大的弧度、观感很好、很圆润、整体颜值很高 </p><p>高度较高，且弧度牺牲打字面积，一般需要用到手托</p><h2 id="DSA键帽"><a href="#DSA键帽" class="headerlink" title="DSA键帽"></a>DSA键帽</h2><p>所有键帽都处于同一个高度</p><h2 id="图示"><a href="#图示" class="headerlink" title="图示"></a>图示</h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206092129481.png" alt="image-20220609212925285"></p><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206092128930.png" alt="image-20220609212820057"></p><h1 id="键帽的大小"><a href="#键帽的大小" class="headerlink" title="键帽的大小"></a>键帽的大小</h1><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206092132938.png" alt="image-20220609213248773"></p><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206092133069.png" alt="image-20220609213312909"></p><h1 id="键帽推荐（价位升序）"><a href="#键帽推荐（价位升序）" class="headerlink" title="键帽推荐（价位升序）"></a>键帽推荐（价位升序）</h1><ul><li>光头</li><li>韩度</li><li>Akko</li><li>Gauss</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>habit</category>
+      
+      <category>键盘</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>键帽</tag>
+      
+      <tag>ABS</tag>
+      
+      <tag>PBT</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>计算机系统结构期末预测</title>
-    <link href="/%5Bobject%20Object%5D/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E9%A2%84%E6%B5%8B/"/>
-    <url>/%5Bobject%20Object%5D/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E9%A2%84%E6%B5%8B/</url>
+    <link href="/%5Bobject%20Object%5D/Examination/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E9%A2%84%E6%B5%8B/"/>
+    <url>/%5Bobject%20Object%5D/Examination/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E6%9C%9F%E6%9C%AB%E9%A2%84%E6%B5%8B/</url>
     
     <content type="html"><![CDATA[<h1 id="单选（15×1’）"><a href="#单选（15×1’）" class="headerlink" title="单选（15×1’）"></a>单选（15×1’）</h1><ol><li><p>下列哪个计算机系统层级不属于虚拟机层级？——传统机器语言机器、微程序机器</p></li><li><p>计算机系统结构属于哪一个计算机系统层级？——机器语言级</p></li><li><p>透明性指的是？——原本存在（不存在）的事物或属性，但从某种角度看又好像不存在（存在）了（组合出四个选项）</p></li><li><p>Flynn分类法的分类标准是什么？——指令流和数据流的多倍性</p></li><li><p>哪一种Flynn分类的机器没有实际的机器？——MISD</p></li><li><p>下列哪一种兼容性是系列机必须要做到的？——向后兼容</p></li><li><p>关于模拟与仿真下列说法正确的是？——仿真是用微程序解释执行的，模拟是用机器语言执行的</p></li><li><p>什么时候初步具有并行性？什么时候正式进入到并行处理？——字串位并、字并位串</p></li><li><p>以下哪项名词解释正确？——CISC（复杂指令集计算机）、RISC（精简指令集计算机）</p></li><li><p>下列有关向量处理方式的纵横处理方式的说法正确的是？</p><p>组内纵向、组间横向</p></li><li><p>下列说法正确的是？——随着存储系统层次的提高，价格越来越便宜、访问速度越来越慢、容量越来越大</p></li><li><p>下列有关存储系统透明性说法正确的是？</p><p>Cache-主存层次由硬件实现，对所有程序员透明</p><p>主存-辅存层次对应用程序员透明、常常用来实现虚拟存储器</p></li><li><p>下列关于Cache映像规则中组相联的说法正确的是</p><p>组间直接映像，组内全相联（考试如此认为，实际并非如此）</p></li><li><p>小计算——Amdahl定律</p></li><li><p>小计算——互联函数</p></li><li><p>互联函数概念</p><p>多级立方体网络——STARAN网络和间接二进制n方体网络——实现的是Cubei互联函数</p><p>Omega网络——多级洗牌置换网络</p></li></ol><h1 id="简答（5×6’）"><a href="#简答（5×6’）" class="headerlink" title="简答（5×6’）"></a>简答（5×6’）</h1><ol><li><p><strong>请解释计算机组成、计算机实现和计算机系统结构之间的区别和联系</strong></p><ol><li>计算机系统结构——计算机系统软、硬件的交界面</li><li>计算机组成——计算机系统结构的逻辑实现</li><li>计算机实现——计算机组成的物理实现</li></ol></li><li><p>请写出三种Flynn分类法下对应的典型机器</p><ol><li>SISD——传统的顺序处理机</li><li>SIMD——阵列处理机</li><li>MISD——没有实际的机器实现</li><li>MIMD——多处理机机器</li></ol></li><li><p><strong>请指出计算机系统设计的三种方法，并且说明什么是“中间”？</strong></p><ol><li>由上往下</li><li>由下往上</li><li>从中间开始——中间指的是<ul><li>层次结构中的软硬件交界面</li><li>目前一般是在传统机器语言机器级与操作系统机器级之间</li></ul></li></ol></li><li><p>请说明什么是软件移植，并给出软件移植的方法？</p><ol><li>指一个软件可以不经修改或者少量修改就可以由一台计算机移植到另外一台计算机上运行。</li><li>软件移植的三种方法：<ol><li>统一高级语言</li><li>采用系列机</li><li>模拟与仿真</li></ol></li></ol></li><li><p>请列举三种提高并行性的技术途径</p><ol><li>时间重叠——并行性</li><li>空间重叠——同时性</li><li>资源共享</li></ol></li><li><p><strong>请简述Huffman思想</strong></p><p>当发生各种事件的概率不相等时，可以对于发生概率最高的事件用最短的位数表示，而对于发生概率较低的事件用较长的位数表示，从而使平均位数缩短。</p></li><li><p><strong>请举出常见的流水线分类方法和实例</strong></p><ol><li>按功能分<ol><li>单功能流水线</li><li>多功能流水线</li></ol></li><li>多功能流水线进一步分为<ol><li>静态流水线——同一时间内，流水线内的各段只能按同一种功能的连接方式工作</li><li>动态流水线——同一时间内，流水线内的各段可以按不同的方式连接</li></ol></li><li>按照是否存在反馈回路<ol><li>线性流水线</li><li>非线性流水线</li></ol></li></ol></li><li><p>请举出三种指令级并行处理技术并简单说明</p><ol><li>超标量处理机——在一个时钟周期内能够同时发射多条指令的处理机，且在三种指令级并行处理机中性能最优</li><li>超流水线处理机——在一个时钟周期内能够分时发射多条指令的处理机</li><li>超长指令字处理机——有编译程序找出指令间潜在的并行性，经过适当安排调整，把多个能够并行执行的操作组合在一起，构成一条具有多个操作段的超长指令</li></ol></li><li><p><strong>请举出“主存-辅存”层次存储系统使用的映像规则</strong></p><ol><li>段式——逻辑段映射到物理段</li><li>页式——逻辑页（块）映射到物理页（块）</li><li>段页式——逻辑段映射到物理段，段对系统程序员不透明;物理段中的逻辑页由硬件映射到物理页，物理页对于系统程序员透明</li></ol></li></ol><h1 id="计算与应用（8-7’）"><a href="#计算与应用（8-7’）" class="headerlink" title="计算与应用（8*7’）"></a>计算与应用（8*7’）</h1><ol><li>（CPI公式）Exp1.3、作业1.7、作业1.11</li><li>（Huffman编码、扩展编码、平均码长、<del>信息熵、信息冗余量</del>）<strong>作业2.11</strong>、作业2.12、作业2.13</li><li>（流水线的性能指标{吞吐率、加速比、效率}{各段时间相同、存在瓶颈段}）</li><li>（单流水线非线性的最优调度）</li><li>（向量处理器链接后的执行拍数）</li><li>（计算Cache命中率）</li><li>（二维数组错位存放避免冲突，计算最小容量和体内地址）</li><li>（LRU置换算法）</li></ol>]]></content>
     
