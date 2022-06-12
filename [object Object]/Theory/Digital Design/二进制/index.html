@@ -19,7 +19,7 @@
     <meta name="description" content="控制复杂性的艺术抽象（Abstraction） 约束（Discipline）约束是对设计选择的一种内在限制，通过这种限制可以更有效地在更高的抽象层次上工作。 数字电路是模拟电路的子集。 通过数字电路的约束规则，我们很容易将组件组合成复杂的系统，而且这种数字系统在很多应用上都远远优于模拟组件组成的系统。 三Y原则 层次化（hierarchy） 将系统划分为若干模块，然后更进一步划分每个模块直到这些模">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二进制">
-<meta property="og:url" content="http://loverain.tech/[object%20Object]/%E4%BA%8C%E8%BF%9B%E5%88%B6/index.html">
+<meta property="og:url" content="http://loverain.tech/[object%20Object]/Theory/Digital%20Design/%E4%BA%8C%E8%BF%9B%E5%88%B6/index.html">
 <meta property="og:site_name" content="StarAndRain">
 <meta property="og:description" content="控制复杂性的艺术抽象（Abstraction） 约束（Discipline）约束是对设计选择的一种内在限制，通过这种限制可以更有效地在更高的抽象层次上工作。 数字电路是模拟电路的子集。 通过数字电路的约束规则，我们很容易将组件组合成复杂的系统，而且这种数字系统在很多应用上都远远优于模拟组件组成的系统。 三Y原则 层次化（hierarchy） 将系统划分为若干模块，然后更进一步划分每个模块直到这些模">
 <meta property="og:locale" content="zh_CN">
@@ -36,8 +36,20 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206101713882.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206101720677.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206101741236.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110825562.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110825868.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110826641.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110827371.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110827972.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110832550.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110832593.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110841885.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110847236.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110856108.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110905492.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110906192.png">
 <meta property="article:published_time" content="2022-06-10T07:50:12.680Z">
-<meta property="article:modified_time" content="2022-06-10T14:56:56.273Z">
+<meta property="article:modified_time" content="2022-06-11T05:07:16.469Z">
 <meta property="article:author" content="LoveRain">
 <meta property="article:tag" content="数字电路">
 <meta property="article:tag" content="计算机系统结构">
@@ -232,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          2.1k 字
         
       </span>
     
@@ -243,7 +255,7 @@
         
         
         
-          13 分钟
+          18 分钟
         
       </span>
     
@@ -367,6 +379,46 @@
 </li>
 </ul>
 <h2 id="数制的比较"><a href="#数制的比较" class="headerlink" title="数制的比较"></a>数制的比较</h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206101741236.png" srcset="/img/loading.gif" lazyload alt="image-20220610174108184"></p>
+<h1 id="逻辑门"><a href="#逻辑门" class="headerlink" title="逻辑门"></a>逻辑门</h1><p>逻辑门（logic gate）是最简单的数字电路，它们可以接受一个或多个二进制输入并产生一个二进制输出。</p>
+<ul>
+<li>输入通常画在左边（或者上部）</li>
+<li>输出通常画在右边（或者下部）</li>
+<li>通常使用字母表开始部分的字母表示门的输入，用Y表示门的输出</li>
+<li>输入和输出之间的关系由真值表或布尔表达式描述<ul>
+<li>真值表的左边列出输入</li>
+<li>右边列出对应的输出</li>
+<li>每种可能的输入组合对应一行</li>
+</ul>
+</li>
+</ul>
+<h2 id="基本逻辑门"><a href="#基本逻辑门" class="headerlink" title="基本逻辑门"></a>基本逻辑门</h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110825562.png" srcset="/img/loading.gif" lazyload alt="image-20220611082519507"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110825868.png" srcset="/img/loading.gif" lazyload alt="image-20220611082545837"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110826641.png" srcset="/img/loading.gif" lazyload alt="image-20220611082604612"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110827371.png" srcset="/img/loading.gif" lazyload alt="image-20220611082713342"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110827972.png" srcset="/img/loading.gif" lazyload alt="image-20220611082728938"></p>
+<!--N输入异或门有时也称奇偶校验门（parity）-->
+
+<p>当有奇数个输入为TRUE时才输出为TRUE</p>
+<h2 id="多输入逻辑门"><a href="#多输入逻辑门" class="headerlink" title="多输入逻辑门"></a>多输入逻辑门</h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110832550.png" srcset="/img/loading.gif" lazyload alt="image-20220611083228515"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110832593.png" srcset="/img/loading.gif" lazyload alt="image-20220611083236554"></p>
+<h1 id="数字抽象之下"><a href="#数字抽象之下" class="headerlink" title="数字抽象之下"></a>数字抽象之下</h1><blockquote>
+<p>Beneath the Digital Abstraction </p>
+</blockquote>
+<h2 id="电源电压"><a href="#电源电压" class="headerlink" title="电源电压"></a>电源电压</h2><p>通常，系统中</p>
+<ul>
+<li>最低电压为0V，称为地（GND）</li>
+<li>最高电压来自电源，常称$V_{DD}$</li>
+</ul>
+<h2 id="逻辑电平"><a href="#逻辑电平" class="headerlink" title="逻辑电平"></a>逻辑电平</h2><p>通过定义逻辑电平可以将连续变量映射到离散的二进制变量</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110841885.png" srcset="/img/loading.gif" lazyload alt="image-20220611084144845"></p>
+<h2 id="噪声容限（noise-margin）"><a href="#噪声容限（noise-margin）" class="headerlink" title="噪声容限（noise margin）"></a>噪声容限（noise margin）</h2><p>可以加在最坏情况输出上但依然能正确解释为有效输入的噪声值</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110847236.png" srcset="/img/loading.gif" lazyload alt="image-20220611084747204"></p>
+<h2 id="直流电压传输特性"><a href="#直流电压传输特性" class="headerlink" title="直流电压传输特性"></a>直流电压传输特性</h2><p>描述了当输入电压变化足够慢且保证输出能跟上输入的变化时，输出电压随输入电压变化的函数关系。这个函数成为传输特性（Transfer Characteristics）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110856108.png" srcset="/img/loading.gif" lazyload alt="image-20220611085609055"></p>
+<p>Choosing logic levels at the unity gain point usually maximizes the noise margins.</p>
+<h2 id="静态约束"><a href="#静态约束" class="headerlink" title="静态约束"></a>静态约束</h2><p>逻辑门可以按照逻辑系列（logic family）来区分，同一系列的所有门都遵循相同的静态约束，即使用相同的电源电压和逻辑电平。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110905492.png" srcset="/img/loading.gif" lazyload alt="image-20220611090502448"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206110906192.png" srcset="/img/loading.gif" lazyload alt="image-20220611090659147"></p>
 
               
             </div>
@@ -428,7 +480,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>二进制</div>
-      <div>http://loverain.tech/[object Object]/二进制/</div>
+      <div>http://loverain.tech/[object Object]/Theory/Digital Design/二进制/</div>
     </div>
     <div class="license-meta">
       
@@ -470,7 +522,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/%5Bobject%20Object%5D/%E5%85%B3%E4%BA%8E%E8%A1%A5%E7%A0%81%E7%9A%84%E6%80%9D%E8%80%83/" title="关于补码的思考">
+                      <a href="/%5Bobject%20Object%5D/Theory/Digital%20Design/%E5%85%B3%E4%BA%8E%E8%A1%A5%E7%A0%81%E7%9A%84%E6%80%9D%E8%80%83/" title="关于补码的思考">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">关于补码的思考</span>
                         <span class="visible-mobile">上一篇</span>
@@ -480,7 +532,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/%5Bobject%20Object%5D/%E8%BD%B4%E4%BD%93/" title="轴体">
+                      <a href="/%5Bobject%20Object%5D/Habit/%E8%BD%B4%E4%BD%93/" title="轴体">
                         <span class="hidden-mobile">轴体</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
