@@ -19,7 +19,7 @@
     <meta name="description" content="引言在数字电路中，电路是一个可以处理离散值变量的网络，一个电路可以看作一个黑盒子。  电路由结点和元件组成。 元件（element）本身又是一个带有输入、输出、功能规范、时序规范的电路。 结点（node）是一段导线，通过电压传递离散值变量。 结点可分为：  输入结点 输出结点 内部结点  数字电路可以分为组合电路和时序电路：  组合电路——输出仅仅取决于输入的值 时序电路——输出取决于当前输入值和">
 <meta property="og:type" content="article">
 <meta property="og:title" content="组合逻辑设计">
-<meta property="og:url" content="http://loverain.tech/[object%20Object]/%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/index.html">
+<meta property="og:url" content="http://loverain.tech/[object%20Object]/Theory/Digital%20Design/%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="StarAndRain">
 <meta property="og:description" content="引言在数字电路中，电路是一个可以处理离散值变量的网络，一个电路可以看作一个黑盒子。  电路由结点和元件组成。 元件（element）本身又是一个带有输入、输出、功能规范、时序规范的电路。 结点（node）是一段导线，通过电压传递离散值变量。 结点可分为：  输入结点 输出结点 内部结点  数字电路可以分为组合电路和时序电路：  组合电路——输出仅仅取决于输入的值 时序电路——输出取决于当前输入值和">
 <meta property="og:locale" content="zh_CN">
@@ -54,8 +54,13 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206122120035.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206122126975.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206122128522.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206130840297.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206130846532.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206130847218.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206130847926.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206130848306.png">
 <meta property="article:published_time" content="2022-06-11T07:39:30.687Z">
-<meta property="article:modified_time" content="2022-06-12T13:30:56.978Z">
+<meta property="article:modified_time" content="2022-06-13T00:55:01.520Z">
 <meta property="article:author" content="LoveRain">
 <meta property="article:tag" content="数字电路">
 <meta property="article:tag" content="计算机系统结构">
@@ -250,7 +255,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.1k 字
+          4.4k 字
         
       </span>
     
@@ -261,7 +266,7 @@
         
         
         
-          35 分钟
+          37 分钟
         
       </span>
     
@@ -531,6 +536,20 @@
 <li>最小延迟是最短路径上每个元件的最小延迟之和</li>
 </ul>
 <p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206122128522.png" srcset="/img/loading.gif" lazyload alt="image-20220612212849455"></p>
+<p>control critical——关键路径是从控制信号S到输出Y</p>
+<p>data critical_关键路径是从数据输入到输出</p>
+<p>如果数据输入在控制输入前到达，则我们倾向于具有最短控制-输出延迟的设计；</p>
+<p>如果控制信号在数据输入之前到达，则我们选择具有最短数据-输出延迟的设计</p>
+<h2 id="毛刺"><a href="#毛刺" class="headerlink" title="毛刺"></a>毛刺</h2><p>一个输入信号的改变可能会导致多个输出信号的改变——glitch or hazard</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206130840297.png" srcset="/img/loading.gif" lazyload alt="image-20220613083811299"></p>
+<p>可能产生毛刺：卡诺图相切，信号的变化在卡诺图中穿越两个主蕴含项的边缘时，</p>
+<p>产生原因：在另一个主蕴含项的电路开启前，如果主蕴含项的电路将关闭，就会产生毛刺。</p>
+<p>去除毛刺：可以增加一个新的覆盖主蕴含项边缘的圈（一致项或冗余项）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206130846532.png" srcset="/img/loading.gif" lazyload alt="image-20220613084656473"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206130847218.png" srcset="/img/loading.gif" lazyload alt="image-20220613084710158"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206130847926.png" srcset="/img/loading.gif" lazyload alt="image-20220613084728883"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206130848306.png" srcset="/img/loading.gif" lazyload alt="image-20220613084831261"></p>
+<!--多个输入上的同时变化也会导致毛刺，这些毛刺不能通过增加硬件来避免-->
 
               
             </div>
@@ -592,7 +611,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>组合逻辑设计</div>
-      <div>http://loverain.tech/[object Object]/组合逻辑设计/</div>
+      <div>http://loverain.tech/[object Object]/Theory/Digital Design/组合逻辑设计/</div>
     </div>
     <div class="license-meta">
       
@@ -634,7 +653,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/%5Bobject%20Object%5D/%E7%AE%80%E5%8D%95%E5%8F%A5/" title="简单句">
+                      <a href="/%5Bobject%20Object%5D/Skill/%E7%AE%80%E5%8D%95%E5%8F%A5/" title="简单句">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">简单句</span>
                         <span class="visible-mobile">上一篇</span>

@@ -1,0 +1,1004 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="LoveRain">
+  <meta name="keywords" content="Technology and Science">
+  
+    <meta name="description" content="引言时序逻辑的输出取决于当前的输入值和先前的输入值 时序逻辑可能明确的记住某些先前的输入，也可能从先前的输入中提取更少量信息，这些信息称为系统的状态 一个数字时序逻辑电路的状态由一组称为状态变量的位构成，这些状态变量包含用于解释电路未来行为所需要的有关过去的所有信息 锁存器和触发器存储器件的基本模块是一个双稳态元件，该元件有两个稳定状态。  上图显示的是交叉耦合的反向器对： 因为Q值作为输入经过I">
+<meta property="og:type" content="article">
+<meta property="og:title" content="时序逻辑设计">
+<meta property="og:url" content="http://loverain.tech/[object%20Object]/Theory/Digital%20Design/%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/index.html">
+<meta property="og:site_name" content="StarAndRain">
+<meta property="og:description" content="引言时序逻辑的输出取决于当前的输入值和先前的输入值 时序逻辑可能明确的记住某些先前的输入，也可能从先前的输入中提取更少量信息，这些信息称为系统的状态 一个数字时序逻辑电路的状态由一组称为状态变量的位构成，这些状态变量包含用于解释电路未来行为所需要的有关过去的所有信息 锁存器和触发器存储器件的基本模块是一个双稳态元件，该元件有两个稳定状态。  上图显示的是交叉耦合的反向器对： 因为Q值作为输入经过I">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131643066.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131655627.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131656642.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131703744.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131711248.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131730511.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131735286.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131742433.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131750317.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131758552.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131758268.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141537071.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141556300.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141556465.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141557171.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141603792.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141603638.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141607777.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141639972.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141713306.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141714868.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141725244.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141725393.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206170927159.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206170929206.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206170944545.png">
+<meta property="og:image" content="http://loverain.tech/home/Loverain/.config/Typora/typora-user-images/image-20220617094522394.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171039011.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171047545.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171048824.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171048005.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171112408.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171112230.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171453293.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171131191.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171131239.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171136643.png">
+<meta property="article:published_time" content="2022-06-13T01:13:08.629Z">
+<meta property="article:modified_time" content="2022-06-17T06:54:11.514Z">
+<meta property="article:author" content="LoveRain">
+<meta property="article:tag" content="数字电路">
+<meta property="article:tag" content="计算机系统结构">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131643066.png">
+  
+  
+  
+  <title>时序逻辑设计 - StarAndRain</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"loverain.tech","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="时序逻辑设计"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-06-13 09:13" pubdate>
+          2022年6月13日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.6k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          39 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">时序逻辑设计</h1>
+            
+            <div class="markdown-body">
+              
+              <h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>时序逻辑的输出取决于当前的输入值和先前的输入值</p>
+<p>时序逻辑可能明确的记住某些先前的输入，也可能从先前的输入中提取更少量信息，这些信息称为系统的<strong>状态</strong></p>
+<p>一个数字时序逻辑电路的状态由一组称为<strong>状态变量</strong>的位构成，这些状态变量包含用于解释电路未来行为所需要的有关过去的所有信息</p>
+<h1 id="锁存器和触发器"><a href="#锁存器和触发器" class="headerlink" title="锁存器和触发器"></a>锁存器和触发器</h1><p>存储器件的基本模块是一个<strong>双稳态元件</strong>，该元件有两个稳定状态。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131643066.png" srcset="/img/loading.gif" lazyload alt="image-20220613164311013"></p>
+<p>上图显示的是交叉耦合的反向器对：</p>
+<p>因为Q值作为输入经过I_1和I_2两个反向器Q值不变，而$\bar Q$值只经过一个反向器故而保持与Q相反。</p>
+<p>此时电路有两种稳定状态:Q&#x3D;0；Q&#x3D;1.</p>
+<p>所以电路称为双稳态。</p>
+<p>具有N种稳态的元件可以表示$log_2N$位的信息。</p>
+<!--当第一次给此时序电路加电时，它的初始状态是未知的并且通常是不可预测的-->
+
+
+
+<h2 id="SR锁存器"><a href="#SR锁存器" class="headerlink" title="SR锁存器"></a>SR锁存器</h2><p>SR锁存器和交叉耦合反向器相似，但是它的状态可以通过输入S和R来控制，可以set和reset输出Q。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131655627.png" srcset="/img/loading.gif" lazyload alt="image-20220613165555598"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131656642.png" srcset="/img/loading.gif" lazyload alt="image-20220613165616611"></p>
+<!--输入的全部历史可以由状态变量Q解释。无论过去置位或复位是如何发生的，都需要通过最近一次置位或复位操作来预测SR锁存器的未来行为。-->
+
+<h2 id="D锁存器"><a href="#D锁存器" class="headerlink" title="D锁存器"></a>D锁存器</h2><p>Designing circuits becomes easier when these questions of <strong>what</strong> and <strong>when</strong> are separated. </p>
+<p>D锁存器有两个输入：</p>
+<ul>
+<li><p>数据输入D，用来控制下一个状态的值；</p>
+</li>
+<li><p>时钟输入CLK，用来控制状态发生改变的时间</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131703744.png" srcset="/img/loading.gif" lazyload alt="image-20220613170321712"></p>
+<ul>
+<li>D锁存器避免了S和R同时有效而造成的奇怪情况</li>
+<li>当CLK&#x3D;1时，D锁存器是透明的，就像一个缓冲器</li>
+<li>当CLK&#x3D;0时，D锁存器，阻塞新书局D通过D锁存器流向Q，Q保持原来的值不变</li>
+<li>D锁存器又称为透明锁存器、电平敏感锁存器</li>
+</ul>
+<h2 id="D触发器"><a href="#D触发器" class="headerlink" title="D触发器"></a>D触发器</h2><p>一个D触发器可以由反向时钟控制的两个背靠背的D锁存器构成</p>
+<p>第一个锁存器L1称为<strong>主锁存器</strong></p>
+<p>第二个锁存器L2称为<strong>从锁存器</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131711248.png" srcset="/img/loading.gif" lazyload alt="image-20220613171146211"></p>
+<p>D触发器在时钟<strong>上升沿</strong>将D复制到Q，在其他时间D触发器保持原来的状态</p>
+<p>时钟的上升沿也经常简称为时钟沿（clock  edge）</p>
+<ul>
+<li>输入D确定新的状态，时钟沿确定状态发生改变的时间</li>
+</ul>
+<p>D触发器也经常称为</p>
+<ul>
+<li>主从触发器（master-slave flip-flop）</li>
+<li>边沿触发器（edge-triggered flip-flop）</li>
+<li>正边沿触发器（positive edge-triggered flip-flop）</li>
+</ul>
+<p>电路中的三角形表示沿触发时钟输入。</p>
+<p>当不需要$\bar Q$时，$\bar Q$经常被省略。</p>
+<h2 id="寄存器"><a href="#寄存器" class="headerlink" title="寄存器"></a>寄存器</h2><p>一个N位寄存器由共享一个公共CLK输入的一排N个触发器构成</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131730511.png" srcset="/img/loading.gif" lazyload alt="image-20220613173021465"></p>
+<h2 id="带使能端的触发器"><a href="#带使能端的触发器" class="headerlink" title="带使能端的触发器"></a>带使能端的触发器</h2><p>带使能端的触发器（enabled flip-flop）增加了另一个称为EN或ENABLE的输入，该输入用于确定在时钟沿</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131735286.png" srcset="/img/loading.gif" lazyload alt="image-20220613173505252"></p>
+<!--当CLK=1时，EN不能改变，以免触发器出现一个时钟毛刺（在不正确的时间进行切换）-->
+
+
+
+<h2 id="带复位功能的触发器"><a href="#带复位功能的触发器" class="headerlink" title="带复位功能的触发器"></a>带复位功能的触发器</h2><p>带复位功能的触发器（resettable flip-flop）增加了一个称为RESET的输入。</p>
+<p>当RESET&#x3D;TRUE，带复位功能的触发器忽略D并将输出Q复位为0</p>
+<p>触发器可能是：</p>
+<ul>
+<li>同步复位——只在CLK上升沿进行复位</li>
+<li>异步复位——任意时刻都可复位，与CLK无关</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131742433.png" srcset="/img/loading.gif" lazyload alt="image-20220613174202387"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131750317.png" srcset="/img/loading.gif" lazyload alt="image-20220613175025259"></p>
+<h1 id="同步逻辑设计"><a href="#同步逻辑设计" class="headerlink" title="同步逻辑设计"></a>同步逻辑设计</h1><h2 id="一些有问题的电路"><a href="#一些有问题的电路" class="headerlink" title="一些有问题的电路"></a>一些有问题的电路</h2><h3 id="非稳态电路"><a href="#非稳态电路" class="headerlink" title="非稳态电路"></a>非稳态电路</h3><p>环形振荡器（ring oscillator）</p>
+<p>环形振荡器的周期取决于每个反向器的传播延迟。</p>
+<p>很难预测环形振荡器的周期。</p>
+<p>环形振荡器是一个零输入和一个周期性改变的输出的时序电路。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131758552.png" srcset="/img/loading.gif" lazyload alt="image-20220613175841514"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206131758268.png" srcset="/img/loading.gif" lazyload alt="image-20220613175848223"></p>
+<h3 id="竞争条件（race-condition）"><a href="#竞争条件（race-condition）" class="headerlink" title="竞争条件（race condition）"></a>竞争条件（race condition）</h3><p>电路的行为取决于两条通过逻辑门的路径中哪条最快</p>
+<h2 id="同步时序电路"><a href="#同步时序电路" class="headerlink" title="同步时序电路"></a>同步时序电路</h2><p>组合逻辑没有环路和竞争</p>
+<p>为了避免包含环路的时序电路存在不良的竞争或不稳定的行为</p>
+<p>设计师将电路转变成组合逻辑电路和寄存器的集合。</p>
+<p>寄存器包含系统的状态，这些状态仅仅在时钟到达时发生改变。</p>
+<p>状态<strong>同步</strong>于时钟信号。</p>
+<p>如果时钟足够慢，使得在下一个时钟沿到达之前输入到寄存器的信号都可以稳定下来，所有的竞争都将被消除。</p>
+<!--反馈回路上总是使用寄存器-->
+
+
+
+<p>定义时序电路（同步）：</p>
+<ul>
+<li><p>一个时序电路有一组有限的离散状态${S_0,S_1,…,S_{k-1}}$</p>
+</li>
+<li><p>同步时序电路有一个时钟输入，上升沿表示庶徐电路状态转变发生的时间</p>
+</li>
+<li><p>当前状态和下一个状态用来区分目前系统的状态和下一个时钟沿系统将进入的状态</p>
+</li>
+<li><p>功能规范详细说明了对于当前状态和输入值的各种组合的下一个状态和输出值</p>
+</li>
+<li><p>时序规范包括</p>
+<ul>
+<li><p>上界时间$t_{pcq}$和下界时间$t_{ccq}$，它是从时钟的上升沿直到输出改变的时间</p>
+<p>$t_{pcq}$ stands for the time of propagation from clock to Q, where Q indicates the output of a synchronous sequential circuit. $t_{ccq}$ stands for the time of contamination from clock to Q. These are analogous to $t_{pd}$ and $t_{cd}$ in combinational logic.</p>
+</li>
+<li><p>建立时间$t_{setup}$和保持时间$t_{hold}$它表示何时输入必须相对于时钟的上升沿稳定</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>同步时序电路的组成规则：</p>
+<ul>
+<li>每一个电路元件或者是组合电路或者是寄存器</li>
+<li>至少有一个电路元件是寄存器</li>
+<li>所有寄存器接受同一个时钟信号</li>
+<li>每个环路至少包含一个寄存器</li>
+</ul>
+<h2 id="同步电路和异步电路"><a href="#同步电路和异步电路" class="headerlink" title="同步电路和异步电路"></a>同步电路和异步电路</h2><p>同步电路和异步电路各有优缺点</p>
+<h1 id="有限状态机"><a href="#有限状态机" class="headerlink" title="有限状态机"></a>有限状态机</h1><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141537071.png" srcset="/img/loading.gif" lazyload alt="image-20220614153703991"></p>
+<h2 id="有限状态机设计实例"><a href="#有限状态机设计实例" class="headerlink" title="有限状态机设计实例"></a>有限状态机设计实例</h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141556300.png" srcset="/img/loading.gif" lazyload alt="image-20220614155610245"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141556465.png" srcset="/img/loading.gif" lazyload alt="image-20220614155619423"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141557171.png" srcset="/img/loading.gif" lazyload alt="image-20220614155733125"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141603792.png" srcset="/img/loading.gif" lazyload alt="image-20220614160318754"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141603638.png" srcset="/img/loading.gif" lazyload alt="image-20220614160338601"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141607777.png" srcset="/img/loading.gif" lazyload alt="image-20220614160712729"></p>
+<ul>
+<li>状态寄存器在启动时收到一个同步或异步复位信号来初始化有限状态机。</li>
+<li>在每个时钟沿，这个状态寄存器复制下一个状态$S’<em>{1:0}$到状态$S</em>{1:0}$</li>
+<li>根据下一个状态方程画出下一个状态逻辑的电路图</li>
+<li>根据输出方程画出输出逻辑的电路图</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141639972.png" srcset="/img/loading.gif" lazyload alt="image-20220614163940909"></p>
+<h2 id="状态编码"><a href="#状态编码" class="headerlink" title="状态编码"></a>状态编码</h2><ul>
+<li>二进制编码</li>
+<li>独热编码<ul>
+<li>状态的每一位表示一种状态</li>
+</ul>
+</li>
+</ul>
+<h2 id="Moore型状态机和Mealy型状态机"><a href="#Moore型状态机和Mealy型状态机" class="headerlink" title="Moore型状态机和Mealy型状态机"></a>Moore型状态机和Mealy型状态机</h2><ul>
+<li>Moore型状态机的输出仅和当前状态相关</li>
+<li>Mealy型状态机的输出取决于输入和当前状态</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141713306.png" srcset="/img/loading.gif" lazyload alt="image-20220614171353255"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141714868.png" srcset="/img/loading.gif" lazyload alt="image-20220614171404809"></p>
+<h1 id="状态机的分解"><a href="#状态机的分解" class="headerlink" title="状态机的分解"></a>状态机的分解</h1><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141725244.png" srcset="/img/loading.gif" lazyload alt="image-20220614172510161"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206141725393.png" srcset="/img/loading.gif" lazyload alt="image-20220614172519347"></p>
+<h2 id="由电路图导出状态机"><a href="#由电路图导出状态机" class="headerlink" title="由电路图导出状态机"></a>由电路图导出状态机</h2><ul>
+<li>Examine circuit, stating inputs, outputs, and state bits.</li>
+<li>Write next state and output equations. </li>
+<li>Create next state and output tables. </li>
+<li>Reduce the next state table to eliminate unreachable states. </li>
+<li>Assign each valid state bit combination a name. </li>
+<li>Rewrite next state and output tables with state names. </li>
+<li>Draw state transition diagram. </li>
+<li>State in words what the FSM does.</li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>Use the following procedure to design an FSM: </p>
+<ul>
+<li>Identify the inputs and outputs. </li>
+<li>Sketch a state transition diagram. </li>
+<li>For a Moore machine:<ul>
+<li>Write a state transition table. </li>
+<li>Write an output table.</li>
+</ul>
+</li>
+<li>For a Mealy machine: <ul>
+<li>Write a combined state transition and output table.</li>
+</ul>
+</li>
+<li>Select state encodings—your selection affects the hardware design. </li>
+<li>Write Boolean equations for the next state and output logic. </li>
+<li>Sketch the circuit schematic</li>
+</ul>
+<p>状态转换图——&gt;状态转换表和输出表——&gt;布尔表达式——&gt;电路草图</p>
+<h1 id="时序逻辑的时序"><a href="#时序逻辑的时序" class="headerlink" title="时序逻辑的时序"></a>时序逻辑的时序</h1><h2 id="动态约束"><a href="#动态约束" class="headerlink" title="动态约束"></a>动态约束</h2><p>在时钟上升时，输出在时钟Q的最小延迟后开始改变，并在时钟到Q的传播延迟内达到最终值。</p>
+<p>为了对电路正确采样，在时钟的上升沿到来前，输入必须在建立时间内保持稳定，在时钟上升沿之后保持时间内保持稳定。</p>
+<p>建立时间和保持时间统称为电路的孔径时间。</p>
+<p>动态约束是指同步时序电路的输入必须在时钟沿附近的建立和维持孔径时间内保持稳定。</p>
+<p>必须保证在触发器对信号进行采样时，信号不能变化。</p>
+<p>采样时仅关心输入在孔径时间内的值，可以认为是每个时钟周期内的最终值，所以可以将信号当作时间和逻辑电平上都是离散的量</p>
+<h2 id="系统时序"><a href="#系统时序" class="headerlink" title="系统时序"></a>系统时序</h2><p>时钟周期——重复的时钟信号的上升沿之间的时间</p>
+<p>时钟频率——时钟周期的倒数</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206170927159.png" srcset="/img/loading.gif" lazyload alt="image-20220617092753089"></p>
+<ol>
+<li><p>建立时间约束</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206170929206.png" srcset="/img/loading.gif" lazyload alt="image-20220617092918165"></p>
+<ul>
+<li>最小周期等式：$T_c\ge t_{pcq}+t_{pd}+t_{setup}$</li>
+<li>建立时间约束 （最大延迟约束）$t_{pd}\le T_c-(t_{pcq}+t_{setup})$<ul>
+<li>限制通过组合逻辑的最大约束</li>
+</ul>
+</li>
+<li>$t_{pcq}+t_{setup}$称为时序开销，通常由触发器制造商决定</li>
+</ul>
+</li>
+<li><p>保持时间约束</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206170944545.png" srcset="/img/loading.gif" lazyload alt="image-20220617094255881"></p>
+<ul>
+<li><p>$t_{ccq}+t_{cd}\ge t_{hold}$</p>
+</li>
+<li><p>保持时间约束，最小时间约束$t_{cd}\ge t_{hold}-t_{ccq}$</p>
+<p><img src="/home/Loverain/.config/Typora/typora-user-images/image-20220617094522394.png" srcset="/img/loading.gif" lazyload alt="image-20220617094522394"></p>
+</li>
+<li><p>$t_{hold}\le t_{ccq}$</p>
+<ul>
+<li>一个可靠触发器的保持时间比它的最小延迟短</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>小结</p>
+<ul>
+<li>时序电路中的建立时间和保持时间约束控制触发器之间的组合逻辑的最大延迟和最小延迟。</li>
+<li>现代触发器经常设计为可以使其组合逻辑的最小延迟是0,即触发器可以背靠背地放置。</li>
+<li>因为高的时钟频率意味着短的时钟周期，所以最大延迟约束限制了高速电路的关键路径上串联门的个数</li>
+<li>增加缓冲器通常能在不降低关键路径速度的同时解决保持时间问题</li>
+</ul>
+</li>
+</ol>
+<h2 id="时钟偏移"><a href="#时钟偏移" class="headerlink" title="时钟偏移"></a>时钟偏移</h2><p>时钟偏移——每个寄存器的时钟到达时间总是有所不同，这个时钟沿到达时间的变化称为时钟偏移。</p>
+<p>引起时钟偏移的原因：</p>
+<ul>
+<li>线路长度不同</li>
+<li>时钟门控</li>
+<li>噪声</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171039011.png" srcset="/img/loading.gif" lazyload alt="image-20220617103930900"></p>
+<p>![</p>
+<p>](<a target="_blank" rel="noopener" href="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171047781.png">https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171047781.png</a>)</p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171047545.png" srcset="/img/loading.gif" lazyload alt="image-20220617104741506"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171048824.png" srcset="/img/loading.gif" lazyload alt="image-20220617104800759"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171048005.png" srcset="/img/loading.gif" lazyload alt="image-20220617104813941"></p>
+<ul>
+<li>时钟偏移显著增加了建立时间和保持时间</li>
+<li>增加时序总开销，减少组合逻辑的有效工作时间</li>
+<li>增加了组合逻辑所需要的最小延迟</li>
+<li>为了防止$t_{skem}&gt;t_{ccq}$，背靠背触发器出现时间错误</li>
+</ul>
+<h2 id="亚稳态"><a href="#亚稳态" class="headerlink" title="亚稳态"></a>亚稳态</h2><p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171112408.png" srcset="/img/loading.gif" lazyload alt="image-20220617111200365"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171112230.png" srcset="/img/loading.gif" lazyload alt="image-20220617111218196"></p>
+<ul>
+<li>触发器等双稳态设备的输入在孔径时间内发生改变，则输出在稳定到0或者1之前是一个亚稳态值。</li>
+<li>达到稳态的时间是无界的，因为对于任何有限时间t，触发器仍处于亚稳态的概率都不是0。</li>
+<li>但是这个概率随着t的增加而指数级下降</li>
+</ul>
+<h3 id="同步器"><a href="#同步器" class="headerlink" title="同步器"></a>同步器</h3><p>对于数字系统，来自真实世界的异步输入是不可避免的。</p>
+<p>数字系统设计人员的目标是：对于给定的异步输入，确保遇到的亚稳态电压的概率足够小。</p>
+<p>为了确保产生正确的逻辑电平，所有的异步输入必须经过<strong>同步器</strong>。</p>
+<p>同步器有如下特性：</p>
+<ul>
+<li>接受异步输入信号D和时钟CLK</li>
+<li>在有限时间内，他产生输出Q，输出为有效逻辑电压的概率很高</li>
+<li>如果在孔径时间内D是稳定的，则Q将会取与D一样的值</li>
+<li>如果在孔径时间内D发生变化，则Q可能取HIGH或LOW，但它一定不会是亚稳态。</li>
+<li>如果同步器的输出Q是亚稳态，那么这个同步器将失效</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171453293.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171131191.png" srcset="/img/loading.gif" lazyload alt="image-20220617113108149"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171131239.png" srcset="/img/loading.gif" lazyload alt="image-20220617113117186"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/jdccccc/PictureBed/img/202206171136643.png" srcset="/img/loading.gif" lazyload alt="image-20220617113630597"></p>
+<p>Mean Time Between Failure —— 平均系统失效间隔时间</p>
+<h1 id="并行"><a href="#并行" class="headerlink" title="并行"></a>并行</h1><p>系统的速度可以使用延迟和通过系统的信息吞吐量来度量</p>
+<p>任务——经过处理后，能产生一组输出的一组输入。</p>
+<p>延迟——从开始到结束所需要的时间。</p>
+<p>吞吐量——系统单位时间内产生任务的数量。</p>
+<p>并行——在同一时间内处理多个任务可以提高吞吐率。</p>
+<p>空间并行——提供多个相同的硬件，多个任务可以在同一时间一起处理。</p>
+<p>时间并行——将一个任务分成多个阶段，任意给定的时间内每段都有一个不同的任务，从而使多个人物可以重叠起来。</p>
+<ul>
+<li>时间并行通常称为流水线（pipelining）</li>
+</ul>
+<p>在没有并行的系统中，吞吐量为：<br>$$<br>1&#x2F;L<br>$$<br>在空间并行系统中有N个相同的硬件，吞吐量为：<br>$$<br>N&#x2F;L<br>$$<br>在时间并行系统中，延迟最长的段延迟为$L_1$:<br>$$<br>1&#x2F;L_1<br>$$</p>
+<!--将寄存器放在组合逻辑块之间以便将逻辑块分成可以用较快时钟运行的较短阶段-->
+
+
+
+<p>并行的克星是依存关系：</p>
+<p>如果当前的任务依赖于前一个任务的结果，而不是当前任务中的前一步结果，则只有前一个任务完成后，后一个任务才能开始。</p>
+
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Theory/" class="category-chain-item">Theory</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Theory/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E4%B8%8E%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/" class="category-chain-item">数字电路与逻辑设计</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/Theory/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E4%B8%8E%E9%80%BB%E8%BE%91%E8%AE%BE%E8%AE%A1/%E3%80%8A%E6%95%B0%E5%AD%97%E8%AE%BE%E8%AE%A1%E5%92%8C%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E3%80%8B/" class="category-chain-item">《数字设计和计算机体系结构》</a>
+  
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF/">#数字电路</a>
+      
+        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/">#计算机系统结构</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>时序逻辑设计</div>
+      <div>http://loverain.tech/[object Object]/Theory/Digital Design/时序逻辑设计/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>LoveRain</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年6月13日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/%5Bobject%20Object%5D/Inspirition/%E5%85%B3%E4%BA%8E%E6%88%91%E8%BD%AC%E7%94%9F%E5%8F%98%E6%88%90%E5%8F%B2%E8%8E%B1%E5%A7%86%E8%BF%99%E4%BB%B6%E4%BA%8B/" title="关于我转生变成史莱姆这件事">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">关于我转生变成史莱姆这件事</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/%5Bobject%20Object%5D/Theory/Digital%20Design/%E5%85%B3%E4%BA%8E%E6%AF%9B%E5%88%BA%E7%9A%84%E6%80%9D%E8%80%83/" title="关于毛刺的思考">
+                        <span class="hidden-mobile">关于毛刺的思考</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
