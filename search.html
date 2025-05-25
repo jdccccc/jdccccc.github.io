@@ -1,160 +1,100 @@
-<!doctype html>
-<html data-bs-theme="">
-    <head>
-                <title>HLLM Wiki</title>
+<!DOCTYPE html>
+<html>
 
-            <meta charset="utf-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <title>HLLM Wiki</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    <link rel="stylesheet" href="./css/theme.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
 
-            
-            
-            
-
-            
-                <link  rel="icon" type="image/x-icon" href="./assets/img/favicon.ico">
-            
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-            <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-            <link rel="stylesheet" href="./assets/css/root.min.css">
-            <link rel="stylesheet" href="./assets/css/main.min.css">
-            <link rel="stylesheet" href="./assets/css/media.min.css">
-            <link rel="stylesheet" href="./assets/css/mkdocstrings.min.css">
-                <script src="./search/main.js"></script>
-
-            
-                
-            
-    </head>
-
-    <body>
-        <div class="container py-3">
-            <header>
-                    <!-- block header -->
-<nav class="navbar navbar-expand-xl border-bottom">
-    <div class="container-fluid">
-        
-
-        
-            <span class=" fs-4 title-color site-name" id="component-site-name" style="text-transform: uppercase;">HLLM Wiki</span>
-        
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
-            aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
-            <ul class="navbar-nav">
-
-                <!-- block menu -->
-                <li class="nav-item">
-                    <!-- block menu -->
-<!-- endblock -->
-                </li>
-                <!-- endblock -->
-
-                <!-- block search -->
-                <li class="nav-item">
-                    <a class="collapsed" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                        <div class="md-search-icon">
-                            <i class="fa fa-search" aria-hidden="true"></i>
-                        </div>
-                    </a>
-                </li>
-                <!--  endblock -->
-
-                <!-- block source -->
-                <li class="nav-item">
-                    
-                </li>
-                <!--  endblock -->
-            </ul>
-        </div>
-    </div>
-</nav>
-<!--  endblock -->
-            </header>
-
-            <main><!-- block search -->
-<div class="collapse" id="collapseExample">
-    <div role="search" class="search-box">
-        <form id="rtd-search-form" class="wy-form" action="./search.html" method="get">
-            <input type="text" name="q" class="search-query"
-            placeholder="Search docs" title="Type search term here" />
-        </form>
-    </div>
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="./." class="site-name"> HLLM Wiki</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="./search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
 </div>
-<!-- endblock -->
-
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1"><a class="nav-item" href="./.">Home</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Hardware</button>
+<ul class="subnav">
+    <li class="toctree-l2">
+<a class="nav-item" href="./Hardware/hardware/">Hardware</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Simulator</button>
+<ul class="subnav">
+    <li class="toctree-l2">
+<a class="nav-item" href="./Simulator/simulator/">Simulator</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Model</button>
+<ul class="subnav">
+    <li class="toctree-l2">
+<a class="nav-item" href="./Model/model/">Model</a></li>
+</ul></li>
+                </ul>
+            </nav>
+            <div class="repo">
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="./." class="site-name"> HLLM Wiki</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs"></nav>
                 
 
+<h1 id="search">Search Results</h1>
 
-	
-<!-- block search -->
-<section class="p-md-5 content-search">
-	<article class="search-box">
-		<p></p>
-		<h1 id="search">Search Results</h1>
-		<hr>
+<form id="content_search" action="search.html">
+    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+    <input name="q" id="mkdocs-search-query" type="text" class="search_input search-query ui-autocomplete-input" placeholder="Search the Docs" autocomplete="off" autofocus title="Type search term here">
+</form>
 
-		<form id="content_search" action="./search.html">
-			<span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
-			<input name="q" id="mkdocs-search-query" type="text" class="search-query search_input search-query ui-autocomplete-input"
-				placeholder="Search the Docs" autocomplete="off" autofocus title="Type search term here">
-		</form>
-
-		<div id="mkdocs-search-results" class="search-results" data-no-results-text="No results found">
-			Searching...
-		</div>
-
-	</article>
-</section>
-<!-- endblock -->
+<div id="mkdocs-search-results" class="search-results">
+    Searching...
+</div>
 
 
-
-
-
-                
-                
-            </main>
-
-            
-                    <!-- block preview -->
-<!-- endblock -->
-            
-
-            
-                    <!-- block footer -->
-<footer class="pt-4 my-md-5 pt-md-5 border-top" id="component-footer">
-    <div class="row">
-        <div class="col-12 col-md">
-                <!-- block copyright -->
-
-    <small class="d-block mb-3">
-        Made with
-        <a href="https://github.com/FernandoCelmer/mkdocs-simple-blog" target="_blank" rel="noopener">
-            Simple Blog for MkDocs
-        </a>
-    </small>
-
-<!-- endblock -->
-        </div>
+                <footer>
+    <div class="footer-note">
+        <p>
+            Built with <a href="http://www.mkdocs.org">MkDocs</a> using
+            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.
+        </p>
     </div>
 </footer>
-<!-- endblock -->
-            
-        </div>
-
-            <script>var base_url = '.';</script>
-            <script src="./assets/js/jquery-3.3.1.slim.min.js""></script>
-            <script src="./assets/js/bootstrap.bundle.min.js""></script>
-            <script src="./assets/js/main.min.js""></script>
-                <script src="./search/main.js" defer></script>
-
-    </body>
+            </div>
+        </main>
+    </div>
+    <script>var base_url = '.';</script>
+    <script src="./js/theme.js"></script>
+    <script src="./search/main.js"></script>
+</body>
 
 </html>
